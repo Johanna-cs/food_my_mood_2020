@@ -3,15 +3,3 @@ body {
   font-family: 'Josefin Sans' sans-serif, Roboto sans-serif, 'Playfair Display', serif;
   }
 
-.img{
-    display: flex;
-    align-self: flex-start;
-    width: 0.5rem;
-    pointer-events: none;
-}
-.navbar {
-  background-color: #3E4F59;
-  color : white;
-
-
-}
