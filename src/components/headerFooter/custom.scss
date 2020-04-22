@@ -22,11 +22,10 @@ body {
     width: 2.5rem ;
   }
 
-.a .selected {
-      color: #F0CC53;
-  }
-
 .Footer {
+    font-family: 'Josefin Sans';
+    font-weight: 300;
+    font-size: smaller;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;

@@ -1,19 +1,12 @@
-import React from 'react-dom';
-import { NavLink } from "react-dom";
+import React from 'react'
 
-
-
-const Footer = (props) => {
+const Footer = () => {
     return (
-    <div id='Footer'>
-<ul className='Footer'>
+    <div className='Footer'>
+        <p>je suis un Footer</p>
 
-    <li><NavLink activeClassName="selected" to="./src/components/pageMood">Mood</NavLink></li>
-    <li><NavLink activeClassName="selected" to="./src/components/Contact">Contact</NavLink></li>
-    <li><NavLink activeClassName="selected" to="./src/components/AboutUs">About Us</NavLink></li>
-    
-</ul> 
     </div>
-    )}
+    )
+}
 
-export default Footer;
+export default Footer

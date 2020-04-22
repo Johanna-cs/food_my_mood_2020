@@ -3,3 +3,42 @@ body {
   font-family: 'Josefin Sans' sans-serif, Roboto sans-serif, 'Playfair Display', serif;
   }
 
+h1 {
+  font-family: 'Playfair Display';
+  color : #3e4f59;
+  padding: 0.4rem;
+}
+h2 {
+  font-family: 'Playfair Display';
+  color : #3e4f59;
+  padding: 0.4rem;
+}
+
+h3 {
+  font-family: 'Josefin Sans';
+  color : #3e4f59;
+  padding: 0.4rem;
+}
+
+h4 {
+  font-family: 'Josefin Sans';
+  padding: 0.4rem;
+  color : #febe40;
+  border: transparent;
+  box-sizing: content-box;
+  background-color: #d9e2dd;
+}
+
+p {
+  font-family: 'Josefin Sans'; 
+  font-size: small;
+  padding: 0.4rem;
+}
+
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  cursor: pointer ;
+}
