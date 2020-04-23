@@ -1,8 +1,11 @@
 import React from 'react'
 import Axios from 'axios'
 import RecipeCard from './RecipeCard'
+import './Results.css'
+
 const API_ID = '6b74c366'
 const API_KEY = '4819294e40eaccde885e836d49f610d0'
+
 class RecipesResults extends React.Component {
     constructor(props) {
         super(props)
@@ -21,11 +24,11 @@ class RecipesResults extends React.Component {
     }
     render() {
         return (
-            <>
+            <div className='recipesresults'>
                 {this.state.recipe.map(recip => recip.recipe).map(e=> (
                     <RecipeCard label={e.label} image={e.image} time={e.totalTime} calories={e.calories} />
                 ))}
-            </>
+            </div>
         )}
 }
 export default RecipesResults
