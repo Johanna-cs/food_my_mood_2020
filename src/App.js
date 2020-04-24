@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header'
+import MoodList from './components/pageMood/MoodsList'
 
 function App() {
   return (
     <div className="App">
-        <Header />
+        <MoodList />
     
     </div>
   );
