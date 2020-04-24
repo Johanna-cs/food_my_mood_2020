@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    font-family: 'Josefin Sans' sans-serif, Roboto sans-serif, 'Playfair Display', serif;
+    }
+  
+#logoFMM {
+      display: flex;
+      align-self: center;
+      width: 2.1rem;
+      margin : 0.9rem;
+      pointer-events: none;
+  }
+.navbar {
+    display: flex;
+    align-self: center;
+    background-color: #3E4F59;
+    font-family: 'Playfair Display';
+  }
+
+.burgerMenu {
+    display: flex ;
+    width: 2.5rem ;
+  }
+
+.Footer {
+    font-family: 'Josefin Sans';
+    font-weight: 300;
+    font-size: smaller;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: #3E4F59;
+    width: fit-content;
+
+}
+
+
+
+
+
+@import '~bootstrap/scss/bootstrap.scss';

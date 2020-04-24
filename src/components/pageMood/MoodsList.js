@@ -7,9 +7,11 @@ import fatigue from './photos/cadre/fatigue.png'
 import love from './photos/cadre/love.png'
 import stresse from './photos/cadre/stresse.png'
 import Affame from './Affame'
-
+import { Link } from 'react-router-dom'
 import './MoodsList.css'
 import Axios from 'axios';
+
+
 
 const API_ID = 'b013cd2e'
 const API_KEY = 'b5866da13b7d6a2eac318c855012b15f'
@@ -44,10 +46,10 @@ class MoodList extends Component {
                 <div className="col1">
                     <h1>Affamé</h1>
 
-                        <Link to ={{pathname: "/pageSelect/PreferencesList",
+                    <Link to ={{pathname: "/pageSelect/PreferencesList",
                                     state:{affame}}}>
                                  <img className="photos" src={affame} alt="Affamé"/>
-                        </Link> 
+                    </Link> 
                                                 
                          
                         
