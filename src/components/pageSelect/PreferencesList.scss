@@ -1,0 +1,52 @@
+button {
+    width: 8rem;
+    box-sizing: content-box;
+}
+
+
+.typeOfMeals {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 7%;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  
+.Preferences {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#Valid {
+    width: 55px;
+	height:55px;
+	background:#fafafa;
+	box-shadow:2px 2px 6px #aaa;
+	font:bold 13px Arial;
+	border-radius:50%;
+    color:#555;
+    margin-top: 7%;
+    margin-left: 45%;
+    font-size: small;
+}
+
+.skipButton {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 6%;
+    margin-bottom: 12%;
+   
+}
+
+#test {
+    font-size: xx-small;
+}
+
+
+
+
+
+
+@import '~bootstrap/scss/bootstrap.scss';
