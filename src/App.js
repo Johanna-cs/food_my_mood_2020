@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import './index.css';
 import Router from './components/Router'
-
+import PreferencesList from './components/pageSelect/PreferencesList'
 
 
 
@@ -12,9 +12,16 @@ function App() {
         
         <Router />
         
+      
     </div>
   
   );
 }
+
+
+
+
+
+
 
 export default App;

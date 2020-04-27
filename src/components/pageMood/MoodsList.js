@@ -20,38 +20,46 @@ class MoodList extends Component {
     constructor(props){
         super(props)
         this.state = {
-          affame : 'false',
-          besoinconcentration : 'false',
+          affame : true,
+          besoinconcentration : false,
           enerve : 'false',
           fatigue : 'false',
           love : 'false',
-          strese : 'false',
+          stresse : 'false'
         }
       }
 
  //   componentDidMount() {
  //       this.getData()
+
  //     }
 //
  //   getData = () => {
  //       Axios.get(`https://api.edamam.com/search?q=${this.state.query}&app_id=${API_ID}&app_key=${API_KEY}`)
  //       .then(response => this.setState({recipe : response.data.hits}))
- //     }
+ //     }CV?preview=CV_O+Baveux.pdf
+
+ //handleState = () => {
+ //   this.setState ({ affame = false ? true : false })
+ 
+  
+
     
       render (){ 
         return (
-            
+           
             <div className="moodList">
                 
                 <div className="col1">
                     <h1>Affamé</h1>
 
                     <Link to ={{pathname: "/pageSelect/PreferencesList",
-                                    state:{affame}}}>
+                                   state: this.state.test}}>
+                                                   
                                  <img className="photos" src={affame} alt="Affamé"/>
                     </Link> 
-                                                
-                         
+                                           
+                        
                         
                     <h1>Besoin de concentration</h1>
                         <img className="photos" src={besoinconcentration}
