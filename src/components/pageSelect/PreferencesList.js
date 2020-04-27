@@ -107,7 +107,7 @@ class PreferencesList extends React.Component {
 
 
         <div className="validButton">
-          <Link to="/results">
+          <Link to={{pathname:"/pageResults/RecipesResults"}}>
            <Button  id="Valid">Valider</Button></Link>
         </div>
 
