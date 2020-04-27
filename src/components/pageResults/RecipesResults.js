@@ -24,12 +24,16 @@ class RecipesResults extends React.Component {
         .get(`https://api.edamam.com/search?q=${this.state.query}&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => this.setState({recipe : response.data.hits}))
     }
-
     render() {
         return (
             <>
                 {this.state.recipe.map(recip => recip.recipe).map(e=> (
-                    <RecipeCard label={e.label} image={e.image} time={e.totalTime} calories={e.calories} />
+                    <RecipeCard 
+                    label={e.label} 
+                    image={e.image} 
+                    time={e.totalTime} 
+                    calories={e.calories} 
+                    uri={e.uri}/>
                 ))}            
             </>
         )}

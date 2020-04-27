@@ -1,16 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header'
-import RecipesResults from './components/pageResults/RecipesResults';
+import './index.css';
+import Router from './components/Router'
+
+
 
 
 function App() {
   return (
     <div className="App">
-        <RecipesResults />
-    
+        <Router />
+        
     </div>
+  
   );
 }
 
