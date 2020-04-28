@@ -1,9 +1,10 @@
 import React from 'react'
 import Axios from 'axios'
 import RecipeCard from './RecipeCard'
+import './Results.css'
 
-const API_ID = 'e9275ee4'
-const API_KEY = 'bda40244157a76f38fd5f51e25675359'
+const API_ID = '6b74c366'
+const API_KEY = '4819294e40eaccde885e836d49f610d0'
 
 
 class RecipesResults extends React.Component {
@@ -26,7 +27,7 @@ class RecipesResults extends React.Component {
     }
     render() {
         return (
-            <>
+            <div className='recipesresults'>
                 {this.state.recipe.map(recip => recip.recipe).map(e=> (
                     <RecipeCard 
                     label={e.label} 
@@ -35,9 +36,8 @@ class RecipesResults extends React.Component {
                     calories={e.calories} 
                     uri={e.uri}/>
                 ))}            
-            </>
+            </div>
         )}
-
 }
 
 export default RecipesResults
