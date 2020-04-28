@@ -1,0 +1,37 @@
+body {
+    background-color: #D9E2DD;
+}
+
+.container {
+    border-style: solid;
+    border-radius: 10%;
+    border : 0.5px solid #3E4F59;
+    padding: 0.4rem;
+    margin: 0.8rem;
+    margin-left: 12rem;
+
+}
+
+.recipe {
+    margin-left: 2rem;
+}
+
+.recipe-title {
+    font-size: 4rem;
+}
+
+.recipe-summary {
+    display: flex;
+    justify-content: space-around;
+}
+
+.recipe-typology {
+    color: violet;
+    width: 50%;
+    font-size: 2rem;
+}
+
+
+h3 {
+    margin-left : 0.8rem;
+}

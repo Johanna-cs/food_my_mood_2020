@@ -1,6 +1,8 @@
 import React from 'react';
+import './App.css';
 import './index.css';
 import Router from './components/Router'
+import './App.css';
 
 
 
@@ -8,11 +10,22 @@ import Router from './components/Router'
 function App() {
   return (
     <div className="App">
-        <Router />
+      <header className="App-header">
+      <Router />
+     
+        
+      </header>
+       
         
     </div>
   
   );
 }
+
+
+
+
+
+
 
 export default App;

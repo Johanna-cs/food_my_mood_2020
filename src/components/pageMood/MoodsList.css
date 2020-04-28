@@ -1,0 +1,21 @@
+.photos {
+    width: 80%;   
+    margin: 0px 10% 30px 10%;
+}
+
+.photos:hover {
+    width: 83%;
+    border-radius: 9%;
+    box-shadow: 10px 10px 25px 0 rgba(0, 0, 0, 0.7)
+}
+
+.moodList{
+    display: flex ;
+    background-color: #D9E2DD;
+}
+
+h1 {
+    font-size: 1.5em !important;
+    text-align: center;
+}
+
