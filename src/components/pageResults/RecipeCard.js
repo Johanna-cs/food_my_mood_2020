@@ -1,4 +1,6 @@
 import React from 'react'
+import './Results.css'
+
 class RecipeCard extends React.Component {
     // constructor(props) {
     //     super(props)
@@ -6,11 +8,13 @@ class RecipeCard extends React.Component {
     render() {
         return (
         <>
-            <div>
-                <h2>{this.props.label}</h2>
-                <img src={this.props.image} alt={this.props.label}></img>
-                <h5>Temps de préparation : {this.props.time === 0 ? 'Instantané !' : this.props.time} {this.props.time > 0 ? 'minutes' : ''}</h5>
-                <h6>Nombre de calories : {Math.round(this.props.calories)}</h6>
+            <div className='recipeCard'>
+                <h3 className='recipeName'>{this.props.label}</h3>
+                <img className='recipePhoto' src={this.props.image} alt={this.props.label}></img>
+                <div className='recipeDetails'>
+                    <p className='recipeTime'>Temps de préparation : {this.props.time === 0 ? 'Instantané !' : this.props.time} {this.props.time > 0 ? 'minutes' : ''}</p>
+                    <p className='recipeCal'> Nombre de calories : {Math.round(this.props.calories)}</p>
+                </div>
             </div>
         </>
         )
