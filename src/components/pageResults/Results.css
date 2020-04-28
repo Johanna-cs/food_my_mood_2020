@@ -1,3 +1,7 @@
+.pageResults {
+    display: flex;
+}
+
 .recipesresults {
     background-color: #D9E2DD;
     display : flex ; 
@@ -7,8 +11,35 @@
     padding : 0.4rem;
     
 }
+.filterBar {
+    background-color: #AEDEB7;
+    border: 0.5px solid #3E4F59;
+    display : flex;
+    width: inherit;
+    padding: 1rem;
+}
+.selectTime {
+    display: flex;
+    border: 0.5px solid #3E4F59;
+    background-color: white;
+
+}
+
+.timing label {
+    font-family: 'josefin sans';
+    margin-right: 1.5px;
+    font-size: xx-small;
+}
+
+.timing select {
+    width: 3rem;
+    font-size: 0.4rem ;
+    padding: 0.8rem;
+    margin: unset;
+}
 
 .recipeCard {
+    box-sizing: initial;
     border-style: solid;
     border-radius: 10%;
     border : 0.5px solid #3E4F59;
@@ -16,11 +47,12 @@
     margin: 0.8rem;
 }
 .recipeName {
+    font-size: inherit !important;
     display : flex ;
     justify-content: center;
     box-sizing: inherit;
     border-radius: 10%;
-    word-break: keep-all;
+    word-break: break-word !important;
 }
 
 .recipeTime {

@@ -11,7 +11,7 @@ class RecipesResults extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            query : 'chicken',
+            query : 'potatoes',
             recipe : []
         }
     }
@@ -24,19 +24,28 @@ class RecipesResults extends React.Component {
         Axios
         .get(`https://api.edamam.com/search?q=${this.state.query}&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => this.setState({recipe : response.data.hits}))
+        // console.log(response.data.hits)
+    
     }
     render() {
         return (
-            <div className='recipesresults'>
-                {this.state.recipe.map(recip => recip.recipe).map(e=> (
-                    <RecipeCard 
-                    label={e.label} 
-                    image={e.image} 
-                    time={e.totalTime} 
-                    calories={e.calories} 
-                    uri={e.uri}/>
-                ))}            
+            <>
+            <div className='pageResults'>
+                {/* <div className='filterBar'>
+                    <Filter />
+                </div> */}
+                <div className='recipesresults'>
+                        {this.state.recipe.map(recip => recip.recipe).map(e=> (
+                            <RecipeCard 
+                            label={e.label} 
+                            image={e.image} 
+                            time={e.totalTime} 
+                            calories={e.calories}
+                            uri={e.uri} />
+                        ))}
+                </div>
             </div>
+            </>
         )}
 }
 

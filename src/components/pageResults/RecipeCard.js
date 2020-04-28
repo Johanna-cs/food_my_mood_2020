@@ -22,7 +22,6 @@ class RecipeCard extends React.Component {
     render() {
         return (
         <>
-
             <div className='recipeCard'>
                 <h3 className='recipeName'>{this.props.label}</h3>
                 <img className='recipePhoto' src={this.props.image} alt={this.props.label}></img>
