@@ -22,7 +22,6 @@
     display: flex;
     border: 0.5px solid #3E4F59;
     background-color: white;
-
 }
 
 .timing label {
@@ -44,7 +43,7 @@
     border-radius: 10%;
     border : 0.5px solid #3E4F59;
     padding: 0.4rem;
-    margin: 0.8rem;
+    margin: 0.2rem;
 }
 .recipeName {
     font-size: inherit !important;
@@ -64,7 +63,8 @@
 .recipeCal {
     color: #3E4F59;
     text-justify: left;
-    margin-top: unset;
+    margin-bottom : 0.5px;
+    padding: none;
 
 }
 
@@ -75,3 +75,18 @@
     border-radius: 15px;
     padding: 0.2rem;
 }
+/* mettre un id='recipebutton' sur le bouton go recipe' */
+#recipebutton {
+    font-size: 0.6rem;
+    font-family: 'playfair display';
+    color: #3E4F59;
+    background-color:#febe40;
+    box-sizing: content-box;
+    border-style: solid;
+    border-radius: 7%;
+    border : 0.5px solid #3E4F59;
+    padding: 0.5rem;
+    margin: 0.3rem;
+}
+
+

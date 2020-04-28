@@ -2,6 +2,7 @@ import React from 'react'
 import Axios from 'axios'
 import RecipeCard from './RecipeCard'
 import './Results.css'
+import Filter from './Filter'
 
 const API_ID = '6b74c366'
 const API_KEY = '4819294e40eaccde885e836d49f610d0'
@@ -31,9 +32,9 @@ class RecipesResults extends React.Component {
         return (
             <>
             <div className='pageResults'>
-                {/* <div className='filterBar'>
+                <div className='filterBar'>
                     <Filter />
-                </div> */}
+                </div>
                 <div className='recipesresults'>
                         {this.state.recipe.map(recip => recip.recipe).map(e=> (
                             <RecipeCard 

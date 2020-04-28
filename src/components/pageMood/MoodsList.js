@@ -6,15 +6,14 @@ import enerve from './photos/cadre/enerve.png'
 import fatigue from './photos/cadre/fatigue.png'
 import love from './photos/cadre/love.png'
 import stresse from './photos/cadre/stresse.png'
-import Affame from './Affame'
 import { Link } from 'react-router-dom'
 import './MoodsList.css'
-import Axios from 'axios';
 
 
 
-const API_ID = 'b013cd2e'
-const API_KEY = 'b5866da13b7d6a2eac318c855012b15f'
+
+// const API_ID = 'b013cd2e'
+// const API_KEY = 'b5866da13b7d6a2eac318c855012b15f'
 
 class MoodList extends Component {
     constructor(props){

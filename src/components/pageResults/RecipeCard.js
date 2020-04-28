@@ -30,7 +30,7 @@ class RecipeCard extends React.Component {
                   <p className='recipeCal'> Nombre de calories : {Math.round(this.props.calories)}</p>
                 </div>
                 <Link to={{ pathname: `/results/${this.state.id}` }}>
-                    <button>Go Recipe</button>
+                    <button id='recipebutton'>Recipe</button>
                 </Link>
             </div>
 
