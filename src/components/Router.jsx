@@ -27,6 +27,10 @@ const Router = () => {
                     <Route exact path ='/results' component={pageResults} />
                     <Route exact path ='/contact' component={Contact} />
                     <Route path='/results/:id' component={RecipeDetails} />
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa568fff01c53bd6db13812145628aa3e0294d7f
             </div>
         </Switch>
         <Footer />

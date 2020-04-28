@@ -1,5 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa568fff01c53bd6db13812145628aa3e0294d7f
 import './App.css';
 import './index.css';
 import Router from './components/Router'
