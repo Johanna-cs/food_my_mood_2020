@@ -12,6 +12,7 @@ import RecipeDetails from './pageRecipe/RecipeDetails'
 const Router = () => {
     return (
         <>
+        
         <Header />
         <Switch>
             <div className='routerLinks'>

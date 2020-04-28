@@ -1,5 +1,7 @@
 import React from 'react'
 import Axios from 'axios'
+import SimilarRecipes from './SimilarRecipes'
+import './RecipeDetails.css'
 
 const API_ID = 'e9275ee4'
 const API_KEY = 'bda40244157a76f38fd5f51e25675359'
@@ -30,28 +32,49 @@ class RecipeDetails extends React.Component {
     render() {
         return (
             <>
+            <body>
                 {this.state.recipe.map(e=> (
     
-                <div key={e.uri}>
-                    <h1>{e.label}</h1>
-                    <ul>
-                        {e.dietLabels.map(elt=> (
-                            <li key={elt}>{elt}</li>))
-                        }
-                            <li>Calories : {Math.round(e.calories)} cal</li>
-                    </ul>
-                    <img src={e.image} alt={e.label}></img>
-                    <h5>Temps de préparation : {e.totalTime === 0 ? 'Instantané !' : e.totalTime} {e.totalTime > 0 ? 'minutes' : ''}</h5>
-                    <h6>Ingrédients :</h6>
-                    <ul>
-                        {e.ingredients.map(ing=> (
-                            <li key={ing.text}>{ing.text}</li>
-                        ))}
-                    </ul>
+                <div className='container' key={e.uri}>
+                    
+                    <div className='recipe'>
+
+                        <h1 className='recipe-title'>{e.label}</h1>
+                        
+                        <div className='recipe-summary'>
+
+                            <ul className='recipe-typology'>
+                                {e.dietLabels.map(elt=> (
+                                    <li key={elt}>{elt}</li>))
+                                }
+                                    <li>Calories : {Math.round(e.calories)} cal</li>
+                            </ul>
+
+                            <img src={e.image} alt={e.label}></img>
+
+                        </div>
+
+                        <h5>Temps de préparation : {e.totalTime === 0 ? 'Instantané !' : e.totalTime} {e.totalTime > 0 ? 'minutes' : ''}</h5>
+                        
+                        
+                        <h6>Ingrédients :</h6>
+                        <ul>
+                            {e.ingredients.map(ing=> (
+                                <li key={ing.text}>{ing.text}</li>
+                            ))}
+                        </ul>
+
+                    </div>
 
                 </div>
 
                 ))}
+
+                <h3>Vous pourriez aussi aimer les recettes suivantes :</h3>
+
+                <SimilarRecipes />
+
+            </body>
             </>
         )
     }
