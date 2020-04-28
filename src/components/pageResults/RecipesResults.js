@@ -32,11 +32,9 @@ class RecipesResults extends React.Component {
                     <Filter />
                 </div>
                 <div className='recipesresults'>
-                    <div className='globalresults'>
                         {this.state.recipe.map(recip => recip.recipe).map(e=> (
                             <RecipeCard label={e.label} image={e.image} time={e.totalTime} calories={e.calories} />
                         ))}
-                    </div>
                 </div>
             </div>
             </>

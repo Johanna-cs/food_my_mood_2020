@@ -8,9 +8,9 @@
     justify-content: space-around;
     align-items: center ;
     flex-flow: row wrap;
-    padding : 0.4rem;
-    
+    padding : 0.4rem ;
 }
+
 .filterBar {
     background-color: #AEDEB7;
     border: 0.5px solid #3E4F59;
