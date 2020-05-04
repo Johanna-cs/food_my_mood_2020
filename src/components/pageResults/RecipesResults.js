@@ -41,7 +41,8 @@ class RecipesResults extends React.Component {
                             image={e.image} 
                             time={e.totalTime} 
                             calories={e.calories}
-                            uri={e.uri} />
+                            uri={e.uri}
+                            test='coucou' />
                         ))}
                 </div>
             </div>
