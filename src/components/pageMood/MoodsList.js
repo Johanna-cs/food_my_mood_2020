@@ -6,26 +6,25 @@ import enerve from './photos/cadre/enerve.png'
 import fatigue from './photos/cadre/fatigue.png'
 import love from './photos/cadre/love.png'
 import stresse from './photos/cadre/stresse.png'
-import Affame from './Affame'
 import { Link } from 'react-router-dom'
 import './MoodsList.css'
 import Axios from 'axios';
 
 
 
-const API_ID = 'b013cd2e'
-const API_KEY = 'b5866da13b7d6a2eac318c855012b15f'
+//const API_ID = 'b013cd2e'
+//const API_KEY = 'b5866da13b7d6a2eac318c855012b15f'
 
 class MoodList extends Component {
     constructor(props){
         super(props)
         this.state = {
-          affame : true,
+          affame : false,
           besoinconcentration : false,
-          enerve : 'false',
-          fatigue : 'false',
-          love : 'false',
-          stresse : 'false'
+          enerve : false,
+          fatigue : false,
+          love : false,
+          stresse : false
         }
       }
 
@@ -40,48 +39,62 @@ class MoodList extends Component {
  //     }CV?preview=CV_O+Baveux.pdf
 
  //handleState = () => {
- //   this.setState ({ affame = false ? true : false })
+ //   this.setState ({ affame: false ? !false : false })
+ //}
+ //
+ //onClick={this.handleState}
  
   
-
-    
       render (){ 
         return (
-           
             <div className="moodList">
-                
-                <div className="col1">
-                    <h1>Affamé</h1>
+                <h2>Dites-moi votre humeur, je vous dirai quoi manger !</h2>
 
-                    <Link to ={{pathname: "/select",
-                                   state: this.state.test}}>
-                                                   
-                                 <img className="photos" src={affame} alt="Affamé"/>
-                    </Link> 
-                                           
-                        
-                        
+                <div className="cols">
+                 
+                    <div className="col1">
+                        <h1>Affamé</h1>
+                        <Link to ={{pathname: '/select',
+                                       affame: this.state.affame }}>
+                          
+                            <img className="photos" src={affame} alt="Affamé"/>
+                        </Link> 
+
                     <h1>Besoin de concentration</h1>
-                        <img className="photos" src={besoinconcentration}
-                        alt="Besoin de concentration" />
-                </div>
-                <div className="col2">
-                    <h1>Enervé</h1>
-                        <img className="photos" src={enerve}
-                        alt="Enervé" />
+                        <Link to ={{pathname: '/select',
+                                       concentration: this.state.besoinconcentration }}>
+                            <img className="photos" src={besoinconcentration} alt="Besoin de concentration"/>
+                        </Link> 
+                    </div>
 
-                    <h1>Fatigué</h1>
-                        <img className="photos" src={fatigue}
-                        alt="Fatigué" />
-                </div>
-                <div className="col3">
-                    <h1>Love</h1>
-                        <img className="photos" src={love}
-                        alt="Love" />
+                    <div className="col2">
+                        <h1>Enervé</h1>
+                            <Link to ={{pathname: '/select',
+                                           enerve: this.state.enerve }}>
+                                <img className="photos" src={enerve} alt="Enervé"/>
+                            </Link> 
 
-                    <h1>Stressé</h1>
-                        <img className="photos" src={stresse}
-                        alt="Stressé" />
+
+                        <h1>Fatigué</h1>
+                            <Link to ={{pathname: '/select',
+                                           fatigue: this.state.fatigue }}>
+                                <img className="photos" src={fatigue} alt="Fatigué"/>
+                            </Link> 
+                    </div>
+
+                    <div className="col3">
+                        <h1>Love</h1>
+                            <Link to ={{pathname: '/select',
+                                           love: this.state.love }}>
+                                <img className="photos" src={love} alt="Love"/>
+                            </Link> 
+
+                        <h1>Stressé</h1>
+                            <Link to ={{pathname: '/select',
+                                           stress: this.state.stresse }}>
+                                <img className="photos" src={stresse} alt="Stressé"/>
+                            </Link> 
+                    </div>
                 </div>
             </div>
         );

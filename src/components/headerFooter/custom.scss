@@ -3,20 +3,21 @@ body {
     font-family: 'Josefin Sans' sans-serif, Roboto sans-serif, 'Playfair Display', serif;
     }
   
+#logoFMM {
+      display: flex;
+      align-self: center;
+      width: 4.8rem;
+      margin-right: 1.7rem;
+      margin-left: 1rem;
+      pointer-events: none;
+  }
 .navbar {
     display: flex;
     align-self: center;
     background-color: #3E4F59;
     font-family: 'Playfair Display';
+    padding: 4px !important;
   }
-#logoFMM {
-    display: flex;
-    align-self: center;
-    width: 2.1rem;
-    margin : 0.9rem;
-    pointer-events: none;
-    background-color: #3E4F59;
-}
 
 .burgerMenu {
     display: flex ;
