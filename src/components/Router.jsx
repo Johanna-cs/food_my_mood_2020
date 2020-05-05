@@ -6,6 +6,7 @@ import Contact from './Contact'
 import Header from './headerFooter/Header'
 import Footer from './headerFooter/Footer'
 import PreferencesList from './pageSelect/PreferencesList'
+import RecipeDetails from './pageRecipe/RecipeDetails'
 
 
 
@@ -19,7 +20,7 @@ const Router = () => {
                     <Route exact path ='/select' component={PreferencesList} />
                     <Route exact path ='/results' component={pageResults} />
                     <Route exact path ='/contact' component={Contact} />
-
+                    <Route path='/results/:id' component={RecipeDetails} />
 
             </div>
         </Switch>

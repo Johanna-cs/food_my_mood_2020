@@ -1,0 +1,45 @@
+.recipesresults {
+    background-color: #D9E2DD;
+    display : flex ; 
+    justify-content: space-around;
+    align-items: center ;
+    flex-flow: row wrap;
+    padding : 0.4rem;
+    
+}
+
+.recipeCard {
+    border-style: solid;
+    border-radius: 10%;
+    border : 0.5px solid #3E4F59;
+    padding: 0.4rem;
+    margin: 0.8rem;
+}
+.recipeName {
+    display : flex ;
+    justify-content: center;
+    box-sizing: inherit;
+    border-radius: 10%;
+    word-break: keep-all;
+}
+
+.recipeTime {
+    color: #3E4F59;
+    text-justify: left;
+    margin-bottom: unset;
+}
+
+.recipeCal {
+    color: #3E4F59;
+    text-justify: left;
+    margin-top: unset;
+
+}
+
+.recipePhoto {
+    width: 15rem;
+    height: 8rem;
+    object-fit: cover;
+    border-radius: 15px;
+    padding: 0.2rem;
+}
