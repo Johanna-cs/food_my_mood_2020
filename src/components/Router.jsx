@@ -5,6 +5,7 @@ import pageResults from './pageResults/RecipesResults'
 import Contact from './Contact'
 import Header from './headerFooter/Header'
 import Footer from './headerFooter/Footer'
+import PreferencesList from './pageSelect/PreferencesList'
 
 
 
@@ -15,6 +16,7 @@ const Router = () => {
         <Switch>
             <div className='routerLinks'>
                     <Route exact path ='/' component={MoodsList} />
+                    <Route exact path ='/select' component={PreferencesList} />
                     <Route exact path ='/results' component={pageResults} />
                     <Route exact path ='/contact' component={Contact} />
 

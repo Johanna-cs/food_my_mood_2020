@@ -6,8 +6,9 @@ body {
 #logoFMM {
       display: flex;
       align-self: center;
-      width: 2.1rem;
-      margin : 0.9rem;
+      width: 4.8rem;
+      margin-right: 1.7rem;
+      margin-left: 1rem;
       pointer-events: none;
   }
 .navbar {
@@ -15,6 +16,7 @@ body {
     align-self: center;
     background-color: #3E4F59;
     font-family: 'Playfair Display';
+    padding: 4px !important;
   }
 
 .burgerMenu {

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './PreferencesList.scss';
 import Axios from 'axios';
 
 
@@ -16,12 +18,12 @@ class PreferencesList extends React.Component {
     this.state = {
       collationSelected: false,
       platSelected: false,
-      noPrefSelected : false,
-      vegetarianSelected : false,
-      vegetalianSelected : false,
-     
+      noPrefSelected: false,
+      vegetarianSelected: false,
+      vegetalianSelected: false,
+
     };
-    
+
   }
 
   // componentDidMount() {
@@ -40,24 +42,24 @@ class PreferencesList extends React.Component {
 
   render() {
 
-//const validButton = {
-//  if (this.state.collationSelected == true && this.state.noPrefSelected == true){
-//    query = "snacking","drinking recipe";
-//  } else if (this.state.collationSelected == true && this.state.vegetarianSelected == true){
-//    query = "snacking", "drinking recipe", "vegetarian";
-//  } else if (this.state.collationSelected == true && this.state.vegetarianSelected == true){
-//    query = "snacking", "drinking recipe", "vegan";
-//  } else if (this.state.platSelected == true && this.state.noPrefSelected == true){
-//    query = !"snacking", !"drinking recipe";
-//  } else if (this.state.platSelected == true && this.state.vegetarianSelected == true){
-//    query = !"snacking", !"drinking recipe", "vegetarian";
-// } else if (this.state.platSelected == true && this.state.vegetalianSelected == true){
-//    query = "snacking", "drinking recipe", "vegan";
-//  } else {
-//    prompt ("Sélectionner vos préférences");
-//  }
-//  }
-//  }
+    //const validButton = {
+    //  if (this.state.collationSelected == true && this.state.noPrefSelected == true){
+    //    query = "snacking","drinking recipe";
+    //  } else if (this.state.collationSelected == true && this.state.vegetarianSelected == true){
+    //    query = "snacking", "drinking recipe", "vegetarian";
+    //  } else if (this.state.collationSelected == true && this.state.vegetarianSelected == true){
+    //    query = "snacking", "drinking recipe", "vegan";
+    //  } else if (this.state.platSelected == true && this.state.noPrefSelected == true){
+    //    query = !"snacking", !"drinking recipe";
+    //  } else if (this.state.platSelected == true && this.state.vegetarianSelected == true){
+    //    query = !"snacking", !"drinking recipe", "vegetarian";
+    // } else if (this.state.platSelected == true && this.state.vegetalianSelected == true){
+    //    query = "snacking", "drinking recipe", "vegan";
+    //  } else {
+    //    prompt ("Sélectionner vos préférences");
+    //  }
+    //  }
+    //  }
 
     return (
 
@@ -65,16 +67,15 @@ class PreferencesList extends React.Component {
 
         <div className="typeOfMeals">
 
-          <Button onClick={event => {
+          <Button className="Collation" onClick={event => {
             const newCollationSelected = !this.state.collationSelected;
             this.setState({ collationSelected: newCollationSelected });
-          }}
-            style={{ backgroundColor: this.state.collationSelected? '#3E4F59' : '#FEBE40' }}>Collation / En-cas</Button>
+          }} style={{ backgroundColor: this.state.collationSelected ? '#3E4F59' : '#FEBE40' }}>Collation / En-cas <br/>Recettes</Button>
 
-          <Button onClick={event => {
+          <Button className="Plats" onClick={event => {
             const newPlatsSelected = !this.state.platSelected;
             this.setState({ platSelected: newPlatsSelected });
-          }} style={{ backgroundColor: this.state.platSelected? '#3E4F59' : '#FEBE40' }}>Plats</Button>
+          }} style={{ backgroundColor: this.state.platSelected ? '#3E4F59' : '#FEBE40' }}>Plats <br/>Recettes</Button>
 
 
         </div>
@@ -85,35 +86,35 @@ class PreferencesList extends React.Component {
             const newNoPrefSelected = !this.state.noPrefSelected;
             this.setState({ noPrefSelected: newNoPrefSelected });
           }}
-            style={{ backgroundColor: this.state.noPrefSelected? '#3E4F59' : '#FEBE40' }}>Sans préférence</Button>
+            style={{ backgroundColor: this.state.noPrefSelected ? '#3E4F59' : '#72CDBC' }}>Sans préférence</Button>
 
 
           <Button onClick={event => {
             const newVegeSelected = !this.state.vegetarianSelected;
             this.setState({ vegetarianSelected: newVegeSelected });
           }}
-            style={{ backgroundColor: this.state.vegetarianSelected? '#3E4F59' : '#FEBE40' }}>Végétarien</Button>
-
+            style={{ backgroundColor: this.state.vegetarianSelected ? '#3E4F59' : '#72CDBC' }}>Végétarien</Button>
 
 
           <Button onClick={event => {
             const newVeganSelected = !this.state.vegetalianSelected;
             this.setState({ vegetalianSelected: newVeganSelected });
           }}
-            style={{ backgroundColor: this.state.vegetalianSelected? '#3E4F59' : '#FEBE40' }}>Végétalien</Button>
+            style={{ backgroundColor: this.state.vegetalianSelected ? '#3E4F59' : '#72CDBC' }}>Végétalien</Button>
 
 
         </div>
 
 
         <div className="validButton">
-          <Button outline color="warning">Valider</Button>{' '}
+          <Link to={{pathname:"/pageResults/RecipesResults"}}>
+           <Button  id="Valid">Valider</Button></Link>
         </div>
 
-         
+
 
         <div className="skipButton">
-          <Button outline color="warning">Passer cette étape</Button>{' '}
+          <Link to="/results"><Button id="test"outline color="warning" >Passer cette étape</Button></Link>
         </div>
 
       </div>
