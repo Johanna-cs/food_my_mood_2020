@@ -16,7 +16,7 @@ body {
     margin-left: 2rem;
 }
 
-.recipe-title {
+h1.recipe-title {
     font-size: 4rem;
 }
 
@@ -33,5 +33,5 @@ body {
 
 
 h3 {
-    margin-left : 0.8rem;
+    margin-left : 2.8rem;
 }

@@ -3,7 +3,7 @@ import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './PreferencesList.scss';
-import Axios from 'axios';
+
 
 
 //const API_ID = '503bfcfa'

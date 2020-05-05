@@ -6,7 +6,8 @@ class RecipeCard extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            id : ''
+            id : '',
+            test : this.props.test 
         }
     }
 
@@ -29,8 +30,11 @@ class RecipeCard extends React.Component {
                   <p className='recipeTime'>Temps de préparation : {this.props.time === 0 ? 'Instantané !' : this.props.time} {this.props.time > 0 ? 'minutes' : ''}</p>
                   <p className='recipeCal'> Nombre de calories : {Math.round(this.props.calories)}</p>
                 </div>
-                <Link to={{ pathname: `/results/${this.state.id}` }}>
-                    <button id='recipebutton'>Recipe</button>
+                <Link to={{ 
+                    pathname: `/results/${this.state.id}`,
+                    state: {test : this.state.test} }}>
+                    <button>Go Recipe</button>
+
                 </Link>
             </div>
 
