@@ -19,12 +19,12 @@ class MoodList extends Component {
     constructor(props){
         super(props)
         this.state = {
-          affame : false,
-          besoinconcentration : false,
-          enerve : false,
-          fatigue : false,
-          love : false,
-          stresse : false
+          affame : 'affame',
+          besoinconcentration : 'concentration',
+          enerve : 'enerve',
+          fatigue : 'fatigue',
+          love : 'love',
+          stresse : 'stresse'
         }
       }
 
