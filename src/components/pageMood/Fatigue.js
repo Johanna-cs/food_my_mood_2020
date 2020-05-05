@@ -15,12 +15,11 @@ const Fatigue = () => {
             .then(response => setQuery({recipe : response.data.hits}))
         }
     })
-    render() {
         return (
             <>
                 {}
             </>
         )}
-}
+        
 
 export default Fatigue
