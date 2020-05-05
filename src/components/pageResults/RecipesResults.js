@@ -25,7 +25,6 @@ class RecipesResults extends React.Component {
         Axios
         .get(`https://api.edamam.com/search?q=${this.state.query}&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => this.setState({recipe : response.data.hits}))
-        // console.log(response.data.hits)
     
     }
     render() {

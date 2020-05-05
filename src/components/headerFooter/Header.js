@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink as NavLinkTest } from 'react-router-dom'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-import chef from './chef.png'
+import logo from './logo.png'
 
 
 //Navbar Food my Mood, avec logo et router vers les trois pages
@@ -11,7 +11,7 @@ const Header = (props) => {
   return (
     <div className='navbar'>
       <Navbar id='navBar' color="faded" dark>
-      <img id='logoFMM' src={chef} alt='logo FmM'/>
+      <img id='logoFMM' src={logo} alt='logo FmM'/>
         <NavbarBrand href="/" className="foodmymood">Food My Mood </NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="burgerMenu" />
         <Collapse isOpen={!collapsed} navbar>

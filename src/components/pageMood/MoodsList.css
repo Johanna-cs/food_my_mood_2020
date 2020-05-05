@@ -1,6 +1,10 @@
+.moodList{ 
+    background-color: #D9E2DD;
+}
+
 .photos {
     width: 80%;   
-    margin: 0px 10% 30px 10%;
+    margin: 1px 10% 30px 10%;
 }
 
 .photos:hover {
@@ -9,13 +13,23 @@
     box-shadow: 10px 10px 25px 0 rgba(0, 0, 0, 0.7)
 }
 
-.moodList{
+.cols{
     display: flex ;
-    background-color: #D9E2DD;
 }
 
 h1 {
-    font-size: 1.5em !important;
+    font-size: 1.6em !important;
     text-align: center;
 }
 
+.col1, .col2, .col3 {
+    margin-top: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold !important;
+    font-size: 1.9em !important;
+    padding-top: 20px;
+}
