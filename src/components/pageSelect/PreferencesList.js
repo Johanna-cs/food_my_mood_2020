@@ -26,6 +26,7 @@ class PreferencesList extends React.Component {
       disabledNoPref: false,
       disabledVegetarian: false,
       disabledVegan: false,
+      mood : this.props.location.state
     };
 
     this.selectChoiceCollation = this.selectChoiceCollation.bind(this);
@@ -85,7 +86,7 @@ class PreferencesList extends React.Component {
 
 
   render() {
-
+console.log(this.state.mood)
     // const validButton = {
     //  if (this.state.collationSelected == true && this.state.noPrefSelected == true){
     //    query = "snacking","drinking recipe";

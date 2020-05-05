@@ -55,14 +55,14 @@ class MoodList extends Component {
                     <div className="col1">
                         <h1>Affamé</h1>
                         <Link to ={{pathname: '/select',
-                                       affame: this.state.affame }}>
+                                       state: this.state.affame }}>
                           
                             <img className="photos" src={affame} alt="Affamé"/>
                         </Link> 
 
                     <h1>Besoin de concentration</h1>
                         <Link to ={{pathname: '/select',
-                                       concentration: this.state.besoinconcentration }}>
+                                       state: this.state.besoinconcentration }}>
                             <img className="photos" src={besoinconcentration} alt="Besoin de concentration"/>
                         </Link> 
                     </div>
@@ -70,14 +70,14 @@ class MoodList extends Component {
                     <div className="col2">
                         <h1>Enervé</h1>
                             <Link to ={{pathname: '/select',
-                                           enerve: this.state.enerve }}>
+                                           state: this.state.enerve }}>
                                 <img className="photos" src={enerve} alt="Enervé"/>
                             </Link> 
 
 
                         <h1>Fatigué</h1>
                             <Link to ={{pathname: '/select',
-                                           fatigue: this.state.fatigue }}>
+                                           state: this.state.fatigue }}>
                                 <img className="photos" src={fatigue} alt="Fatigué"/>
                             </Link> 
                     </div>
@@ -85,13 +85,13 @@ class MoodList extends Component {
                     <div className="col3">
                         <h1>Love</h1>
                             <Link to ={{pathname: '/select',
-                                           love: this.state.love }}>
+                                           state: this.state.love }}>
                                 <img className="photos" src={love} alt="Love"/>
                             </Link> 
 
                         <h1>Stressé</h1>
                             <Link to ={{pathname: '/select',
-                                           stress: this.state.stresse }}>
+                                           state: this.state.stresse }}>
                                 <img className="photos" src={stresse} alt="Stressé"/>
                             </Link> 
                     </div>
