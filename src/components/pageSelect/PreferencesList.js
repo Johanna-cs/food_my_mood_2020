@@ -26,30 +26,33 @@ class PreferencesList extends React.Component {
     return (
 
       <div>
-        <div className="Preferences">
-          
-          <Link to ={{pathname: "/results",
-                      mood: this.state.mood }}>              
-          <Button
-          style={{ backgroundColor: '#72CDBC' }}>Sans préférence</Button>
-          </Link>
-          
+          <div className="Preferences">
 
-          <Link to ={{pathname: "/results",
-                      mood: this.state.mood, 
-                      preference: this.state.vegetarian }}>  
-          <Button 
-          style={{ backgroundColor: '#72CDBC' }}>Végétarien</Button>
-          </Link>
+            <div>
+              <Link to ={{pathname: "/results",
+                          mood: this.state.mood }}>              
+              <Button style={{ backgroundColor: '#72CDBC' }}>Sans préférence</Button>
+              </Link>
+            <div/>
 
-          <Link to ={{pathname: "/results",
-                      mood: this.state.mood, 
-                      preference: this.state.vegan }}>  
-          <Button 
-          style={{ backgroundColor: '#72CDBC' }} >Végétalien</Button>
-          </Link>
+            <div>
+              <Link to ={{pathname: "/results",
+                          mood: this.state.mood, 
+                          preference: this.state.vegetarian }}>  
+              <Button style={{ backgroundColor: '#72CDBC' }}>Végétarien</Button>
+              </Link>
+            </div>
 
-        </div>
+            <div>
+              <Link to ={{pathname: "/results",
+                          mood: this.state.mood, 
+                          preference: this.state.vegan }}>  
+              <Button style={{ backgroundColor: '#72CDBC' }} >Végan</Button>
+              </Link>
+            </div>
+
+            </div>
+          </div>
       </div>
     );
   }
