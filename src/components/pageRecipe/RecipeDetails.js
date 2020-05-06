@@ -14,6 +14,7 @@ class RecipeDetails extends React.Component {
             recipe : [],
             recipes: this.props.location.recipes,
             id: this.props.match.params.id,
+            uri : this.props.location.uri,
             similarRecipes : []
         }
 
@@ -21,7 +22,7 @@ class RecipeDetails extends React.Component {
 
     componentDidMount() {
         this.getData()
-        this.setState({ similarRecipes : this.getRandomSimilarRecipes(this.state.recipes) })
+        this.setState({ similarRecipes : this.getRandomSimilarRecipes(this.state.recipes.filter(recipe=> recipe.uri !== this.state.uri)) })
 
         
     }

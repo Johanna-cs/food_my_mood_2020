@@ -7,6 +7,7 @@ class RecipeCard extends React.Component {
         super(props)
         this.state = {
             recipes : this.props.recipes,
+            uri: this.props.uri,
             id : '',
         }
     }
@@ -32,7 +33,8 @@ class RecipeCard extends React.Component {
                 </div>
                 <Link to={{ 
                     pathname: `/results/${this.state.id}`,
-                    recipes : this.state.recipes }}>
+                    recipes : this.state.recipes,
+                    uri : this.state.uri }}>
                     <button>Go Recipe</button>
                 </Link>
             </div>
