@@ -7,8 +7,8 @@ import fatigue from './photos/cadre/fatigue.png'
 import love from './photos/cadre/love.png'
 import stresse from './photos/cadre/stresse.png'
 import { Link } from 'react-router-dom'
-import './MoodsList.css'
-import Axios from 'axios';
+import './MoodList.css'
+
 
 
 
@@ -20,11 +20,11 @@ class MoodList extends Component {
         super(props)
         this.state = {
           affame : 'affame',
-          besoinconcentration : 'concentration',
+          besoinconcentration : 'low-fat',
           enerve : 'enerve',
-          fatigue : 'fatigue',
+          fatigue : 'balanced',
           love : 'love',
-          stresse : 'stresse'
+          stresse : 'low-carb'
         }
       }
 
