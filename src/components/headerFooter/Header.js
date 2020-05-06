@@ -11,8 +11,9 @@ const Header = (props) => {
   return (
     <div className='navbar'>
       <Navbar id='navBar' color="faded" dark>
-      <img id='logoFMM' src={logo} alt='logo FmM'/>
-        <NavbarBrand href="/" className="foodmymood">Food My Mood </NavbarBrand>
+        <NavbarBrand href="/" className="foodmymood">
+          <img id='logoFMM' src={logo} alt='logo FmM'/>
+        </NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="burgerMenu" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>

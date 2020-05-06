@@ -24,7 +24,7 @@ const Router = () => {
 
                 </div>
             </Switch>
-            <Footer />
+        <Footer />
         </>
 
     )
