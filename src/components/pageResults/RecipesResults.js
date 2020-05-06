@@ -2,7 +2,7 @@ import React from 'react'
 import Axios from 'axios'
 import RecipeCard from './RecipeCard'
 import './Results.css'
-i
+import MoodList from '../pageMood/MoodList'
 
 const API_ID = '6b74c366'
 const API_KEY = '4819294e40eaccde885e836d49f610d0'
@@ -13,7 +13,7 @@ class RecipesResults extends React.Component {
         super(props)
         this.state = {
             dietLabels : this.props.PreferencesList.mood,
-            healthLabels : this.props.PreferencesList,
+            healthLabels : this.props.PreferencesList.preference,
             recipe : []
         }
     }

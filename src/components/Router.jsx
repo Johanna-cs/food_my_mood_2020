@@ -13,7 +13,6 @@ import PreferencesList from './pageSelect/PreferencesList'
 const Router = () => {
     return (
         <>
-        
         <Header />
         <Switch>
             <div className='routerLinks'>
@@ -22,9 +21,10 @@ const Router = () => {
                     <Route exact path ='/results' component={pageResults} />
                     <Route exact path ='/contact' component={Contact} />
                     <Route path='/results/:id' component={RecipeDetails} />
-            </div>
-        </Switch>
-        <Footer />
+
+                </div>
+            </Switch>
+            <Footer />
         </>
 
     )
