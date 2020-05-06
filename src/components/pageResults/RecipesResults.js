@@ -14,7 +14,7 @@ class RecipesResults extends React.Component {
         this.state = {
             dietLabels : this.props.location.mood,
             healthLabels : this.props.location.preference,
-            recipe : []
+            recipes : []
         }
     }
 
