@@ -1,3 +1,4 @@
+/* Page recettes */
 .pageResults {
     display: flex;
 }
@@ -11,6 +12,7 @@
     padding : 0.4rem;
     
 }
+/* Filter bar */
 .filterBar {
     background-color: #AEDEB7;
     border: 0.5px solid #3E4F59;
@@ -18,11 +20,11 @@
     width: inherit;
     padding: 1rem;
 }
+
 .selectTime {
     display: flex;
     border: 0.5px solid #3E4F59;
     background-color: white;
-
 }
 
 .timing label {
@@ -37,41 +39,45 @@
     padding: 0.8rem;
     margin: unset;
 }
-
+/* Recettes card */
 .recipeCard {
-    box-sizing: initial;
+    box-sizing: inherit;
+    background-color: whitesmoke;
     border-style: solid;
-    border-radius: 10%;
     border : 0.5px solid #3E4F59;
     padding: 0.4rem;
     margin: 0.8rem;
 }
+
 .recipeName {
-    font-size: inherit !important;
-    display : flex ;
-    justify-content: center;
-    box-sizing: inherit;
-    border-radius: 10%;
+    font-size: 0.9rem;
+    box-sizing: border-box;
     word-break: break-word !important;
 }
 
-.recipeTime {
+.recipeTime, .recipeCal {
     color: #3E4F59;
     text-justify: left;
     margin-bottom: unset;
-}
-
-.recipeCal {
-    color: #3E4F59;
-    text-justify: left;
-    margin-top: unset;
-
 }
 
 .recipePhoto {
     width: 15rem;
     height: 8rem;
     object-fit: cover;
-    border-radius: 15px;
-    padding: 0.2rem;
+    padding: 0.1rem;
 }
+.recipeButton {
+    font: 'josefin' sans-serif;
+    align-items: center;
+    margin-left: 10rem;
+    padding: 0.5rem;
+    border: none;
+	padding: 6px 3px 6px 3px;
+	border-radius:2px;
+	box-shadow:1px 1px 3px #aaa;
+	background:#fff;
+	color:#555;
+
+    
+} 

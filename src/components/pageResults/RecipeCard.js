@@ -25,16 +25,16 @@ class RecipeCard extends React.Component {
         return (
         <>
             <div className='recipeCard'>
-                <h3 className='recipeName'>{this.props.label}</h3>
                 <img className='recipePhoto' src={this.props.image} alt={this.props.label}></img>
+                <h3 className='recipeName'>{this.props.label}</h3>
                 <div className='recipeDetails'>
-                  <p className='recipeTime'>Temps de préparation : {this.props.time === 0 ? 'Instantané !' : this.props.time} {this.props.time > 0 ? 'minutes' : ''}</p>
-                  <p className='recipeCal'> Nombre de calories : {Math.round(this.props.calories)}</p>
+                  <p className='recipeTime'>Temps de préparation : {this.props.time === 0 ? 'Instantané !' : this.props.time} {this.props.time > 0 ? 'minutes' : ''} </p>
+                  <p className='recipeCal'>Nombre de calories : {Math.round(this.props.calories)}</p>
                 </div>
                 <Link to={{ 
                     pathname: `/results/${this.state.id}`,
                     recipes : this.state.recipes }}>
-                    <button>Go Recipe</button>
+                    <button className='recipeButton'>Recette</button>
                 </Link>
             </div>
 
