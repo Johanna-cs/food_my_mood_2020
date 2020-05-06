@@ -12,15 +12,24 @@ class RecipeDetails extends React.Component {
         this.state = {
             query : `http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_${this.props.match.params.id}`,
             recipe : [],
-            id: this.props.match.params.id
+            recipes: [],
+            id: this.props.match.params.id,
+            test : this.props.location.recipes
         }
 
     }
 
     componentDidMount() {
         this.getData()
+
         
     }
+
+    // componentDidUpdate(prevProps, prevState) {
+    //     if (prevState.recipes !== this.state.recipes) {
+    //         this.setState({recipes : this.props.location.recipes})
+    //     }
+    //   }
     
     getData = () => {
         Axios
@@ -30,6 +39,7 @@ class RecipeDetails extends React.Component {
 
 
     render() {
+console.log(this.state.test)
         return (
             <>
             <body>
@@ -70,9 +80,25 @@ class RecipeDetails extends React.Component {
 
                 ))}
 
-                <h3>Vous pourriez aussi aimer les recettes suivantes :</h3>
+                <div>
 
-                <SimilarRecipes />
+                    <h3>Vous pourriez aussi aimer les recettes suivantes :</h3>
+                  
+                    <div className='similarrecipes'>
+
+                        {this.state.test.map(recipe => (
+                                    <SimilarRecipes 
+                                        label={recipe.label} 
+                                        image={recipe.image} 
+                                        time={recipe.totalTime}
+                                        uri={recipe.uri}
+                                    />
+                                    ))
+                        }
+                                
+                    </div>
+
+                </div>
 
             </body>
             </>

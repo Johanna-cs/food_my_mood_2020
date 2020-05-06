@@ -6,8 +6,9 @@ class RecipeCard extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            recipes : this.props.recipes,
             id : '',
-            test : this.props.test 
+            // recipes : this.props.recipes 
         }
     }
 
@@ -17,7 +18,7 @@ class RecipeCard extends React.Component {
 
     componentDidMount() {
         const recipeId = this.extractIdFromUri(this.props.uri)
-        this.setState({id : recipeId})
+        this.setState({ id : recipeId })
     }
 
     render() {
@@ -32,7 +33,7 @@ class RecipeCard extends React.Component {
                 </div>
                 <Link to={{ 
                     pathname: `/results/${this.state.id}`,
-                    state: {test : this.state.test} }}>
+                    recipes : this.state.recipes }}>
                     <button>Go Recipe</button>
                 </Link>
             </div>
