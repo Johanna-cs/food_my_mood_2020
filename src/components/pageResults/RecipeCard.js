@@ -8,7 +8,6 @@ class RecipeCard extends React.Component {
         this.state = {
             recipes : this.props.recipes,
             id : '',
-            // recipes : this.props.recipes 
         }
     }
 

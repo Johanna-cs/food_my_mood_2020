@@ -12,15 +12,16 @@ class RecipeDetails extends React.Component {
         this.state = {
             query : `http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_${this.props.match.params.id}`,
             recipe : [],
-            recipes: [],
+            recipes: this.props.location.recipes,
             id: this.props.match.params.id,
-            test : this.props.location.recipes
+            similarRecipes : []
         }
 
     }
 
     componentDidMount() {
         this.getData()
+        this.setState({ similarRecipes : this.getRandomSimilarRecipes(this.state.recipes) })
 
         
     }
@@ -37,9 +38,15 @@ class RecipeDetails extends React.Component {
         .then(response => this.setState({recipe : response.data}))
     }
 
+    getRandomSimilarRecipes = (recipes) => {
+            // Generate shuffle array of recipes
+            const shuffled = recipes.sort(() => 0.5 - Math.random());
+            // Genereate sub-array of 3 elements after shuffled
+            return shuffled.slice(0, 3);
+    }
+
 
     render() {
-console.log(this.state.test)
         return (
             <>
             <body>
@@ -86,15 +93,16 @@ console.log(this.state.test)
                   
                     <div className='similarrecipes'>
 
-                        {this.state.test.map(recipe => (
+                        {this.state.similarRecipes.map(recipe => (
                                     <SimilarRecipes 
                                         label={recipe.label} 
                                         image={recipe.image} 
                                         time={recipe.totalTime}
                                         uri={recipe.uri}
+                                        id = {this.state.id}
                                     />
-                                    ))
-                        }
+                                    ))}
+                                    
                                 
                     </div>
 
