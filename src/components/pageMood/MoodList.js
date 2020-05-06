@@ -27,30 +27,43 @@ class MoodList extends Component {
         return (
             <div className="moodList">
                 <h2>Dites-moi votre humeur, je vous dirai quoi manger !</h2>
-                <div className="cols">
-                    <div className="col1">
-                    <h1>Besoin de concentration</h1>
-                        <Link to ={{pathname: '/select',
-                                       state: this.state.besoinconcentration }}>
-                            <img className="photos" src={besoinconcentration} alt="Besoin de concentration"/>
-                        </Link>
-                    <h1>Sportif</h1>
-                        <Link to ={{pathname: '/select',
-                                       state: this.state.sportif }}>
-                            <img className="photos" src={sportif} alt="Sportif"/>
-                        </Link>
-                    </div>
-                    <div className="col2">
-                        <h1>Stressé</h1>
-                            <Link to ={{pathname: '/select',
-                                           state: this.state.stresse }}>
-                                <img className="photos" src={stresse} alt="Stressé"/>
-                            </Link>
-                        <h1>Fatigué</h1>
-                            <Link to ={{pathname: '/select',
-                                           state: this.state.fatigue }}>
-                                <img className="photos" src={fatigue} alt="Fatigué"/>
-                            </Link>
+
+                <div className="Cols">
+
+                    <div className="cols">
+
+                        <div>
+                            <h3> Besoin de concentration</h3>
+                                <Link to ={{pathname: '/select',
+                                               state: this.state.besoinconcentration }}>
+                                    <img className="photos" src={besoinconcentration} alt="Besoin de concentration"/>
+                                </Link> 
+                        </div>
+
+                        <div>
+                            <h3>Sportif</h3>
+                                <Link to ={{pathname: '/select',
+                                               state: this.state.sportif }}>
+                                    <img className="photos" src={sportif} alt="Sportif"/>
+                                </Link> 
+                        </div>
+
+                        <div>
+                            <h3>Stressé</h3>
+                                <Link to ={{pathname: '/select',
+                                               state: this.state.stresse }}>
+                                    <img className="photos" src={stresse} alt="Stressé"/>
+                                </Link> 
+                        </div>
+
+                        <div>
+                            <h3>Fatigué</h3>
+                                <Link to ={{pathname: '/select',
+                                               state: this.state.fatigue }}>
+                                    <img className="photos" src={fatigue} alt="Fatigué"/>
+                                </Link> 
+                        </div>
+
                     </div>
                 </div>
             </div>
