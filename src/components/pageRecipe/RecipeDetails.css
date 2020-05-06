@@ -4,34 +4,103 @@ body {
 
 .container {
     border-style: solid;
-    border-radius: 10%;
     border : 0.5px solid #3E4F59;
     padding: 0.4rem;
-    margin: 0.8rem;
-    margin-left: 12rem;
+    margin: 1rem;
+    background-color: #d9e2dd;
 
 }
 
 .recipe {
-    margin-left: 2rem;
+    padding: 0.4rem;
 }
 
-h1.recipe-title {
-    font-size: 4rem;
+.recipe-title {
+    font-size: 1.2rem;
+    text-align: right;
 }
 
 .recipe-summary {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2rem;
+
+}
+.recipeImg {
+    object-fit: cover;
+    max-width: 15rem;
+    margin-top: 2rem;
+    margin-left: 5rem;
+    border-radius: 1px;
 }
 
 .recipe-typology {
-    color: violet;
-    width: 50%;
-    font-size: 2rem;
+    font-family: 'playfair-display';
+    color: #3E4F59;
+    padding: inherit;
+    width: 10rem;
+    font-size: 1rem;
 }
 
+.recipeList {
+    font-family: 'playfair-display';
+    color: #3E4F59;
+    font-size: 0.7rem;
+    padding: 0.8rem;
+    text-align: start;
+    margin: 0rem;
+}
 
-h3 {
-    margin-left : 2.8rem;
+/* Similar recipes  */
+
+.similSection {
+    display : flex ; 
+    justify-content: space-around;
+    align-items: center ;
+    flex-flow: row wrap;
+    padding : 0.4rem;
+}
+.similarrecipes {
+    display: flex;
+    align-content: center;
+    flex-flow: row wrap;
+
+}
+
+.similRecipe {
+    background-color: #d9e2dd;
+    padding: 0.2rem;
+    margin: 0.8rem;
+    width: 15rem;
+    height: 20rem;
+    border-radius: 2px;
+}
+.similImg {
+    margin-left: 1.6rem;
+    object-fit: cover;
+    width: 11.4rem;
+    height: 11rem;
+    padding: 0.1rem;
+    border-radius: 1px;
+}
+
+.similName {
+    padding: 0.2rem;
+    font-size: 1rem;
+    width: min-content;
+    max-width: 8rem;
+    height: 5rem;
+    min-width: 5rem;
+    overflow-wrap: normal;
+    box-sizing: border-box;
+    color: #3E4F59;
+    align-self: center;
+    text-align: right;
+    margin-left: 7.9rem;
+}
+
+.similTime {
+    text-align: center;
+    font-family: 'playfair-display';
 }

@@ -19,7 +19,8 @@ h2 {
 h3 {
   font-family: 'Josefin Sans';
   color : #3e4f59;
-  padding: 0.4rem;
+  padding: 0.1rem;
+  overflow-wrap: break-word;
 }
 
 h4 {

@@ -12,6 +12,53 @@
     padding : 0.4rem;
     
 }
+
+/* Recettes card */
+.recipeCard {
+    background-color: whitesmoke;
+    border-style: solid;
+    border : 0.5px solid #3E4F59;
+    padding: 0.2rem;
+    margin: 0.8rem;
+}
+
+#recipeName {
+    padding: 0.2rem;
+    width: min-content;
+    height: inherit;
+    max-width: 11rem;
+    height: 4.5rem;
+    min-width: 10.5rem;
+    overflow-wrap: normal;
+    box-sizing: border-box;
+}
+
+.recipeTime, .recipeCal {
+    color: #3E4F59;
+    text-justify: left;
+    margin-bottom: unset;
+}
+
+.recipePhoto {
+    width: 13.8rem;
+    height: 8rem;
+    object-fit: cover;
+    padding: 0.1rem;
+}
+.recipeButton {
+    font: 'josefin' sans-serif;
+    font-size: xx-small;
+    align-items: center;
+    margin-left: 10rem;
+    margin-bottom: 0.2rem;
+    width: 3.5rem;
+    border: none;
+	padding: 6px 3px 6px 3px;
+	border-radius: 4%;
+	box-shadow: 0.5px 0.5px 2px #aaa;
+	background: whitesmoke;
+	color:#3E4F59;
+} 
 /* Filter bar */
 .filterBar {
     background-color: #AEDEB7;
@@ -39,45 +86,3 @@
     padding: 0.8rem;
     margin: unset;
 }
-/* Recettes card */
-.recipeCard {
-    box-sizing: inherit;
-    background-color: whitesmoke;
-    border-style: solid;
-    border : 0.5px solid #3E4F59;
-    padding: 0.4rem;
-    margin: 0.8rem;
-}
-
-.recipeName {
-    font-size: 0.9rem;
-    box-sizing: border-box;
-    word-break: break-word !important;
-}
-
-.recipeTime, .recipeCal {
-    color: #3E4F59;
-    text-justify: left;
-    margin-bottom: unset;
-}
-
-.recipePhoto {
-    width: 15rem;
-    height: 8rem;
-    object-fit: cover;
-    padding: 0.1rem;
-}
-.recipeButton {
-    font: 'josefin' sans-serif;
-    align-items: center;
-    margin-left: 10rem;
-    padding: 0.5rem;
-    border: none;
-	padding: 6px 3px 6px 3px;
-	border-radius:2px;
-	box-shadow:1px 1px 3px #aaa;
-	background:#fff;
-	color:#555;
-
-    
-} 

@@ -52,48 +52,31 @@ class RecipeDetails extends React.Component {
             <>
             <body>
                 {this.state.recipe.map(e=> (
-    
                 <div className='container' key={e.uri}>
-                    
                     <div className='recipe'>
-
-                        <h1 className='recipe-title'>{e.label}</h1>
-                        
+                        <h4 className='recipe-title'>{e.label}</h4>
                         <div className='recipe-summary'>
-
                             <ul className='recipe-typology'>
                                 {e.dietLabels.map(elt=> (
-                                    <li key={elt}>{elt}</li>))
-                                }
+                                    <li key={elt}>{elt}</li>))}
                                     <li>Calories : {Math.round(e.calories)} cal</li>
                             </ul>
-
-                            <img src={e.image} alt={e.label}></img>
-
+                            <img className='recipeImg' src={e.image} alt={e.label}></img>
                         </div>
-
-                        <h5>Temps de préparation : {e.totalTime === 0 ? 'Instantané !' : e.totalTime} {e.totalTime > 0 ? 'minutes' : ''}</h5>
-                        
-                        
-                        <h6>Ingrédients :</h6>
-                        <ul>
-                            {e.ingredients.map(ing=> (
-                                <li key={ing.text}>{ing.text}</li>
-                            ))}
-                        </ul>
-
+                        <div className='recipeList'>
+                            <p>Temps de préparation : <span> {e.totalTime === 0 ? 'Instantané !' : e.totalTime} {e.totalTime > 0 ? 'minutes' : ''}</span></p>
+                            <p> Ingrédients :</p>
+                            <ul>
+                                {e.ingredients.map(ing=> (
+                                    <li key={ing.text}>{ing.text}</li>))}
+                            </ul>
+                        </div>
                     </div>
-
                 </div>
-
                 ))}
-
-                <div>
-
+                <div className='similSection'>
                     <h3>Vous pourriez aussi aimer les recettes suivantes :</h3>
-                  
                     <div className='similarrecipes'>
-
                         {this.state.similarRecipes.map(recipe => (
                                     <SimilarRecipes 
                                         label={recipe.label} 
