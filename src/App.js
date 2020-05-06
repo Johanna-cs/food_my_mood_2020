@@ -5,18 +5,13 @@ import Router from './components/Router'
 import './App.css';
 
 
-
-
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      <Router />
-     
         
-      </header>
-       
+        <Router />
         
+      
     </div>
   
   );
