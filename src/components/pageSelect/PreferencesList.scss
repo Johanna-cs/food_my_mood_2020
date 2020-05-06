@@ -1,15 +1,21 @@
-.Preferences {
-    display: flex;
+.prefPage {
     background-color: #D9E2DD;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row wrap;
 }
 
+.Preferences {
+    padding: 1rem;
+}
+
+
 .btn {
-    width: 20rem;
+    width: 10rem;
     height: 3rem;
+    padding: 1rem;
+    margin: 1rem;
     box-sizing: content-box;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 140%;
     background-color:  #3e4f59 !important;
     color: #febe40 !important;
 }
