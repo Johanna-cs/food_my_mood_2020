@@ -3,6 +3,7 @@ import { Component } from 'react'
 import besoinconcentration from './photos/cadre/besoinconcentration.png'
 import fatigue from './photos/cadre/fatigue.png'
 import stresse from './photos/cadre/stresse.png'
+import sportif from './photos/cadre/enerve.png'
 import { Link } from 'react-router-dom'
 import './MoodList.css'
 

@@ -12,8 +12,8 @@ class RecipesResults extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            dietLabels : this.props.PreferencesList.mood,
-            healthLabels : this.props.PreferencesList.preference,
+            dietLabels : this.props.location.mood,
+            healthLabels : this.props.location.preference,
             recipe : []
         }
     }
@@ -23,8 +23,13 @@ class RecipesResults extends React.Component {
     }
     
     getData = () => {
+        
+        this.state.healthLabels === '' ?
         Axios
-        .get(`https://api.edamam.com/search?q=${this.state.recipe}diet=${this.state.dietLabels}&app_id=${API_ID}&app_key=${API_KEY}`)
+        .get(`https://api.edamam.com/search?q=&diet=${this.state.dietLabels}&app_id=${API_ID}&app_key=${API_KEY}`)
+        .then(response => this.setState({recipe : response.data.hits}))
+        : Axios
+        .get(`https://api.edamam.com/search?q=&diet=${this.state.dietLabels}&health=${this.state.healthLabels}&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => this.setState({recipe : response.data.hits}))
     
     }
