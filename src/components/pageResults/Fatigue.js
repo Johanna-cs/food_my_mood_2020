@@ -16,7 +16,7 @@ function Fatigue (props) {
     useEffect(() => {
         getData () {
             Axios
-            .get(`https://api.edamam.com/search?q=${query}&app_id=${API_ID}&app_key=${API_KEY}`)
+            .get(`https://api.edamam.com/search?diet=${dietLabel}&app_id=${API_ID}&app_key=${API_KEY}`)
             .then(response => setQuery({recipe : response.data.hits}))
         }
     }
@@ -30,7 +30,8 @@ function Fatigue (props) {
                                 image={e.image} 
                                 time={e.totalTime} 
                                 calories={e.calories}
-
+                                health={e.healthLabels}
+                                diet={e.diet}
                                 uri={e.uri}
                                 test='coucou' />
                         ))}
