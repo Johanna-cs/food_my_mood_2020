@@ -24,7 +24,7 @@ class RecipesResults extends React.Component {
     
     getData = () => {
         
-        this.state.healthLabels === '' ?
+        this.state.healthLabels === undefined ?
         Axios
         .get(`https://api.edamam.com/search?q=&diet=${this.state.dietLabels}&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => this.setState({recipes : response.data.hits}))
