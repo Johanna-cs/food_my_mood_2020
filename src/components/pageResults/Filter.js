@@ -18,19 +18,21 @@ class Filter extends Component {
 
         return (
             <>
-            <div>
+            <div className='filterBar'>
                 <h3>Filters</h3>
+                
+                <div className='searchBar'>
+                    <input className='searchBarInput' type="text" placeholder= "Search" onChange={ e => this.setState (
+                        {
+                        search : e.target.value
+                        }
+                        )}/>
 
-                <input type="text" placeholder= "Search" onChange={ e => this.setState (
-                    {
-                       search : e.target.value
-                    }
-                    )}/>
-
-                <Link to ={{pathname: '/results',
-                               ingredient: this.state.search }}>
-                    <button>Valider</button>
-                </Link> 
+                    <Link to ={{pathname: '/results',
+                                ingredient: this.state.search }}>
+                        <button>Valider</button>
+                    </Link> 
+                </div>
 
                     
                 <div className='filterTime'>
