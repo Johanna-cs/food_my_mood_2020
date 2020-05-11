@@ -1,7 +1,7 @@
 import React from 'react'
 import { Component } from 'react'
 import besoinconcentration from './photos/cadre/besoinconcentration.png'
-import sportif from './photos/cadre/enerve.png'
+import sportif from './photos/cadre/sportif.png'
 import fatigue from './photos/cadre/fatigue.png'
 import stresse from './photos/cadre/stresse.png'
 import { Link } from 'react-router-dom'
