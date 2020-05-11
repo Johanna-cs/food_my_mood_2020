@@ -10,32 +10,30 @@ class RecipeDetails extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            query : `http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_${this.props.match.params.id}`,
-            recipe : [],
             recipes: this.props.location.recipes,
             id: this.props.match.params.id,
             uri : this.props.location.uri,
+            recipe : [],
             similarRecipes : []
         }
-
     }
 
     componentDidMount() {
         this.getData()
-        this.setState({ similarRecipes : this.getRandomSimilarRecipes(this.state.recipes.filter(recipe=> recipe.uri !== this.state.uri)) })
-
-        
+        this.setState({ similarRecipes : this.getRandomSimilarRecipes(this.state.recipes.filter(recipe=> recipe.uri !== this.state.uri)) })     
     }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     if (prevState.recipes !== this.state.recipes) {
-    //         this.setState({recipes : this.props.location.recipes})
-    //     }
-    //   }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.id !== this.state.id) {
+            this.getData()
+        }
+      }
     
     getData = () => {
+        const query = `http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_${this.state.id}`;
+
         Axios
-        .get(`https://api.edamam.com/search?r=${this.state.query}&app_id=${API_ID}&app_key=${API_KEY}`)
+        .get(`https://api.edamam.com/search?r=${query}&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => this.setState({recipe : response.data}))
     }
 
@@ -44,6 +42,14 @@ class RecipeDetails extends React.Component {
             const shuffled = recipes.sort(() => 0.5 - Math.random());
             // Genereate sub-array of 3 elements after shuffled
             return shuffled.slice(0, 3);
+    }
+
+    extractIdFromUri = (uri) => {
+        return uri.split('#recipe_').pop()
+    }
+
+    refreshRecipeDetails = (newId) => {
+        this.setState({ id : newId })
     }
 
 
@@ -71,23 +77,24 @@ class RecipeDetails extends React.Component {
                                     <li key={ing.text}>{ing.text}</li>))}
                             </ul>
                         </div>
+                            <a rel="noopener noreferrer" href={this.state.recipe[0].url} target="_blank"><button>Accéder à la recette complète</button></a>
                     </div>
                 </div>
                 ))}
                 <div className='similSection'>
+                    
                     <h3>Vous pourriez aussi aimer les recettes suivantes :</h3>
                     <div className='similarrecipes'>
                         {this.state.similarRecipes.map(recipe => (
-                                    <SimilarRecipes 
+                                    <div key={recipe.uri} onClick={() => this.refreshRecipeDetails(this.extractIdFromUri(recipe.uri))}><SimilarRecipes 
                                         label={recipe.label} 
                                         image={recipe.image} 
                                         time={recipe.totalTime}
-                                        uri={recipe.uri}
-                                        id = {this.state.id}
+                                        id = {this.extractIdFromUri(recipe.uri)}
+                                        recipes = {this.state.recipes}
                                     />
-                                    ))}
-                                    
-                                
+                                    </div>
+                                    ))}                
                     </div>
 
                 </div>
