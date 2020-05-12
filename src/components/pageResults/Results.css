@@ -3,7 +3,7 @@
     min-height: max-content;
     background-color: #D9E2DD;
     display: flex;
-    justify-content: space-evenly;
+    flex-flow: row-reverse nowrap;
 }
 
 .recipesresults {
@@ -68,31 +68,47 @@
     border: 0.5px solid #3E4F59;
     display : flex;
     flex-flow: column wrap;
-    width: 200px;
-    padding: 1rem;
+    width: inherit;
+    padding: 0.2rem;
+    min-width: 7.5rem;
 }
 
+.filterLabel {
+    font-family: 'josefin sans';
+    margin-bottom: 0 !important;
+    font-size: xx-small;
+    padding: 0.1rem;
+}
+/* Search bar */
 .searchBar {
     display: flex;
     justify-content: flex-start;
+    flex-flow: column wrap;
     width: 2rem;
 }
 
-.selectTime {
-    display: flex;
-    border: 0.5px solid #3E4F59;
-    background-color: white;
+#searchBarInput {
+    font-size: xx-small;
+    width: min-content;
+    font-family: 'josefin', sans-serif, 'roboto' sans-serif;
 }
 
-.timing label {
-    font-family: 'josefin sans';
-    margin-right: 1.5px;
+#searchBarBtn {
+    width: max-content;
     font-size: xx-small;
 }
 
+/* Time selector  */
+.filterTime{
+    padding: 0;
+    margin: 0.1rem;
+}
 .timing select {
-    width: 3rem;
-    font-size: 0.4rem ;
-    padding: 0.8rem;
-    margin: unset;
+    width: 3.2rem;
+    font-size: 0.5rem ;
+    padding: 0.1rem;
+    margin: 0.1rem;
+}
+.timing form {
+    margin-left: 10rem;
 }

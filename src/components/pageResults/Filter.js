@@ -22,22 +22,22 @@ class Filter extends Component {
                 <h3>Filters</h3>
                 
                 <div className='searchBar'>
-                    <input className='searchBarInput' type="text" placeholder= "Search" onChange={ e => this.setState (
+                    <label className='filterLabel' for='searchBar'>Search</label>
+                    <input id='searchBarInput' type="text" placeholder= "Enter an ingredient" onChange={ e => this.setState (
                         {
                         search : e.target.value
                         }
                         )}/>
-
                     <Link to ={{pathname: '/results',
                                 ingredient: this.state.search }}>
-                        <button>Valider</button>
+                        <button id='searchBarBtn'>Ok</button>
                     </Link> 
                 </div>
 
                     
                 <div className='filterTime'>
+                <label className='filterLabel' for="Timing">Timing</label>
                     <form className='timing'>
-                        <label id='timing' for="Timing">Timing</label>
                             <select type="select" className="timing">
                             <option>10min</option>
                             <option>30min</option>
