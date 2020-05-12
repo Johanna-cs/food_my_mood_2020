@@ -2,6 +2,7 @@ import React from 'react'
 import Axios from 'axios'
 import RecipeCard from './RecipeCard'
 import './Results.css'
+import Filter from './Filter'
 
 
 const API_ID = '6b74c366'
@@ -14,7 +15,8 @@ class RecipesResults extends React.Component {
         this.state = {
             dietLabels : this.props.location.mood,
             healthLabels : this.props.location.preference,
-            recipes : []
+            recipes : [],
+            search : ""
         }
     }
 
@@ -34,11 +36,13 @@ class RecipesResults extends React.Component {
     
     }
     render() {
+
         return (
             <>
             <div className='pageResults'>
 
                 <div className='recipesresults'>
+
                         {this.state.recipes.map(recip => recip.recipe).map(e=> (
                             <RecipeCard 
                             label={e.label} 
@@ -48,6 +52,9 @@ class RecipesResults extends React.Component {
                             uri={e.uri}
                             recipes={this.state.recipes.map(recipe=>recipe.recipe)} />
                         ))}
+                </div>
+                <div>
+                    <Filter {...this.state}/>
                 </div>
             </div>
             </>
