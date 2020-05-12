@@ -18,22 +18,20 @@ class RecipesResults extends React.Component {
             healthLabels : this.props.location.preference,
             recipes : [],
             query : '',
-            loaded : false,
+            loaded : false, 
         }
 
-        // this.getFilter = this.getFilter.bind(this)
     }
 
     componentDidMount() {
-        // setTimeout(() => this.getData(), 1000)
-        this.getData()
+        setTimeout(() => this.getData(), 1000)
         
     }
     
     componentDidUpdate(prevState) {
         if (prevState.query !== this.props.location.ingredient) {
             this.setState({query : this.props.location.ingredient}) 
-            this.getData() };      
+            this.getData() }
         }
     
 
@@ -48,6 +46,7 @@ class RecipesResults extends React.Component {
         Axios
         .get(`https://api.edamam.com/search?q=&diet=${this.state.dietLabels}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => this.setState({recipes : response.data.hits}))
+        .then(console.log('data is loaded'))
         .finally(this.setState({ loaded : true }))
 
         : Axios
@@ -57,9 +56,12 @@ class RecipesResults extends React.Component {
     
     }
 
-    // getFilter = () => {
-    //     return <Filter />
-    // }
+    getFilter = () => {
+        if (this.state.loaded === true) {
+        console.log('filter is ready to display')
+        // return <Filter />}
+        }
+    }
 
     render(){ 
         return (
@@ -70,27 +72,26 @@ class RecipesResults extends React.Component {
                         zIndex={2e9} scale={1.00}
                         loadedClassName="loadedContent">
 
-                {this.state.loaded === true && (
-                
-                <div className='pageResults'>
 
+                    <div className='pageResults'>
+                {console.log("le filter se charge")}
+                {this.state.loaded === true && <Filter />}
 
-                    <Filter />
-
-                    <div className='recipesresults'>
-                            {this.state.recipes.map(recip => recip.recipe).map(e=> (
-                                <RecipeCard 
-                                label={e.label} 
-                                image={e.image} 
-                                time={e.totalTime} 
-                                calories={e.calories}
-                                uri={e.uri}
-                                recipes={this.state.recipes.map(recipe=>recipe.recipe)} />
-                            ))}
+                        <div className='recipesresults'>
+                                {this.state.recipes.map(recip => recip.recipe).map(e=> (
+                                    <RecipeCard
+                                    key={e.uri} 
+                                    label={e.label} 
+                                    image={e.image} 
+                                    time={e.totalTime} 
+                                    calories={e.calories}
+                                    uri={e.uri}
+                                    recipes={this.state.recipes.map(recipe=>recipe.recipe)} />
+                                ))}
+                        </div>
+                                    
                     </div>
-                                
-                </div>) 
-                }
+                
 
             </Loader>
         )}
