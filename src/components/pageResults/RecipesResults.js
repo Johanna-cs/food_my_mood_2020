@@ -3,7 +3,7 @@ import Axios from 'axios'
 import RecipeCard from './RecipeCard'
 import Filter from './Filter'
 import './Results.css'
-
+import Loader from 'react-loader'
 
 
 const API_ID = '6b74c366'
@@ -36,7 +36,7 @@ class RecipesResults extends React.Component {
         }
     
 
-    getData = () => {
+    getData = async () => {
         this.state.query !== '' ?
         Axios
         .get(`https://api.edamam.com/search?q=${this.state.query}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
@@ -44,10 +44,9 @@ class RecipesResults extends React.Component {
         .finally(this.setState({ loaded : true }))
         
         : this.state.healthLabels === undefined ?
-        Axios
+        await Axios
         .get(`https://api.edamam.com/search?q=&diet=${this.state.dietLabels}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => this.setState({recipes : response.data.hits}))
-        .then(console.log('data is loaded'))
         .finally(this.setState({ loaded : true }))
 
         : Axios
@@ -56,31 +55,41 @@ class RecipesResults extends React.Component {
         .finally(this.setState({ loaded : true }))
     
     }
-    render() {
 
+    render(){ 
         return (
-            <>
-            <div className='pageResults'>
 
-                <div className='recipesresults'>
+            <Loader loaded={this.state.loaded} lines={13} length={20} width={10} radius={30}
+                        corners={1} rotate={0} direction={1} color="#000" speed={1}
+                        trail={60} shadow={false} hwaccel={false} className="spinner"
+                        zIndex={2e9} scale={1.00}
+                        loadedClassName="loadedContent">
 
-                        {this.state.recipes.map(recip => recip.recipe).map(e=> (
-                            <RecipeCard 
-                            label={e.label} 
-                            image={e.image} 
-                            time={e.totalTime} 
-                            calories={e.calories}
-                            uri={e.uri}
-                            recipes={this.state.recipes.map(recipe=>recipe.recipe)} />
-                        ))}
-                </div>
-                <div>
-                    <Filter {...this.state}/>
-                </div>
-            </div>
-            </>
-        )
-     } 
-    }
+
+                    <div className='pageResults'>
+
+                {this.state.loaded === true && <Filter {...this.state}/>}
+
+                        <div className='recipesresults'>
+                                {this.state.recipes.map(recip => recip.recipe).map(e=> (
+                                    <RecipeCard
+                                    key={e.uri} 
+                                    label={e.label} 
+                                    image={e.image} 
+                                    time={e.totalTime} 
+                                    calories={e.calories}
+                                    uri={e.uri}
+                                    recipes={this.state.recipes.map(recipe=>recipe.recipe)} />
+                                ))}
+                        </div>
+                                    
+                    </div>
+                
+
+            </Loader>
+        )}
+     }
+    
+
 
 export default RecipesResults

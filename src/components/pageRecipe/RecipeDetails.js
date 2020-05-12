@@ -70,8 +70,6 @@ class RecipeDetails extends React.Component {
     render() {
         return (
             <>
-                
-                    <div className='body'>
                         {this.state.recipe.map(e=> (
                         <div className='container' key={e.uri}>
                             <div className='recipe'>
@@ -114,8 +112,6 @@ class RecipeDetails extends React.Component {
 
                         </div>
 
-                    </div>
-               
             </>
         )
     }
