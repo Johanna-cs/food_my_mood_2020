@@ -4,6 +4,7 @@ import RecipeCard from './RecipeCard'
 import Filter from './Filter'
 import Loader from 'react-loader'
 import './Results.css'
+import Filter from './Filter'
 
 
 const API_ID = '6b74c366'
@@ -17,6 +18,7 @@ class RecipesResults extends React.Component {
             dietLabels : this.props.location.mood,
             healthLabels : this.props.location.preference,
             recipes : [],
+            search : "",
             query : '',
             loaded : false, 
         }
@@ -67,7 +69,7 @@ class RecipesResults extends React.Component {
 
                     <div className='pageResults'>
 
-                {this.state.loaded === true && <Filter />}
+                {this.state.loaded === true && <Filter {...this.state}/>}
 
                         <div className='recipesresults'>
                                 {this.state.recipes.map(recip => recip.recipe).map(e=> (
