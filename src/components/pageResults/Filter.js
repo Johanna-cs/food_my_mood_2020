@@ -6,35 +6,14 @@ class Filter extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            search : "",
+            search : '',
             dietLabels : this.props.dietLabels,
-            concentration  : false,
-            sportif : false,
+            concentration  : this.props.dietLabels === "low-fat" ? true : false,
+            sportif : this.props.dietLabels === "high-protein" ? true : false,
+            stresse : this.props.dietLabels === "low-carb" ? true : false,
+            fatigue : this.props.dietLabels === "balanced" ? true : false,
 
-        
-        //    besoinconcentration : 'low-fat',
-        //    sportif : 'high-protein',
-        //    stresse : 'low-carb',
-        //    fatigue : 'balanced',
-            }
-        }
-
-        
-    handleChangeConcentration = (e) => {  
-        //this.props.dietLabels     
-        this.setState (
-            {   
-
-                // concentration : e.target.checked,
-            })
-                }
-    
-    handleChangeSportif = (e) => {
-        this.setState (
-            {   
-                sportif : e.target.checked
-            })}
-
+        }}
 
     render() {
 
@@ -67,8 +46,8 @@ class Filter extends Component {
                     <div className="moodType" >
                         <input
                             type="checkbox"
-                            checked={this.props.dietLabels === "low-fat"}
-                            onChange={this.handleChangeConcentration}
+                            checked={this.state.concentration}
+                            onChange={(e) => this.setState({concentration : e.target.checked})}
                             />                      
                        <label className='moodType'>Concentrated</label>
                     </div>
@@ -76,8 +55,8 @@ class Filter extends Component {
                     <div className="moodType" >
                         <input
                             type="checkbox"
-                            checked={this.props.dietLabels === "high-protein"}
-                            onChange={this.handleChangeSportif}
+                            checked={this.state.sportif}
+                            onChange={(e) => this.setState({sportif : e.target.checked})}
                         />
                         <label className='moodType'>Sport</label>
                     </div>
@@ -85,8 +64,8 @@ class Filter extends Component {
                     <div className="moodType" >
                         <input
                             type="checkbox"
-                            checked={this.props.dietLabels === "low-carb"}
-                            onChange={this.handleChangeStresse}
+                            checked={this.state.stresse}
+                            onChange={(e) => this.setState({stresse : e.target.checked})}
                         />
                         <label className='moodType'>Stressed</label>
                     </div>
@@ -94,8 +73,8 @@ class Filter extends Component {
                     <div className="moodType" >
                         <input
                             type="checkbox"
-                            checked={this.props.dietLabels === "balanced"}
-                            onChange={this.handleChangeFatigue}
+                            checked={this.state.fatigue}
+                            onChange={(e) => this.setState({fatigue : e.target.checked})}
                         />
                         <label className='moodType'>Tired</label>
                     </div>
@@ -118,7 +97,7 @@ class Filter extends Component {
                         <input
                             type="checkbox"
                             checked={this.props.healthLabels === "vegetarian"}
-                            onChange={this.handleChangeVegeyarien}
+                            onChange={this.handleChangeVegetarien}
                         />
                         <label className='prefType'>Veggie </label>
                     </div>
@@ -148,9 +127,8 @@ class Filter extends Component {
                     </form>
                 </div>
 
-
-        </div>  
-
+            </div>  
+        
         )
     }
  
