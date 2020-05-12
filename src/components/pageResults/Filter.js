@@ -36,7 +36,7 @@ class Filter extends Component {
 
                     
                 <div className='filterTime'>
-                <label className='filterLabel' for="Timing">Timing</label>
+                    <label className='filterLabel' for="Timing">Timing</label>
                     <form className='timing'>
                             <select type="select" className="timing">
                             <option>10min</option>
@@ -57,17 +57,3 @@ class Filter extends Component {
 }
 
 export default Filter
-
-//    {this.state.filterQueries.map(recip => recip.recipe).map(e=> (
-            //        <RecipeCard 
-            //        label={e.label} 
-            //        image={e.image} 
-            //        time={e.totalTime} 
-            //        calories={e.calories}
-            //        uri={e.uri}
-            //        recipes={this.state.recipes.map(recipe=>recipe.recipe)}
-            //        query={e.q} 
-            //        />
-            //    ))}
-
-              //.search(e.target.value) }/>

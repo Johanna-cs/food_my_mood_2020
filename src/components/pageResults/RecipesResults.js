@@ -25,7 +25,7 @@ class RecipesResults extends React.Component {
     }
 
     componentDidMount() {
-        // setTimeout(() => this.getData(), 1000)
+        setTimeout(() => this.getData(), 1000)
         this.getData()
         
     }
@@ -73,7 +73,6 @@ class RecipesResults extends React.Component {
                 {this.state.loaded === true && (
                 
                 <div className='pageResults'>
-
 
                     <Filter />
 

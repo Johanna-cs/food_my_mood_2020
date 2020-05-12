@@ -12,24 +12,26 @@
     justify-content: space-around;
     align-items: center ;
     flex-flow: row wrap;
-    padding : 0.4rem;
+    padding : 0.6rem;
     
 }
 
 /* Recettes card */
 .recipeCard {
+    width: max-content;
     background-color: whitesmoke;
-    border-style: solid;
-    border : 0.5px solid #3E4F59;
+    border-radius: 2%;
     padding: 0.2rem;
-    margin: 0.8rem;
+    margin: 0.2rem;
 }
 
 #recipeName {
+    font-weight: 800 !important;
+    text-align: left;
     padding: 0.2rem;
     width: min-content;
     height: inherit;
-    max-width: 11rem;
+    max-width: 1rem;
     height: 4.5rem;
     min-width: 10.5rem;
     overflow-wrap: normal;
@@ -40,13 +42,15 @@
     color: #3E4F59;
     text-justify: left;
     margin-bottom: unset;
+    padding: 0.2rem;
 }
 
 .recipePhoto {
-    width: 13.8rem;
-    height: 8rem;
+    width: 15rem;
+    height: 10rem;
     object-fit: cover;
-    padding: 0.1rem;
+    border-radius: 2%;
+    padding: 0rem;
 }
 .recipeButton {
     font: 'josefin' sans-serif;

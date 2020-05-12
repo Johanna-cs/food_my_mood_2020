@@ -3,11 +3,10 @@
 }
 
 .container {
-    border-style: solid;
-    border : 0.5px solid #3E4F59;
+    border-radius: 2%;
     padding: 0.4rem;
     margin: 1rem;
-    background-color: #d9e2dd;
+    background-color: whitesmoke;
 
 }
 
@@ -28,11 +27,11 @@
 
 }
 .recipeImg {
+    width: 20rem;
+    height: 20rem;
     object-fit: cover;
-    max-width: 15rem;
-    margin-top: 2rem;
-    margin-left: 5rem;
-    border-radius: 1px;
+    border-radius: 2%;
+    padding: 0rem;
 }
 
 .recipe-typology {
@@ -65,11 +64,11 @@
     display: flex;
     align-content: center;
     flex-flow: row wrap;
-
 }
 
 .similRecipe {
-    background-color: #d9e2dd;
+    background-color: whitesmoke;
+    border-radius: 2%;
     padding: 0.2rem;
     margin: 0.8rem;
     width: 15rem;

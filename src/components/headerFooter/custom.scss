@@ -1,25 +1,52 @@
 body {
+    width: 100%;
+    height: 100%;
     margin: 0;
     font-family: 'Josefin Sans' sans-serif, Roboto sans-serif, 'Playfair Display', serif;
     }
-  
-#logoFMM {
-      width: 4.8rem;
-      margin-right: 1.7rem;
-      margin-left: 1rem;
-      pointer-events: none;
-  }
+// Header global
 .navbar {
-  display: flex;
   background-color: #3E4F59;
   font-family: 'Playfair Display';
+  width: 100%;
+  height: 5rem;
+  padding: 0.2rem;
+  display: flex;
+
   }
 
-.burgerMenu {
+#logoFMM {
+    margin-top: -20px;
+      width: 6rem;
+      padding: 1rem;
+
+  }
+// Menu + navigation on desktop
+#navMenu {
+  display: flex ;
+  justify-content: space-around ;
+  flex-flow: row nowrap !important;
+  padding: 1.5rem !important;
+}
+.linkMenu {
+  text-decoration: none;
+  margin: 0 1rem 00;
+  padding: 0.5rem;
+}
+.burgerMenu .Navbar-Toggler {
+  display: none ;
+}
+
+// Menu + burger menu on mobile
+@media only screen and(max-width : 500px) {
+.burgerMenu .Navbar-Toggler {
     display: flex ;
     width: 2.5rem ;
     padding: 1rem;
 }
+
+}
+
 
 .contact {
   background-color: #D9E2DD;
