@@ -1,6 +1,8 @@
 import React from 'react'
 import Axios from 'axios'
 import RecipeCard from './RecipeCard'
+import Filter from './Filter'
+import Loader from 'react-loader'
 import './Results.css'
 
 
@@ -14,7 +16,8 @@ class RecipesResults extends React.Component {
         this.state = {
             dietLabels : this.props.location.mood,
             healthLabels : this.props.location.preference,
-            recipes : []
+            recipes : [],
+            loaded : false
         }
     }
 
@@ -28,14 +31,23 @@ class RecipesResults extends React.Component {
         Axios
         .get(`https://api.edamam.com/search?q=&diet=${this.state.dietLabels}&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => this.setState({recipes : response.data.hits}))
+        .finally(this.setState({ loaded : true }))
+
         : Axios
         .get(`https://api.edamam.com/search?q=&diet=${this.state.dietLabels}&health=${this.state.healthLabels}&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => this.setState({recipes : response.data.hits}))
+        .finally(this.setState({ loaded : true }))
     
     }
     render() {
         return (
-            <>
+            <div>
+            <Loader loaded={this.state.loaded} lines={13} length={20} width={10} radius={30}
+                        corners={1} rotate={0} direction={1} color="#000" speed={1}
+                        trail={60} shadow={false} hwaccel={false} className="spinner"
+                        zIndex={2e9} scale={1.00}
+                        loadedClassName="loadedContent">
+
             <div className='pageResults'>
 
                 <div className='recipesresults'>
@@ -50,7 +62,10 @@ class RecipesResults extends React.Component {
                         ))}
                 </div>
             </div>
-            </>
+
+            <Filter />
+            </Loader>
+            </div>
         )}
 }
 

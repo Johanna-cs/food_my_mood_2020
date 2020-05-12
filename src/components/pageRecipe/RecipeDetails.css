@@ -1,4 +1,4 @@
-body {
+.body {
     background-color: #D9E2DD;
 }
 
@@ -104,3 +104,13 @@ body {
     text-align: center;
     font-family: 'playfair-display';
 }
+
+/* .loader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: white;
+    z-index: 9999;
+  } */
