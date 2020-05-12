@@ -35,7 +35,7 @@ class RecipesResults extends React.Component {
         }
     
 
-    getData = () => {
+    getData = async () => {
         this.state.query !== '' ?
         Axios
         .get(`https://api.edamam.com/search?q=${this.state.query}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
@@ -43,10 +43,9 @@ class RecipesResults extends React.Component {
         .finally(this.setState({ loaded : true }))
         
         : this.state.healthLabels === undefined ?
-        Axios
+        await Axios
         .get(`https://api.edamam.com/search?q=&diet=${this.state.dietLabels}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => this.setState({recipes : response.data.hits}))
-        .then(console.log('data is loaded'))
         .finally(this.setState({ loaded : true }))
 
         : Axios
@@ -54,13 +53,6 @@ class RecipesResults extends React.Component {
         .then(response => this.setState({recipes : response.data.hits}))
         .finally(this.setState({ loaded : true }))
     
-    }
-
-    getFilter = () => {
-        if (this.state.loaded === true) {
-        console.log('filter is ready to display')
-        // return <Filter />}
-        }
     }
 
     render(){ 
@@ -74,7 +66,7 @@ class RecipesResults extends React.Component {
 
 
                     <div className='pageResults'>
-                {console.log("le filter se charge")}
+
                 {this.state.loaded === true && <Filter />}
 
                         <div className='recipesresults'>
