@@ -3,7 +3,7 @@
     min-height: max-content;
     background-color: #D9E2DD;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row-reverse nowrap;
 }
 
 .recipesresults {

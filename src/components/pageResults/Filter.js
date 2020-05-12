@@ -39,11 +39,10 @@ class Filter extends Component {
     render() {
 
         return (
-            <>
             
-            
+            <div className='filterBar'>
                 <h3>Filters</h3>
-/* search bar */
+{/* search bar */}
                 <div className="searchBar">
                     <input type="text" 
                         placeholder= "Search" 
@@ -59,7 +58,7 @@ class Filter extends Component {
                     </Link> 
                 </div>
 
-/* check box Moods */
+{/* check box Moods */}
                 <div className="selectMoods">
 
                     <p>Moods</p>
@@ -102,25 +101,7 @@ class Filter extends Component {
                     </label>
 
                 </div>
-            
-            <div className='filterBar'>
-                <h3>Filters</h3>
-                
-                <div className='searchBar'>
-                    <label className='filterLabel' for='searchBar'>Search</label>
-                    <input id='searchBarInput' type="text" placeholder= "Enter an ingredient" onChange={ e => this.setState (
-                        {
-                        search : e.target.value
-                        }
-                        )}/>
-                    <Link to ={{pathname: '/results',
-                                ingredient: this.state.search }}>
-                        <button id='searchBarBtn'>Ok</button>
-                    </Link> 
-                </div>
-
-
- {/* check box Select Preferencies  */}
+        
                 <div className="selectPreferencies">
 
                     <p>Preferencies</p>
@@ -156,8 +137,6 @@ class Filter extends Component {
                 </div>
 
 
-
-{/* filter time */}
                 <div className='filterTime'>
                 <label className='filterLabel' for="Timing">Timing</label>
                     <form className='timing'>
@@ -172,9 +151,8 @@ class Filter extends Component {
                 </div>
 
 
-              </div>  
-        </>
-        
+        </div>  
+
         )
     }
  
