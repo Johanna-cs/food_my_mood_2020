@@ -6,7 +6,7 @@ class Filter extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            search : "",
+            search : '',
             dietLabels : this.props.dietLabels,
             concentration  : false,
             sportif : false,
@@ -89,7 +89,7 @@ class Filter extends Component {
                             checked={this.props.dietLabels === "low-carb"}
                             onChange={this.handleChangeStresse}
                         />
-                        <label>Sportif</label>
+                        <label>Stréssé</label>
                     </div>
 
                     <div className="fatigue" >
