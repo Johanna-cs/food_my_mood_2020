@@ -12,6 +12,7 @@ class Filter extends Component {
             sportif : this.props.dietLabels === "high-protein" ? true : false,
             stresse : this.props.dietLabels === "low-carb" ? true : false,
             fatigue : this.props.dietLabels === "balanced" ? true : false,
+            test : "coucou"
 
         }}
 
@@ -115,7 +116,10 @@ class Filter extends Component {
                         <label>Végan</label>
                     </div>
                     
-                    <button>Valid your choices</button>
+                    <Link to ={{pathname: '/results',
+                                newMood : this.state.test }}>
+                        <button>Valid your choices</button>
+                    </Link>
 
                 </div>
 
