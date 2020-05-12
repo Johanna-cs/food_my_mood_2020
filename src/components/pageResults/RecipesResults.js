@@ -4,7 +4,6 @@ import RecipeCard from './RecipeCard'
 import Filter from './Filter'
 import Loader from 'react-loader'
 import './Results.css'
-import Filter from './Filter'
 
 
 const API_ID = '6b74c366'
