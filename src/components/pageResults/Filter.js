@@ -10,6 +10,8 @@ class Filter extends Component {
             dietLabels : this.props.dietLabels,
             concentration  : false,
             sportif : false,
+            stresse : false,
+
 
         
         //    besoinconcentration : 'low-fat',
@@ -24,8 +26,8 @@ class Filter extends Component {
         //this.props.dietLabels     
         this.setState (
             {   
-
-                // concentration : e.target.checked,
+                //dietLabels : "low-fat" ? true : false
+                concentration : e.target.checked
             })
                 }
     
@@ -35,11 +37,18 @@ class Filter extends Component {
                 sportif : e.target.checked
             })}
 
+    handleChangeConcentration = (e) => {  
+        //this.props.dietLabels     
+        this.setState (
+            {   
+                //dietLabels : "low-fat" ? true : false
+                concentration : e.target.checked
+            })
+                }
 
     render() {
 
         return (
-            <>
             
             <div className='filterBar'>
                 <h3>Filters</h3>
@@ -62,13 +71,13 @@ class Filter extends Component {
 
  {/* check box Moods  */}
                 <div className="selectMoods">
-
-                    <p>Moods</p>
+                <label className='filterLabel' for="CheckBox">Moods</label>
 
                     <div className="besoindeconcentration" >
                         <input
                             type="checkbox"
-                            checked={this.props.dietLabels === "low-fat"}
+                            checked={this.state.concentration } 
+                            value = "low-fat"
                             onChange={this.handleChangeConcentration}
                             />                      
                        <label>Besoin de concentration</label>
@@ -78,7 +87,7 @@ class Filter extends Component {
                     <div className="sportif" >
                         <input
                             type="checkbox"
-                            checked={this.props.dietLabels === "high-protein"}
+                            checked={this.props.dietLabels === "high-protein" ? true : false}
                             onChange={this.handleChangeSportif}
                         />
                         <label>Sportif</label>
@@ -87,10 +96,10 @@ class Filter extends Component {
                     <div className="stresse" >
                         <input
                             type="checkbox"
-                            checked={this.props.dietLabels === "low-carb"}
+                            checked={this.state.stresse} //=== "low-carb"}
                             onChange={this.handleChangeStresse}
                         />
-                        <label>Sportif</label>
+                        <label>Stressé</label>
                     </div>
 
                     <div className="fatigue" >
@@ -107,36 +116,38 @@ class Filter extends Component {
             
  {/* check box Select Preferencies  */}
                 <div className="selectPreferencies">
+                <label className='filterLabel' for="CheckBox">Preferencies</label>
 
                     <p>Preferencies</p>
 
-                    <label className="sanspreference" >
+                    <div className="sanspreference" >
                         <input
                             type="checkbox"
                             checked={this.props.healthLabels === undefined}
                             onChange={this.handleChangeSansPreference}
                         />
-                        Sans préférence
-                    </label>
+                        <label>Sans préférence</label>
+                    </div>
                 
-
-                    <label className="vegetarien" >
+                    <div className="vegetarien" >
                         <input
                             type="checkbox"
                             checked={this.props.healthLabels === "vegetarian"}
-                            onChange={this.handleChangeVegeyarien}
+                            onChange={this.handleChangeVegetarien}
                         />
-                        Végétarien
-                    </label>
+                        <label>Végétarien</label>
+                    </div>
 
-                    <label className="vegan" >
+                    <div className="vegetarien" >
                         <input
                             type="checkbox"
                             checked={this.props.healthLabels === "vegan"}
                             onChange={this.handleChangeVegan}
                         />
-                        Végan
-                    </label>
+                        <label>Végan</label>
+                    </div>
+                    
+                    <button>Valid your choices</button>
 
                 </div>
 
@@ -156,9 +167,8 @@ class Filter extends Component {
                     </form>
                 </div>
 
-
-              </div>  
-        </>
+            </div>  
+        
         
         )
     }
