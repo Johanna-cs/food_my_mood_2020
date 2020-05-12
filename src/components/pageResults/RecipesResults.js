@@ -2,8 +2,8 @@ import React from 'react'
 import Axios from 'axios'
 import RecipeCard from './RecipeCard'
 import Filter from './Filter'
-import Loader from 'react-loader'
 import './Results.css'
+import Loader from 'react-loader'
 
 
 const API_ID = '6b74c366'

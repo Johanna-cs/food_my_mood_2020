@@ -42,66 +42,69 @@ class Filter extends Component {
             
             <div className='filterBar'>
                 <h3>Filters</h3>
-{/* search bar */}
-                <div className="searchBar">
-                    <input type="text" 
-                        placeholder= "Search" 
-                        onChange={ e => this.setState (
-                            {
-                               search : e.target.value
-                            }
-                            )}/>
 
+ {/* search bar  */}
+
+                <div className='searchBar'>
+                    <label className='filterLabel' for='searchBar'>Search</label>
+                    <input id='searchBarInput' type="text" placeholder= "Enter an ingredient" onChange={ e => this.setState (
+                        {
+                        search : e.target.value
+                        }
+                        )}/>
                     <Link to ={{pathname: '/results',
-                                   ingredient: this.state.search }}>
-                        <button>Valider</button>
+                                ingredient: this.state.search }}>
+                        <button id='searchBarBtn'>Ok</button>
                     </Link> 
                 </div>
+                
 
 {/* check box Moods */}
                 <div className="selectMoods">
 
                     <p>Moods</p>
 
-                    <label className="besoindeconcentration" >
+                    <div className="besoindeconcentration" >
                         <input
                             type="checkbox"
                             checked={this.props.dietLabels === "low-fat"}
                             onChange={this.handleChangeConcentration}
-                        />
-                        Besoin de concentration
-                    </label>
+                            />                      
+                       <label>Besoin de concentration</label>
+                    </div>
                 
 
-                    <label className="sportif" >
+                    <div className="sportif" >
                         <input
                             type="checkbox"
                             checked={this.props.dietLabels === "high-protein"}
                             onChange={this.handleChangeSportif}
                         />
-                        Sportif
-                    </label>
+                        <label>Sportif</label>
+                    </div>
 
-                    <label className="stresse" >
+                    <div className="stresse" >
                         <input
                             type="checkbox"
                             checked={this.props.dietLabels === "low-carb"}
                             onChange={this.handleChangeStresse}
                         />
-                        Stressé
-                    </label>
+                        <label>Sportif</label>
+                    </div>
 
-                    <label className="fatigue" >
+                    <div className="fatigue" >
                         <input
                             type="checkbox"
                             checked={this.props.dietLabels === "balanced"}
                             onChange={this.handleChangeFatigue}
                         />
-                        Fatigué
-                    </label>
+                        <label>Fatigué</label>
+                    </div>
 
                 </div>
-        
+            
+            
+ {/* check box Select Preferencies  */}
                 <div className="selectPreferencies">
 
                     <p>Preferencies</p>
