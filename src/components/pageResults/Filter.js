@@ -41,71 +41,11 @@ class Filter extends Component {
         return (
             <>
             
-            
-                <h3>Filters</h3>
-/* search bar */
-                <div className="searchBar">
-                    <input type="text" 
-                        placeholder= "Search" 
-                        onChange={ e => this.setState (
-                            {
-                               search : e.target.value
-                            }
-                            )}/>
-
-                    <Link to ={{pathname: '/results',
-                                   ingredient: this.state.search }}>
-                        <button>Valider</button>
-                    </Link> 
-                </div>
-
-/* check box Moods */
-                <div className="selectMoods">
-
-                    <p>Moods</p>
-
-                    <label className="besoindeconcentration" >
-                        <input
-                            type="checkbox"
-                            checked={this.props.dietLabels === "low-fat"}
-                            onChange={this.handleChangeConcentration}
-                        />
-                        Besoin de concentration
-                    </label>
-                
-
-                    <label className="sportif" >
-                        <input
-                            type="checkbox"
-                            checked={this.props.dietLabels === "high-protein"}
-                            onChange={this.handleChangeSportif}
-                        />
-                        Sportif
-                    </label>
-
-                    <label className="stresse" >
-                        <input
-                            type="checkbox"
-                            checked={this.props.dietLabels === "low-carb"}
-                            onChange={this.handleChangeStresse}
-                        />
-                        Stressé
-                    </label>
-
-                    <label className="fatigue" >
-                        <input
-                            type="checkbox"
-                            checked={this.props.dietLabels === "balanced"}
-                            onChange={this.handleChangeFatigue}
-                        />
-                        Fatigué
-                    </label>
-
-                </div>
-            
             <div className='filterBar'>
                 <h3>Filters</h3>
-                
+
+ {/* search bar  */}
+
                 <div className='searchBar'>
                     <label className='filterLabel' for='searchBar'>Search</label>
                     <input id='searchBarInput' type="text" placeholder= "Enter an ingredient" onChange={ e => this.setState (
@@ -118,8 +58,53 @@ class Filter extends Component {
                         <button id='searchBarBtn'>Ok</button>
                     </Link> 
                 </div>
+                
 
+ {/* check box Moods  */}
+                <div className="selectMoods">
 
+                    <p>Moods</p>
+
+                    <div className="besoindeconcentration" >
+                        <input
+                            type="checkbox"
+                            checked={this.props.dietLabels === "low-fat"}
+                            onChange={this.handleChangeConcentration}
+                            />                      
+                       <label>Besoin de concentration</label>
+                    </div>
+                
+
+                    <div className="sportif" >
+                        <input
+                            type="checkbox"
+                            checked={this.props.dietLabels === "high-protein"}
+                            onChange={this.handleChangeSportif}
+                        />
+                        <label>Sportif</label>
+                    </div>
+
+                    <div className="stresse" >
+                        <input
+                            type="checkbox"
+                            checked={this.props.dietLabels === "low-carb"}
+                            onChange={this.handleChangeStresse}
+                        />
+                        <label>Sportif</label>
+                    </div>
+
+                    <div className="fatigue" >
+                        <input
+                            type="checkbox"
+                            checked={this.props.dietLabels === "balanced"}
+                            onChange={this.handleChangeFatigue}
+                        />
+                        <label>Fatigué</label>
+                    </div>
+
+                </div>
+            
+            
  {/* check box Select Preferencies  */}
                 <div className="selectPreferencies">
 
