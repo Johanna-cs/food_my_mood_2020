@@ -8,33 +8,12 @@ class Filter extends Component {
         this.state = {
             search : '',
             dietLabels : this.props.dietLabels,
-            concentration  : false,
-            sportif : false,
+            concentration  : this.props.dietLabels === "low-fat" ? true : false,
+            sportif : this.props.dietLabels === "high-protein" ? true : false,
+            stresse : this.props.dietLabels === "low-carb" ? true : false,
+            fatigue : this.props.dietLabels === "balanced" ? true : false,
 
-        
-        //    besoinconcentration : 'low-fat',
-        //    sportif : 'high-protein',
-        //    stresse : 'low-carb',
-        //    fatigue : 'balanced',
-            }
-        }
-
-        
-    handleChangeConcentration = (e) => {  
-        //this.props.dietLabels     
-        this.setState (
-            {   
-
-                // concentration : e.target.checked,
-            })
-                }
-    
-    handleChangeSportif = (e) => {
-        this.setState (
-            {   
-                sportif : e.target.checked
-            })}
-
+        }}
 
     render() {
 
@@ -67,8 +46,8 @@ class Filter extends Component {
                     <div className="besoindeconcentration" >
                         <input
                             type="checkbox"
-                            checked={this.props.dietLabels === "low-fat"}
-                            onChange={this.handleChangeConcentration}
+                            checked={this.state.concentration}
+                            onChange={(e) => this.setState({concentration : e.target.checked})}
                             />                      
                        <label>Besoin de concentration</label>
                     </div>
@@ -77,8 +56,8 @@ class Filter extends Component {
                     <div className="sportif" >
                         <input
                             type="checkbox"
-                            checked={this.props.dietLabels === "high-protein"}
-                            onChange={this.handleChangeSportif}
+                            checked={this.state.sportif}
+                            onChange={(e) => this.setState({sportif : e.target.checked})}
                         />
                         <label>Sportif</label>
                     </div>
@@ -86,8 +65,8 @@ class Filter extends Component {
                     <div className="stresse" >
                         <input
                             type="checkbox"
-                            checked={this.props.dietLabels === "low-carb"}
-                            onChange={this.handleChangeStresse}
+                            checked={this.state.stresse}
+                            onChange={(e) => this.setState({stresse : e.target.checked})}
                         />
                         <label>Stréssé</label>
                     </div>
@@ -95,8 +74,8 @@ class Filter extends Component {
                     <div className="fatigue" >
                         <input
                             type="checkbox"
-                            checked={this.props.dietLabels === "balanced"}
-                            onChange={this.handleChangeFatigue}
+                            checked={this.state.fatigue}
+                            onChange={(e) => this.setState({fatigue : e.target.checked})}
                         />
                         <label>Fatigué</label>
                     </div>
