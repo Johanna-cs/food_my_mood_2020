@@ -1,7 +1,6 @@
 import React from 'react'
 import Axios from 'axios'
 import SimilarRecipes from './SimilarRecipes'
-import Loader from 'react-loader'
 import './RecipeDetails.css'
 
 
@@ -70,7 +69,7 @@ class RecipeDetails extends React.Component {
 
     render() {
         return (
-            <>                    
+            <>
                         {this.state.recipe.map(e=> (
                         <div className='container' key={e.uri}>
                             <div className='recipe'>
@@ -113,8 +112,6 @@ class RecipeDetails extends React.Component {
 
                         </div>
 
-                    
-                
             </>
         )
     }
