@@ -17,26 +17,25 @@ class RecipesResults extends React.Component {
             dietLabels : this.props.location.mood,
             healthLabels : this.props.location.preference,
             recipes : [],
-            search : "",
             query : '',
             loaded : false, 
         }
-
     }
 
     componentDidMount() {
-        setTimeout(() => this.getData(), 1000)
+        // setTimeout(() => this.getData(), 1000)
+        this.getData()
         
     }
     
-    componentDidUpdate(prevState) {
+    componentDidUpdate(prevProps, prevState) {
         if (prevState.query !== this.props.location.ingredient) {
-            this.setState({query : this.props.location.ingredient}) 
+            this.setState({query : this.props.location.ingredient})
             this.getData() }
         }
     
 
-    getData = async () => {
+    getData = () => {
         this.state.query !== '' ?
         Axios
         .get(`https://api.edamam.com/search?q=${this.state.query}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
@@ -44,7 +43,7 @@ class RecipesResults extends React.Component {
         .finally(this.setState({ loaded : true }))
         
         : this.state.healthLabels === undefined ?
-        await Axios
+        Axios
         .get(`https://api.edamam.com/search?q=&diet=${this.state.dietLabels}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => this.setState({recipes : response.data.hits}))
         .finally(this.setState({ loaded : true }))
