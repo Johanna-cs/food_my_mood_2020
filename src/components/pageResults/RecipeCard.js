@@ -25,10 +25,12 @@ class RecipeCard extends React.Component {
         return (
         <>
             <div className='recipeCard'>
-                <img className='recipePhoto' src={this.props.image} alt={this.props.label}></img>
-                <div className='recipeDetails'>
-                  <p className='recipeTime'>{this.props.time === 0 ? 'Instantané !' : this.props.time} {this.props.time > 0 ? 'minutes' : ''} </p>
-                  <p className='recipeCal'>{Math.round(this.props.calories)} cal</p>
+                <div className='recipeCardCard'>
+                    <img className='recipePhoto' src={this.props.image} alt={this.props.label}></img>
+                    <div className='recipeDetails'>
+                        <p className='recipeTime'>{this.props.time === 0 ? 'Instant !' : this.props.time} {this.props.time > 0 ? 'minutes' : ''} </p>
+                        <p className='recipeCal'>{Math.round(this.props.calories)} cal</p>
+                    </div>
                 </div>
                 <h3 id='recipeName'>{this.props.label}</h3>
                 <Link to={{ 

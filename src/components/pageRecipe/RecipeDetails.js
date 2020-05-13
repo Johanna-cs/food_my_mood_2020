@@ -84,21 +84,22 @@ class RecipeDetails extends React.Component {
                                     <img className='recipeImg' src={e.image} alt={e.label}></img>
                                 </div>
                                 <div className='recipeList'>
-                                    <p>Temps de préparation : <span> {e.totalTime === 0 ? 'Instantané !' : e.totalTime} {e.totalTime > 0 ? 'minutes' : ''}</span></p>
-                                    <p> Ingrédients :</p>
+                                    <p>Timing : <span> {e.totalTime === 0 ? 'Instantané !' : e.totalTime} {e.totalTime > 0 ? 'minutes' : ''}</span></p>
+                                    <p> Ingredients :</p>
                                     <ul>
                                         {e.ingredients.map(ing=> (
                                             <li key={ing.text}>{ing.text}</li>))}
                                     </ul>
                                 </div>
-                                    <a rel="noopener noreferrer" href={this.state.recipe[0].url} target="_blank"><button>Accéder à la recette complète</button></a>
+                                    <a rel="noopener noreferrer" href={this.state.recipe[0].url} target="_blank">
+                                        <button  className='goRecipe'>Get the complete recipe</button></a>
                             </div>
                             </div>
                         ))}
                         
                         <div className='similSection'>
                             
-                            <h3>Vous pourriez aussi aimer les recettes suivantes :</h3>
+                            <h3>You will also love it :</h3>
                             <div className='similarrecipes'>
                                 {this.state.similarRecipes.map(recipe => (
                                             <div key={recipe.uri} onClick={() => this.refreshRecipeDetails(this.extractIdFromUri(recipe.uri))}><SimilarRecipes 

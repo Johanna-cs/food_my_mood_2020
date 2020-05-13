@@ -29,7 +29,7 @@ class RecipesResults extends React.Component {
         
     }
     
-    componentDidUpdate(prevState) {
+    componentDidUpdate(prevpros, prevState) {
         if (prevState.query !== this.props.location.ingredient) {
             this.setState({query : this.props.location.ingredient})
             this.getData() }
