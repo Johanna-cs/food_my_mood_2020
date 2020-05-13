@@ -1,22 +1,26 @@
 .pageDetails {
     background : url('../pageSelect/backgrounds/background_11.jpg') no-repeat center center fixed;
     background-size: cover;
+    
     min-height: 100%;
     min-width: 100%;
     width: 100%;
 }
 .recipe {
+    background-color: #D9E2DD99;
     padding: 0.4rem;
 }
 .container {
     margin-top: 1rem;
     border-radius: 2%;
-    background-color: #D9E2DD99;
+    background-color: #f5f5f599;
+    
 }
 
 .recipe-title {
     padding: 1rem;
     font-size: 1.2rem;
+    font-weight: 800;
     text-align: right;
 }
 
@@ -51,6 +55,21 @@
     text-align: start;
     margin: 0rem;
 }
+.goRecipe {
+    font: 'josefin' sans-serif;
+    font-size: x-small;
+    align-items: center;
+    margin-left: 32rem;
+    margin-bottom: 3rem;
+    width: 8rem;
+    border: none;
+	padding: 6px 3px 6px 3px;
+	border-radius: 4%;
+	box-shadow: 0.5px 0.5px 2px rgb(104, 90, 90);
+	background: transparent;
+	color:#3E4F59;
+
+}
 
 /* Similar recipes  */
 
@@ -60,6 +79,7 @@
     align-items: center ;
     flex-flow: row wrap;
     padding : 0.4rem;
+    background-color: #D9E2DD99;
 }
 .similarrecipes {
     display: flex;
@@ -68,36 +88,37 @@
 }
 
 .similRecipe {
-    background-color: whitesmoke;
+    min-width: 15.4rem;
+    width: 15.4rem;
+    background-color: #f5f5f5;
     border-radius: 2%;
     padding: 0.2rem;
-    margin: 0.8rem;
-    width: 15rem;
-    height: 20rem;
-    border-radius: 2px;
+    margin: 0.2rem;
 }
+
 .similImg {
-    margin-left: 1.6rem;
+    width: 15rem;
+    height: 13rem;
     object-fit: cover;
-    width: 11.4rem;
-    height: 11rem;
-    padding: 0.1rem;
-    border-radius: 1px;
+    border-radius: 2%;
+    padding: 0rem;
 }
 
 .similName {
-    padding: 0.2rem;
-    font-size: 1rem;
+    color:#3E4F59;
+    font-weight: 800 !important;
+    text-align: left;
     width: min-content;
-    max-width: 8rem;
-    height: 5rem;
-    min-width: 5rem;
+    height: 3.5rem;
+    min-width: 10.5rem;
     overflow-wrap: normal;
     box-sizing: border-box;
-    color: #3E4F59;
-    align-self: center;
-    text-align: right;
-    margin-left: 7.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    line-height: 1.6rem;
 }
 
 .similTime {
