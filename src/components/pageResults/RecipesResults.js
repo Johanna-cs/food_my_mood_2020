@@ -7,8 +7,8 @@ import './Filter.css'
 import Loader from 'react-loader'
 
 
-const API_ID = 'e9275ee4'
-const API_KEY = 'bda40244157a76f38fd5f51e25675359'
+const API_ID = '6b74c366'
+const API_KEY = '4819294e40eaccde885e836d49f610d0'
 
 
 class RecipesResults extends React.Component {
