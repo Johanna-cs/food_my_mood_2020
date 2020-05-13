@@ -1,9 +1,9 @@
 /* Filter bar */
 .filterBar {
-    background-color: #AEDEB7;
+    background-color: #AEDEB799;
     display : flex;
     flex-flow: column wrap;
-    width: inherit;
+    width: min-content;
     padding: 0.5rem;
     min-width: 9.5rem;
 }

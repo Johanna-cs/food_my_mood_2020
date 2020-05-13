@@ -1,17 +1,21 @@
-
-.container {
-    border-radius: 2%;
-    padding: 0.4rem;
-    margin: 1rem;
-    background-color: whitesmoke;
-
+.pageDetails {
+    background : url('../pageSelect/backgrounds/background_11.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
 }
-
 .recipe {
     padding: 0.4rem;
 }
+.container {
+    margin-top: 1rem;
+    border-radius: 2%;
+    background-color: #D9E2DD99;
+}
 
 .recipe-title {
+    padding: 1rem;
     font-size: 1.2rem;
     text-align: right;
 }

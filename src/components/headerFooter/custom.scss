@@ -47,9 +47,26 @@ body {
 
 }
 
-
 .contact {
-  background-color: #D9E2DD;
+  background-color: #D9E2DD99;
+  background : url('../pageSelect/backgrounds/background_12.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100%;
+  min-width: 100%;
+  width: 100%;
+  padding: 1rem;
+}
+.contactTitle {
+  background-color: #D9E2DD99;
+  padding: 3rem;
+  font-weight: 700;
+
+}
+.laTeam p {
+  font-family: 'playfair display';
+  font-weight: 300;
+  padding: none;
+  
 }
 
 .Footer p {

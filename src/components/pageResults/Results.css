@@ -1,13 +1,20 @@
 /* Page recettes */
 .pageResults {
+    background : url('../pageSelect/backgrounds/background_1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+}
+.pageResults {
     min-height: max-content;
-    background-color: #D9E2DD;
+    background-color: #D9E2DD99;
     display: flex;
     flex-flow: row nowrap;
 }
 
 .recipesresults {
-    background-color: #D9E2DD;
+    background-color: #D9E2DD99;
     display : flex ; 
     justify-content: space-around;
     align-items: center ;
@@ -18,7 +25,7 @@
 
 /* Recettes card */
 .recipeCard {
-    width: max-content;
+    width: min-content;
     background-color: whitesmoke;
     border-radius: 2%;
     padding: 0.2rem;
@@ -28,16 +35,17 @@
 #recipeName {
     font-weight: 800 !important;
     text-align: left;
-    padding: 0.2rem;
     width: min-content;
     height: inherit;
-    max-width: 1rem;
-    height: 4.5rem;
+    
     min-width: 10.5rem;
     overflow-wrap: normal;
     box-sizing: border-box;
 }
-
+.recipeDetails {
+    display: flex;
+    justify-content: space-around;
+}
 .recipeTime, .recipeCal {
     color: #3E4F59;
     text-justify: left;
