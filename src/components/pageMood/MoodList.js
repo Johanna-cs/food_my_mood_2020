@@ -26,14 +26,15 @@ class MoodList extends Component {
       render (){
         return (
             <div className="moodList">
-                <h2>Dites-moi votre humeur, je vous dirai quoi manger !</h2>
-
+                <h2 className='mainTitle'>What's your mood ?</h2>
+                <h2 className='mainTitle'>We choose your food !</h2>
+                
                 <div className="Cols">
 
                     <div className="cols">
 
                         <div>
-                            <h3> Besoin de concentration</h3>
+                            <h3> Get concentrated</h3>
                                 <Link to ={{pathname: '/select',
                                                state: this.state.besoinconcentration }}>
                                     <img className="photos" src={besoinconcentration} alt="Besoin de concentration"/>
@@ -41,7 +42,7 @@ class MoodList extends Component {
                         </div>
 
                         <div>
-                            <h3>Sportif</h3>
+                            <h3>Sport</h3>
                                 <Link to ={{pathname: '/select',
                                                state: this.state.sportif }}>
                                     <img className="photos" src={sportif} alt="Sportif"/>
@@ -49,7 +50,7 @@ class MoodList extends Component {
                         </div>
 
                         <div>
-                            <h3>Stressé</h3>
+                            <h3>Stressed</h3>
                                 <Link to ={{pathname: '/select',
                                                state: this.state.stresse }}>
                                     <img className="photos" src={stresse} alt="Stressé"/>
@@ -57,7 +58,7 @@ class MoodList extends Component {
                         </div>
 
                         <div>
-                            <h3>Fatigué</h3>
+                            <h3>Tired</h3>
                                 <Link to ={{pathname: '/select',
                                                state: this.state.fatigue }}>
                                     <img className="photos" src={fatigue} alt="Fatigué"/>

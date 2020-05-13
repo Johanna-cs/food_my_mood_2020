@@ -69,11 +69,12 @@ class RecipeDetails extends React.Component {
 
     render() {
         return (
-            <>
+            <div className='pageDetails'>
+                
                         {this.state.recipe.map(e=> (
-                        <div className='container' key={e.uri}>
-                            <div className='recipe'>
-                                <h4 className='recipe-title'>{e.label}</h4>
+                        <div className='recipe' key={e.uri}>
+                            <div className='container'>
+                                <h3 className='recipe-title'>{e.label}</h3>
                                 <div className='recipe-summary'>
                                     <ul className='recipe-typology'>
                                         {e.dietLabels.map(elt=> (
@@ -92,8 +93,9 @@ class RecipeDetails extends React.Component {
                                 </div>
                                     <a rel="noopener noreferrer" href={this.state.recipe[0].url} target="_blank"><button>Accéder à la recette complète</button></a>
                             </div>
-                        </div>
+                            </div>
                         ))}
+                        
                         <div className='similSection'>
                             
                             <h3>Vous pourriez aussi aimer les recettes suivantes :</h3>
@@ -112,7 +114,7 @@ class RecipeDetails extends React.Component {
 
                         </div>
 
-            </>
+            </div>
         )
     }
 

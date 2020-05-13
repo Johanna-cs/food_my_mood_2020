@@ -24,13 +24,14 @@ class Filter extends Component {
         return (
             
             <div className='filterBar'>
-                <h3>Filters</h3>
+                <h3 id='filterTitle'>Filters</h3>
 
 
  {/* search bar  */}
 
                 <div className='searchBar'>
                     <label className='filterLabel' for='searchBar'>Search</label>
+                    <div>
                     <input id='searchBarInput' type="text" placeholder= "Enter an ingredient" onChange={ e => this.setState (
                         {
                         search : e.target.value
@@ -122,7 +123,7 @@ class Filter extends Component {
             
 
                 <div className='filterTime'>
-                <label className='filterLabel' for="Timing">Timing</label>
+                    <label className='filterLabel' for="Timing">Timing</label>
                     <form className='timing'>
                             <select type="select" className="timing">
                             <option>10min</option>
@@ -135,7 +136,8 @@ class Filter extends Component {
                 </div>
 
              </div>
-             </div>  
+            </div> 
+        </div> 
             
         )
     }

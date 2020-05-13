@@ -1,18 +1,21 @@
-
-.container {
-    border-style: solid;
-    border : 0.5px solid #3E4F59;
-    padding: 0.4rem;
-    margin: 1rem;
-    background-color: #d9e2dd;
-
+.pageDetails {
+    background : url('../pageSelect/backgrounds/background_11.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
 }
-
 .recipe {
     padding: 0.4rem;
 }
+.container {
+    margin-top: 1rem;
+    border-radius: 2%;
+    background-color: #D9E2DD99;
+}
 
 .recipe-title {
+    padding: 1rem;
     font-size: 1.2rem;
     text-align: right;
 }
@@ -25,11 +28,11 @@
 
 }
 .recipeImg {
+    width: 20rem;
+    height: 20rem;
     object-fit: cover;
-    max-width: 15rem;
-    margin-top: 2rem;
-    margin-left: 5rem;
-    border-radius: 1px;
+    border-radius: 2%;
+    padding: 0rem;
 }
 
 .recipe-typology {
@@ -62,11 +65,11 @@
     display: flex;
     align-content: center;
     flex-flow: row wrap;
-
 }
 
 .similRecipe {
-    background-color: #d9e2dd;
+    background-color: whitesmoke;
+    border-radius: 2%;
     padding: 0.2rem;
     margin: 0.8rem;
     width: 15rem;
