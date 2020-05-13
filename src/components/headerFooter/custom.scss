@@ -12,7 +12,6 @@ body {
   height: 5rem;
   padding: 0.2rem;
   display: flex;
-
   }
 
 #logoFMM {
@@ -37,14 +36,17 @@ body {
   display: none ;
 }
 
+
+
 // Menu + burger menu on mobile
 @media only screen and(max-width : 500px) {
 .burgerMenu .Navbar-Toggler {
     display: flex ;
     width: 2.5rem ;
     padding: 1rem;
-}
 
+
+}
 }
 
 .contact {
@@ -56,17 +58,44 @@ body {
   width: 100%;
   padding: 1rem;
 }
+
 .contactTitle {
   background-color: #D9E2DD99;
   padding: 3rem;
   font-weight: 700;
-
 }
-.laTeam p {
+
+.laTeam {
+  display: flex;
+}
+
+.col1, .col2 {
+  margin : auto;
+}
+
+a {
+  margin-left: 0.5rem;
+}
+
+p
+ {
+  font-family: 'playfair-display';
+  font-size: 1rem;
+  color:  #3E4F59;
+}
+
+.profil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-family: 'playfair display';
-  font-weight: 300;
   padding: none;
-  
+  background-color: whitesmoke;
+  border-radius: 2%;
+  margin: 0.8rem;
+  width: 30rem ;
+  height: 8rem ;
+  border-radius: 2px;
 }
 
 .Footer p {
@@ -78,9 +107,6 @@ body {
     height : 1.8rem;
     text-align: right;
 }
-
-
-
 
 
 @import '~bootstrap/scss/bootstrap.scss';
