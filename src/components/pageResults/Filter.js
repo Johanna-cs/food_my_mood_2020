@@ -32,6 +32,7 @@ class Filter extends Component {
                     </div>
                 </div>
 {/* check box Moods */}
+              <div className='selectBox'>
                 <div className="selectMood">
                 <label className='filterLabel' htmlFor='moodsSelect'>Mood</label>
                     <div className="moodType" >
@@ -96,9 +97,10 @@ class Filter extends Component {
                     </div>
                     <Link to ={{pathname: '/results',
                                 newMood : this.state.concentration ? 'low-fat' : this.state.sportif ? 'high-protein' : this.state.stresse ? 'low-carb' : 'balanced' }}>
-                        <button>Valid your choices</button>
+                        <button className='selectBoxBtn' >Valid your choices</button>
                     </Link>
                 </div>
+              </div>
                 <div className='filterTime'>
                     <label className='filterLabel' htmlFor="Timing">Timing</label>
                     <form className='timing'>
