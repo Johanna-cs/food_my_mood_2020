@@ -7,20 +7,25 @@ class Filter extends Component {
         super(props)
         this.state = {
             search : '',
-            dietLabels : this.props.dietLabels,
-            concentration  : this.props.dietLabels === "low-fat" ? true : false,
+            concentration : this.props.dietLabels === "low-fat" ? true : false,
             sportif : this.props.dietLabels === "high-protein" ? true : false,
             stresse : this.props.dietLabels === "low-carb" ? true : false,
             fatigue : this.props.dietLabels === "balanced" ? true : false,
 
-        }}
-
+            sanspreference : this.props.healthLabels === "undefined" ? true : false,
+            vegetarien : this.props.healthLabels === "vegetarian" ? true : false,
+            vegan : this.props.healthLabels === "vegan" ? true : false,
+        }
+        
+    }
+ 
     render() {
 
         return (
             
             <div className='filterBar'>
                 <h3 id='filterTitle'>Filters</h3>
+
 
  {/* search bar  */}
 
@@ -35,84 +40,87 @@ class Filter extends Component {
                     <Link to ={{pathname: '/results',
                                 ingredient: this.state.search }}>
                         <button id='searchBarBtn'>Ok</button>
-                    </Link>
-                    </div>
-                </div>
-                
+                    </Link> 
+                </div>        
 
 {/* check box Moods */}
-                <div className="selectMood">
-                <label className='filterLabel' for='moodsSelect'>Mood</label>
-                    <div className="moodType" >
-                        <input
-                            type="checkbox"
-                            checked={this.state.concentration}
-                            onChange={(e) => this.setState({concentration : e.target.checked})}
-                            />                      
-                       <label className='moodType'>Concentrated</label>
-                    </div>
 
-                    <div className="moodType" >
-                        <input
-                            type="checkbox"
-                            checked={this.state.sportif}
-                            onChange={(e) => this.setState({sportif : e.target.checked})}
-                        />
-                        <label className='moodType'>Sport</label>
-                    </div>
+                <div className="selectMoods">
+                <label className='filterLabel' for="CheckBox">Moods</label>
 
-                    <div className="moodType" >
-                        <input
-                            type="checkbox"
-                            checked={this.state.stresse}
-                            onChange={(e) => this.setState({stresse : e.target.checked})}
-                        />
-                        <label className='moodType'>Stressed</label>
-                    </div>
+                    <div className="besoindeconcentration" >
 
-                    <div className="moodType" >
-                        <input
-                            type="checkbox"
-                            checked={this.state.fatigue}
-                            onChange={(e) => this.setState({fatigue : e.target.checked})}
-                        />
-                        <label className='moodType'>Tired</label>
-                    </div>
+                        
+
+                        <div>
+                          <input type="radio" id="bt1" name="drone" value="bt1"
+                          checked={this.state.concentration}
+                          onChange={(e) => this.setState({concentration : e.target.checked})}
+                          />
+                          <label for="dewey">Besoin de concentration</label>
+                        </div>
+
+                        <div>
+                          <input type="radio" id="bt2" name="drone" value="bt2"
+                                 checked={this.state.sportif}
+                                 onChange={(e) => this.setState({sportif : e.target.checked})}
+                                 />
+                          <label for="huey">Sportif</label>
+                        </div>
+                        
+                        <div>
+                          <input type="radio" id="bt3" name="drone" value="bt3"
+                                 checked={this.state.stresse}
+                                 onChange={(e) => this.setState({stresse : e.target.checked})}
+                                 />
+                          <label for="huey">Stressé</label>
+                        </div>
+
+                        <div>
+                          <input type="radio" id="bt4" name="drone" value="bt4"
+                                 checked={this.state.fatigue}
+                                 onChange={(e) => this.setState({fatigue : e.target.checked})}
+                                 />
+                          <label for="huey">Fatigué</label>
+                        </div>
 
                 </div>
             
+              
             
  {/* check box Select Preferencies  */}
                 <div className="selectPreferencies">
-                <label className='filterLabel' for='prefSelect'>Preferencies</label>
-                    <div className="prefType" >
-                        <input
-                            type="checkbox"
-                            checked={this.props.healthLabels === undefined}
-                            onChange={this.handleChangeSansPreference}
-                        />
-                        <label className='prefType'>All </label>
+                <label className='filterLabel' for="CheckBox">Preferencies</label>
+
+
+                    <div>
+                      <input type="radio" id="bt5" name="preferencies" value="bt5"
+                             checked={this.state.sanspreference}
+                             onChange={(e) => this.setState({sanspreference : e.target.checked})}
+                             />
+                      <label for="huey">Sans préférence</label>
                     </div>
-                    <div className="prefType" >
-                        <input
-                            type="checkbox"
-                            checked={this.props.healthLabels === "vegetarian"}
-                            onChange={this.handleChangeVegetarien}
-                        />
-                        <label className='prefType'>Veggie </label>
+                        
+                    <div>
+                      <input type="radio" id="bt6" name="preferencies" value="bt6"
+                             checked={this.state.vegetarien}
+                             onChange={(e) => this.setState({vegetarien : e.target.checked})}
+                             />
+                      <label for="huey">Végétarien</label>
                     </div>
 
-                    <div className="prefType" >
-                        <input
-                            type="checkbox"
-                            checked={this.props.healthLabels === "vegan"}
-                            onChange={this.handleChangeVegan}
-                        />
-                        <label className='prefType'>Vegan </label>
+                    <div>
+                      <input type="radio" id="bt7" name="preferencies" value="bt7"
+                             checked={this.state.vegan}
+                             onChange={(e) => this.setState({vegan : e.target.checked})}
+                             />
+                      <label for="huey">Végan</label>
                     </div>
+        
+                    <button type="submit">Valid your choices</button>
 
                 </div>
-
+            
 
                 <div className='filterTime'>
                     <label className='filterLabel' for="Timing">Timing</label>
@@ -127,8 +135,10 @@ class Filter extends Component {
                     </form>
                 </div>
 
-            </div>  
-        
+             </div>
+            </div> 
+        </div> 
+            
         )
     }
  

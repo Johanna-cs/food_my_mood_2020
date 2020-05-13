@@ -3,7 +3,7 @@ import { Component } from 'react'
 import besoinconcentration from './photos/cadre/besoinconcentration.png'
 import fatigue from './photos/cadre/fatigue.png'
 import stresse from './photos/cadre/stresse.png'
-import sportif from './photos/cadre/enerve.png'
+import sportif from './photos/cadre/sportif.png'
 import { Link } from 'react-router-dom'
 import './MoodList.css'
 
@@ -42,7 +42,7 @@ class MoodList extends Component {
                         </div>
 
                         <div>
-                            <h3>Sport</h3>
+                            <h3>Athletic</h3>
                                 <Link to ={{pathname: '/select',
                                                state: this.state.sportif }}>
                                     <img className="photos" src={sportif} alt="Sportif"/>

@@ -7,8 +7,8 @@ import './Filter.css'
 import Loader from 'react-loader'
 
 
-const API_ID = '6b74c366'
-const API_KEY = '4819294e40eaccde885e836d49f610d0'
+const API_ID = 'e9275ee4'
+const API_KEY = 'bda40244157a76f38fd5f51e25675359'
 
 
 class RecipesResults extends React.Component {
@@ -20,19 +20,24 @@ class RecipesResults extends React.Component {
             recipes : [],
             query : '',
             loaded : false, 
+            newMood : '',
         }
     }
 
     componentDidMount() {
-        // setTimeout(() => this.getData(), 1000)
-        this.getData()
+        setTimeout(() => this.getData(), 1000)
+        // this.getData()
         
     }
     
-    componentDidUpdate(prevpros, prevState) {
-        if (prevState.query !== this.props.location.ingredient) {
-            this.setState({query : this.props.location.ingredient})
-            this.getData() }
+    componentDidUpdate(prevState) {
+        if (prevState.query !== this.props.location.ingredient) 
+         { this.setState({query : this.props.location.ingredient})
+          this.getData() } 
+        // else if (prevState.newMood !== this.props.location.newMood)  
+        //  {this.setState({dietLabels : this.props.location.newMood})
+        // console.log(this.state.dietLabels) }
+        // else {console.log("fin de la boucle")}    
         }
     
 
@@ -67,6 +72,7 @@ class RecipesResults extends React.Component {
 
 
                     <div className='pageResults'>
+                        
 
                 {this.state.loaded === true && <Filter {...this.state}/>}
 
