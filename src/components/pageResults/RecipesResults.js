@@ -7,8 +7,8 @@ import './Filter.css'
 import Loader from 'react-loader'
 
 
-const API_ID = 'e9275ee4'
-const API_KEY = 'bda40244157a76f38fd5f51e25675359'
+const API_ID = 'b013cd2e'
+const API_KEY = 'b5866da13b7d6a2eac318c855012b15f'
 
 
 class RecipesResults extends React.Component {
@@ -27,7 +27,6 @@ class RecipesResults extends React.Component {
     componentDidMount() {
         setTimeout(() => this.getData(), 1000)
         // this.getData()
-        
     }
     
     componentDidUpdate(prevState) {

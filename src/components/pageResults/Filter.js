@@ -117,7 +117,11 @@ class Filter extends Component {
                       <label for="huey">Végan</label>
                     </div>
         
-                    <button type="submit">Valid your choices</button>
+                    <Link to ={{pathname: '/results',                                
+                               newMood : this.state.concentration ? 
+                               'low-fat' : this.state.sportif ? 'high-protein' : this.state.stresse ? 'low-carb' : 'balanced' }}>
+                            <button>Valid your choices</button>                     
+                    </Link>
 
                 </div>
             

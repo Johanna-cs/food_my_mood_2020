@@ -4,13 +4,42 @@ import './custom.scss'
 const Contact = () => {
     return (
     <div className='contact'>
-        <h3 className='contactTitle'> Contactez nous ! </h3> 
+        <h3 className='contactTitle'> Contact us ! </h3> 
+
             <div className='laTeam'>
-                <p> Olivier </p>
-                <p> Sabrina </p>
-                <p> Jean-Baptiste </p>
-                <p> Johanna </p>
+
+                <div className= "col1">
+                    <div className="profil">
+                        <div><p>Johanna Cas</p></div>
+                        <div><a>https://github.com/johanna-cs</a></div>
+                        <div><a>https://www.linkedin.com/in/johanna-cas/</a></div>
+                    </div>
+
+                    <div className="profil">
+                        <p>Jean-Baptiste Bouillat</p>
+                        <a>https://github.com/jbb-dev</a>
+                        <a>https://www.linkedin.com/in/jean-baptiste-bouillat-b2258450/</a>
+                    </div>
+                </div>
+
+                <div className= "col2">
+                    <div className="profil">
+                        <p>Sabrina Bartoli</p>
+                        <a>https://github.com/sabgirl</a>
+                        <a>https://www.linkedin.com/in/sabrina-bartoli-b421b975/</a>
+                        
+                    </div>
+
+                    <div className="profil">
+                        <p>Olivier Baveux</p>
+                        <a>https://github.com/lco23</a>
+                        <a>https://www.linkedin.com/in/olivier-baveux-05560113/</a>
+                    </div>
+                </div>
+
             </div>
     </div>
-        )}
+    )}
+
+
 export default Contact
