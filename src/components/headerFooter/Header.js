@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink as NavLinkTest } from 'react-router-dom'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-import logo from './logo.png'
+import logo from './logo2.png'
 
 
 //Navbar Food my Mood, avec logo et router vers les trois pages

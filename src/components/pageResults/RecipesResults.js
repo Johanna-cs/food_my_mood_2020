@@ -29,7 +29,7 @@ class RecipesResults extends React.Component {
         
     }
     
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevState) {
         if (prevState.query !== this.props.location.ingredient) {
             this.setState({query : this.props.location.ingredient})
             this.getData() }
@@ -39,18 +39,18 @@ class RecipesResults extends React.Component {
     getData = () => {
         this.state.query !== '' ?
         Axios
-        .get(`https://api.edamam.com/search?q=${this.state.query}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
+        .get(`https://api.edamam.com/search?q=${this.state.query}&health=alcohol-free&excluded=tea&excluded=cream&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => this.setState({recipes : response.data.hits}))
         .finally(this.setState({ loaded : true }))
         
         : this.state.healthLabels === undefined ?
         Axios
-        .get(`https://api.edamam.com/search?q=&diet=${this.state.dietLabels}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
+        .get(`https://api.edamam.com/search?q=&diet=${this.state.dietLabels}&health=alcohol-free&excluded=tea&excluded=cream&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => this.setState({recipes : response.data.hits}))
         .finally(this.setState({ loaded : true }))
 
         : Axios
-        .get(`https://api.edamam.com/search?q=&diet=${this.state.dietLabels}&health=${this.state.healthLabels}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
+        .get(`https://api.edamam.com/search?q=&diet=${this.state.dietLabels}&health=${this.state.healthLabels}&health=alcohol-free&excluded=tea&excluded=cream&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => this.setState({recipes : response.data.hits}))
         .finally(this.setState({ loaded : true }))
     
