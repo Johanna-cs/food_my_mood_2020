@@ -1,0 +1,127 @@
+.pageDetails {
+    background : url('../pageSelect/backgrounds/background_11.jpg') no-repeat center center fixed;
+    background-size: cover;
+    
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+}
+.recipe {
+    background-color: #D9E2DD99;
+    padding: 0.4rem;
+}
+.container {
+    margin-top: 1rem;
+    border-radius: 2%;
+    background-color: #f5f5f599;
+    
+}
+
+.recipe-title {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-align: right;
+}
+
+.recipe-summary {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2rem;
+
+}
+.recipeImg {
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 2%;
+    padding: 0rem;
+}
+
+.recipe-typology {
+    font-family: 'playfair-display';
+    color: #3E4F59;
+    padding: inherit;
+    width: 10rem;
+    font-size: 1rem;
+}
+
+.recipeList {
+    font-family: 'playfair-display';
+    color: #3E4F59;
+    font-size: 0.7rem;
+    padding: 0.8rem;
+    text-align: start;
+    margin: 0rem;
+}
+.goRecipe {
+    font: 'josefin' sans-serif;
+    font-size: x-small;
+    align-items: center;
+    margin-left: 32rem;
+    margin-bottom: 3rem;
+    width: 8rem;
+    border: none;
+	padding: 6px 3px 6px 3px;
+	border-radius: 4%;
+	box-shadow: 0.5px 0.5px 2px rgb(104, 90, 90);
+	background: transparent;
+	color:#3E4F59;
+
+}
+
+/* Similar recipes  */
+
+.similSection {
+    display : flex ; 
+    justify-content: space-around;
+    align-items: center ;
+    flex-flow: row wrap;
+    padding : 0.4rem;
+    background-color: #D9E2DD99;
+}
+.similarrecipes {
+    display: flex;
+    align-content: center;
+    flex-flow: row wrap;
+}
+
+.similRecipe {
+    min-width: 15.4rem;
+    width: 15.4rem;
+    background-color: #f5f5f5;
+    border-radius: 2%;
+    padding: 0.2rem;
+    margin: 0.2rem;
+}
+
+.similImg {
+    width: 15rem;
+    height: 13rem;
+    object-fit: cover;
+    border-radius: 2%;
+    padding: 0rem;
+}
+
+.similName {
+    color:#3E4F59;
+    font-weight: 800 !important;
+    text-align: left;
+    width: min-content;
+    height: 3.5rem;
+    min-width: 10.5rem;
+    overflow-wrap: normal;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    line-height: 1.6rem;
+}
+
+.similTime {
+    text-align: center;
+    font-family: 'playfair-display';
+}

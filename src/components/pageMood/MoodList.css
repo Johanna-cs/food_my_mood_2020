@@ -1,0 +1,35 @@
+.moodList{ 
+    background-color: #D9E2DD;
+}
+
+.photos {
+    width: 90%;
+    margin: 1% 5% 30%;   
+}
+
+.photos:hover {
+    width: 92%;
+    border-radius: 9%;
+    box-shadow: 10px 10px 25px 0 rgba(0, 0, 0, 0.7)
+}
+
+.cols{
+    display: flex ;
+    padding: 3rem;
+}
+
+h3 {
+    font-family: 'Josefin Sans' sans-serif, Roboto sans-serif, 'Playfair Display', serif;
+    font-size: 1.2em !important;
+    text-align: center;
+}
+.selectMood {
+    padding: 3rem;
+}
+.mainTitle {
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.4rem;
+    
+}

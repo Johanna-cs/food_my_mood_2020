@@ -1,45 +1,92 @@
+/* Page recettes */
+.pageResults {
+    background : url('../pageSelect/backgrounds/background_1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+}
+.pageResults {
+    min-height: max-content;
+    background-color: #D9E2DD99;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
 .recipesresults {
-    background-color: #D9E2DD;
+    background-color: #D9E2DD99;
     display : flex ; 
     justify-content: space-around;
     align-items: center ;
     flex-flow: row wrap;
-    padding : 0.4rem;
+    padding : 0.6rem;
     
 }
 
+/* Recettes card */
 .recipeCard {
-    border-style: solid;
-    border-radius: 10%;
-    border : 0.5px solid #3E4F59;
-    padding: 0.4rem;
-    margin: 0.8rem;
-}
-.recipeName {
-    display : flex ;
-    justify-content: center;
-    box-sizing: inherit;
-    border-radius: 10%;
-    word-break: keep-all;
+    min-width: 15.4rem;
+    width: 15.4rem;
+    background-color: #f5f5f5;
+    border-radius: 2%;
+    padding: 0.2rem;
+    margin: 0.2rem;
 }
 
-.recipeTime {
-    color: #3E4F59;
-    text-justify: left;
-    margin-bottom: unset;
+.recipeCardCard {
+    position: relative;
 }
-
-.recipeCal {
-    color: #3E4F59;
-    text-justify: left;
-    margin-top: unset;
-
-}
-
 .recipePhoto {
     width: 15rem;
-    height: 8rem;
+    height: 13rem;
     object-fit: cover;
-    border-radius: 15px;
-    padding: 0.2rem;
+    border-radius: 2%;
+    padding: 0rem;
 }
+
+.recipeDetails {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 2%;
+   
+    
+}
+.recipeTime, .recipeCal {
+    color: #3E4F59;
+    
+    text-justify: left;
+    margin-bottom: unset;
+    padding: 0.1rem;
+    
+}
+
+
+#recipeName {
+    font-weight: 800 !important;
+    text-align: left;
+    width: min-content;
+    height: 3.5rem;
+    min-width: 10.5rem;
+    overflow-wrap: normal;
+    box-sizing: border-box;
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
+   line-height: 1.6rem;
+}
+.recipeButton {
+    font: 'josefin' sans-serif;
+    font-size: xx-small;
+    align-items: center;
+    margin-left: 11rem;
+    margin-bottom: 0.2rem;
+    width: 3.5rem;
+    border: none;
+	padding: 6px 3px 6px 3px;
+	border-radius: 4%;
+	box-shadow: 0.5px 0.5px 2px #aaa;
+	background: transparent;
+	color:#3E4F59;
+} 

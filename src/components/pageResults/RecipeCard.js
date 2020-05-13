@@ -6,7 +6,9 @@ class RecipeCard extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            id : ''
+            recipes : this.props.recipes,
+            uri: this.props.uri,
+            id : '',
         }
     }
 
@@ -16,22 +18,25 @@ class RecipeCard extends React.Component {
 
     componentDidMount() {
         const recipeId = this.extractIdFromUri(this.props.uri)
-        this.setState({id : recipeId})
+        this.setState({ id : recipeId })
     }
 
     render() {
         return (
         <>
-
             <div className='recipeCard'>
-                <h3 className='recipeName'>{this.props.label}</h3>
-                <img className='recipePhoto' src={this.props.image} alt={this.props.label}></img>
-                <div className='recipeDetails'>
-                  <p className='recipeTime'>Temps de préparation : {this.props.time === 0 ? 'Instantané !' : this.props.time} {this.props.time > 0 ? 'minutes' : ''}</p>
-                  <p className='recipeCal'> Nombre de calories : {Math.round(this.props.calories)}</p>
+                <div className='recipeCardCard'>
+                    <img className='recipePhoto' src={this.props.image} alt={this.props.label}></img>
+                    <div className='recipeDetails'>
+                        <p className='recipeTime'>{this.props.time === 0 ? 'Instant !' : this.props.time} {this.props.time > 0 ? 'minutes' : ''} </p>
+                        <p className='recipeCal'>{Math.round(this.props.calories)} cal</p>
+                    </div>
                 </div>
-                <Link to={{ pathname: `/results/${this.state.id}` }}>
-                    <button>Go Recipe</button>
+                <h3 id='recipeName'>{this.props.label}</h3>
+                <Link to={{ 
+                    pathname: `/results/${this.state.id}`,
+                    recipes : this.state.recipes }}>
+                    <button className='recipeButton'>Recipe</button>
                 </Link>
             </div>
 
