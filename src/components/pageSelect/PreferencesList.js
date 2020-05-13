@@ -31,7 +31,7 @@ class PreferencesList extends React.Component {
             <div>
               <Link to ={{pathname: "/results",
                           mood: this.state.mood }}>              
-              <Button style={{ backgroundColor: '#72CDBC' }}>Sans préférence</Button>
+              <Button className='prefBtn' >All</Button>
               </Link>
             <div/>
 
@@ -39,7 +39,7 @@ class PreferencesList extends React.Component {
               <Link to ={{pathname: "/results",
                           mood: this.state.mood, 
                           preference: this.state.vegetarian }}>  
-              <Button style={{ backgroundColor: '#72CDBC' }}>Végétarien</Button>
+              <Button >Veggie</Button>
               </Link>
             </div>
 
@@ -47,7 +47,7 @@ class PreferencesList extends React.Component {
               <Link to ={{pathname: "/results",
                           mood: this.state.mood, 
                           preference: this.state.vegan }}>  
-              <Button style={{ backgroundColor: '#72CDBC' }} >Végan</Button>
+              <Button >Vegan</Button>
               </Link>
             </div>
 

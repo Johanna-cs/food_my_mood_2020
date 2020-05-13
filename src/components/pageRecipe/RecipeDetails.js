@@ -73,7 +73,7 @@ class RecipeDetails extends React.Component {
                         {this.state.recipe.map(e=> (
                         <div className='container' key={e.uri}>
                             <div className='recipe'>
-                                <h4 className='recipe-title'>{e.label}</h4>
+                                <h3 className='recipe-title'>{e.label}</h3>
                                 <div className='recipe-summary'>
                                     <ul className='recipe-typology'>
                                         {e.dietLabels.map(elt=> (

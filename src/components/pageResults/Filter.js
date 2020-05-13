@@ -21,12 +21,13 @@ class Filter extends Component {
         return (
             
             <div className='filterBar'>
-                <h3>Filters</h3>
+                <h3 id='filterTitle'>Filters</h3>
 
  {/* search bar  */}
 
                 <div className='searchBar'>
                     <label className='filterLabel' for='searchBar'>Search</label>
+                    <div>
                     <input id='searchBarInput' type="text" placeholder= "Enter an ingredient" onChange={ e => this.setState (
                         {
                         search : e.target.value
@@ -35,49 +36,48 @@ class Filter extends Component {
                     <Link to ={{pathname: '/results',
                                 ingredient: this.state.search }}>
                         <button id='searchBarBtn'>Ok</button>
-                    </Link> 
+                    </Link>
+                    </div>
                 </div>
                 
 
 {/* check box Moods */}
-                <div className="selectMoods">
-                <label className='filterLabel' for="CheckBox">Moods</label>
-
-                    <div className="besoindeconcentration" >
+                <div className="selectMood">
+                <label className='filterLabel' for='moodsSelect'>Mood</label>
+                    <div className="moodType" >
                         <input
                             type="checkbox"
                             checked={this.state.concentration}
                             onChange={(e) => this.setState({concentration : e.target.checked})}
                             />                      
-                       <label>Besoin de concentration</label>
+                       <label className='moodType'>Concentrated</label>
                     </div>
-                
 
-                    <div className="sportif" >
+                    <div className="moodType" >
                         <input
                             type="checkbox"
                             checked={this.state.sportif}
                             onChange={(e) => this.setState({sportif : e.target.checked})}
                         />
-                        <label>Sportif</label>
+                        <label className='moodType'>Sport</label>
                     </div>
 
-                    <div className="stresse" >
+                    <div className="moodType" >
                         <input
                             type="checkbox"
                             checked={this.state.stresse}
                             onChange={(e) => this.setState({stresse : e.target.checked})}
                         />
-                        <label>Stréssé</label>
+                        <label className='moodType'>Stressed</label>
                     </div>
 
-                    <div className="fatigue" >
+                    <div className="moodType" >
                         <input
                             type="checkbox"
                             checked={this.state.fatigue}
                             onChange={(e) => this.setState({fatigue : e.target.checked})}
                         />
-                        <label>Fatigué</label>
+                        <label className='moodType'>Tired</label>
                     </div>
 
                 </div>
@@ -85,39 +85,35 @@ class Filter extends Component {
             
  {/* check box Select Preferencies  */}
                 <div className="selectPreferencies">
-                <label className='filterLabel' for="CheckBox">Preferencies</label>
-
-                    <p>Preferencies</p>
-
-                    <div className="sanspreference" >
+                <label className='filterLabel' for='prefSelect'>Preferencies</label>
+                    <div className="prefType" >
                         <input
                             type="checkbox"
                             checked={this.props.healthLabels === undefined}
                             onChange={this.handleChangeSansPreference}
                         />
-                        <label>Sans préférence</label>
+                        <label className='prefType'>All </label>
                     </div>
-                
-                    <div className="vegetarien" >
+                    <div className="prefType" >
                         <input
                             type="checkbox"
                             checked={this.props.healthLabels === "vegetarian"}
                             onChange={this.handleChangeVegetarien}
                         />
-                        <label>Végétarien</label>
+                        <label className='prefType'>Veggie </label>
                     </div>
 
-                    <div className="vegetarien" >
+                    <div className="prefType" >
                         <input
                             type="checkbox"
                             checked={this.props.healthLabels === "vegan"}
                             onChange={this.handleChangeVegan}
                         />
-                        <label>Végan</label>
+                        <label className='prefType'>Vegan </label>
                     </div>
                     
                     <Link to ={{pathname: '/results',
-                                newMood : this.state.test }}>
+                                newMood : this.state.concentration ? 'low-fat' : this.state.sportif ? 'high-protein' : this.state.stresse ? 'low-carb' : 'balanced' }}>
                         <button>Valid your choices</button>
                     </Link>
 
@@ -125,7 +121,7 @@ class Filter extends Component {
 
 
                 <div className='filterTime'>
-                <label className='filterLabel' for="Timing">Timing</label>
+                    <label className='filterLabel' for="Timing">Timing</label>
                     <form className='timing'>
                             <select type="select" className="timing">
                             <option>10min</option>

@@ -1,0 +1,101 @@
+/* Filter bar */
+.filterBar {
+    background-color: #AEDEB7;
+    display : flex;
+    flex-flow: column wrap;
+    width: inherit;
+    padding: 0.5rem;
+    min-width: 9.5rem;
+}
+#filterTitle h3 {
+    text-align: left;
+
+}
+
+.filterLabel {
+    text-align: left;
+    font-family: 'josefin sans';
+    margin-bottom: 0 !important;
+    font-size: medium;
+    padding: 0.1rem;
+}
+/* Search bar */
+.searchBar {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+    width: 10rem;
+    margin-bottom: 1rem;
+}
+
+#searchBarInput {
+    font-size: xx-small;
+    width: min-content;
+    font-family: 'josefin', sans-serif, 'roboto' sans-serif;
+}
+
+#searchBarBtn {
+    width: max-content;
+    font-size: x-small;
+}
+
+/* Select Mood */
+.selectMood {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+    width: 10rem;
+    padding: 0.1rem;
+    margin-bottom: 1rem;
+}
+.moodType {
+    margin-left: 10px;
+    margin-bottom: none;
+    font-size: x-small;
+    font-weight: normal;
+    padding: 0.1rem !important;
+}
+.moodType label {
+    margin-left: 2px !important;
+    margin: -2px;
+    padding: 0.1rem !important;
+}
+
+/* Select Pref */
+.selectPreferencies {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+    width: 10rem;
+    padding: 0.1rem;
+    margin-bottom: 1rem;
+}
+.prefType {
+    margin-left: 10px;
+    margin-bottom: none;
+    font-size: x-small;
+    font-weight: normal;
+    padding: 0.1rem !important;
+}
+.prefType label {
+    margin-left: 2px !important;
+    margin: -2px;
+    padding: 0.1rem !important;
+}
+
+
+/* Time selector  */
+.filterTime{
+    padding: 0;
+    margin: 0.1rem;
+    margin-bottom: 1rem;
+}
+.timing select {
+    width: 3.2rem;
+    font-size: 0.5rem ;
+    padding: 0.1rem;
+    margin: 0.1rem;
+}
+.timing form {
+    margin-left: 10rem;
+}
