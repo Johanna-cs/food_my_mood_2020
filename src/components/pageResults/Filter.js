@@ -1,125 +1,151 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-class Filter extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            search : '',
-            dejaselectionne: false, 
+import React, { useState } from 'react';
+import './Filter.css'
 
-            concentration : this.props.dietLabels === "low-fat" ? true : false,
-            sportif : this.props.dietLabels === "high-protein" ? true : false,
-            stresse : this.props.dietLabels === "low-carb" ? true : false,
-            fatigue : this.props.dietLabels === "balanced" ? true : false,
-  
-            sanspreference : this.props.healthLabels === "undefined" ? true : false,
-            vegetarien : this.props.healthLabels === "vegetarian" ? true : false,
-            vegan : this.props.healthLabels === "vegan" ? true : false,
-        }}
-    render() {
-        return (
+
+function Filter (props){
+    const [search, setSearch] = useState('')
+   
+    const [concentration, setConcentration] = useState(props.mood === "low-fat" ? true : false)
+    const [sportif, setSportif] = useState(props.mood === "high-protein" ? true : false)
+    const [stresse, setStresse] = useState(props.mood === "low-carb" ? true : false)
+    const [fatigue, setFatigue] = useState(props.mood === "balanced" ? true : false)
+    
+    const [nopref, setNopref] = useState(props.preferencies === undefined ? true : false)
+    const [vegetarian, setVegetarian] = useState(props.preferencies === "vegetarian" ? true : false)
+    const [vegan, setVegan] = useState(props.preferencies === "vegan" ? true : false)
+
+
+    return (
             <div className='filterBar'>
                 <h3 id='filterTitle'>Filters</h3>
  {/* search bar  */}
                 <div className='searchBar'>
                     <label className='filterLabel' htmlFor='searchBar'>Search</label>
                     <div>
-                    <input id='searchBarInput' type="text" placeholder= "Enter an ingredient" onChange={ e => this.setState (
-                        {
-                        search : e.target.value
-                        }
-                        )}/>
-                    <Link to ={{pathname: '/results',
-                                ingredient: this.state.search }}>
-                        <button id='searchBarBtn'>Ok</button>
-                    </Link>
+                    <input id='searchBarInput' type="text" placeholder= "Enter an ingredient" onChange={ e => setSearch (e.target.value)}/>
+                        <button onClick={()=> props.changeQuery(search)} id='searchBarBtn' >Ok</button>
                     </div>
                 </div>
+                
+                <div className='selectBox'>
 {/* check box Moods */}
                 <div className="selectMood">
                 <label className='filterLabel' htmlFor='moodsSelect'>Mood</label>
                     <div className="moodType" >
                         <input
-                            type="radio" name="Mood"
-                            defaultChecked={this.state.concentration}
-                            onChange={(e) => this.setState({concentration : e.target.checked})}
-                            />
-                       <label className='moodType'>Concentrated</label>
+                            type="radio"
+                            id="concentration"
+                            value="concentration"
+                            name="mood"
+                            defaultChecked={concentration}
+                            onChange={() => {setConcentration(!concentration); setSportif(concentration); setStresse(concentration); setFatigue(concentration)} }
+                            />                      
+                       <label className='moodType' htmlFor="concentration">Concentrated</label>
                     </div>
+
                     <div className="moodType" >
                         <input
-                            type="radio" name="Mood"
-                            defaultChecked={this.state.sportif}
-                            onChange={() => this.setState({sportif : !this.state.sportif })}
+                            type="radio"
+                            id="sportif"
+                            value="sportif"
+                            name="mood"
+                            defaultChecked={sportif}
+                            onChange={() => {setSportif(!sportif); setConcentration(sportif); setStresse(sportif); setFatigue(sportif)} }
                         />
-                        <label className='moodType'>Sport</label>
+                        <label className='moodType' htmlFor="sportif">Sport</label>
                     </div>
+
                     <div className="moodType" >
                         <input
-                            type="radio" name="Mood"
-                            defaultChecked={this.state.stresse}
-                            onChange={(e) => this.setState({stresse : e.target.checked})}
+                            type="radio"
+                            id="stresse"
+                            value="stresse"
+                            name="mood"
+                            defaultChecked={stresse}
+                            onChange={() => {setStresse(!stresse); setConcentration(stresse); setSportif(stresse); setFatigue(stresse)} }
                         />
-                        <label className='moodType'>Stressed</label>
+                        <label className='moodType' htmlFor="stresse">Stressed</label>
                     </div>
+
                     <div className="moodType" >
                         <input
-                            type="radio" name="Mood"
-                            defaultChecked={this.state.fatigue}
-                            onChange={(e) => this.setState({fatigue : e.target.checked})}
+                            type="radio"
+                            id="tired"
+                            value="tired"
+                            name="mood"
+                            defaultChecked={fatigue}
+                            onChange={() => {setFatigue(!fatigue); setConcentration(fatigue); setSportif(fatigue); setStresse(fatigue)} }
                         />
-                        <label className='moodType'>Tired</label>
+                        <label className='moodType' htmlFor="tired">Tired</label>
                     </div>
+
                 </div>
+            
+            
  {/* check box Select Preferencies  */}
                 <div className="selectPreferencies">
                 <label className='filterLabel' htmlFor='prefSelect'>Preferencies</label>
                     <div className="prefType" >
                         <input
-                            type="radio" name="Preferencies"
-                            defaultChecked={this.state.sanspreference}
-                            onChange={(e) => this.setState({sanspreference : e.target.checked})}
+                            type="radio"
+                            id="nopref"
+                            value="nopref"
+                            name="preftype"
+                            defaultChecked={nopref}
+                            onChange={() => {setNopref(!nopref); setVegetarian(nopref); setVegan(nopref)} }
                         />
                         <label className='prefType'>All </label>
                     </div>
                     <div className="prefType" >
                         <input
-                            type="radio" name="Preferencies"
-                            defaultChecked={this.state.vegetarien}
-                            onChange={(e) => this.setState({vegetarien : e.target.checked})}
+                            type="radio"
+                            id="vegetarian"
+                            value="vegetarian"
+                            name="preftype"
+                            defaultChecked={vegetarian}
+                            onChange={() => {setVegetarian(!vegetarian); setNopref(vegetarian); setVegan(vegetarian)} }
                         />
                         <label className='prefType'>Veggie </label>
                     </div>
                     <div className="prefType" >
                         <input
-                            type="radio" name="Preferencies"
-                            defaultChecked={this.state.vegan}
-                            onChange={(e) => this.setState({vegan : e.target.checked})}
+                            type="radio"
+                            id="vegan"
+                            value="vegan"
+                            name="preftype"
+                            defaultChecked={vegan}
+                            onChange={() => {setVegan(!vegan); setNopref(vegan); setVegetarian(vegan)} }
                         />
                         <label className='prefType'>Vegan </label>
                     </div>
-        
-                    <Link to ={{pathname: '/results',                                
-                               newMood : this.state.concentration ? 'low-fat' : this.state.sportif ? 'high-protein' : this.state.stresse ? 'low-carb' : 'balanced' }}>
-                            <button>Valid your choices</button>
-                    </Link>
-
-
+                    
+                        <button className='selectBoxBtn' onClick={() => {
+                            props.changeMood(concentration ? 'low-fat' : sportif ? 'high-protein' : stresse ? 'low-carb' : 'balanced');
+                            props.changePreference(nopref ? undefined : vegetarian ? 'vegetarian' : 'vegan')} }
+                            >
+                            Valid your choices
+                        </button>
                 </div>
+            </div>
+
+ {/* Timing  */}
                 <div className='filterTime'>
                     <label className='filterLabel' htmlFor="Timing">Timing</label>
                     <form className='timing'>
-                            <select type="select" className="timing">
-                            <option>10min</option>
-                            <option>30min</option>
-                            <option>45min</option>
-                            <option>1h </option>
-                            <option>2h +</option>
+                            <select type="select" className="timing" id="mySelect" onChange={(e) => props.filterOnTiming(e.target.value)}>
+                                <option value={10}>10min</option>
+                                <option value={30}>30min</option>
+                                <option value={45}>45min</option>
+                                <option value={60}>1h </option>
+                                <option value={120}>2h +</option>
                             </select>
                     </form>
                 </div>
-            </div>
+
+            </div>  
+        
         )
+        
     }
-}
+
 export default Filter

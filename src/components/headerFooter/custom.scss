@@ -36,17 +36,6 @@ body {
   display: none ;
 }
 
-
-
-// Menu + burger menu on mobile
-@media only screen and(max-width : 500px) {
-.burgerMenu .Navbar-Toggler {
-    display: flex ;
-    width: 2.5rem ;
-    padding: 1rem;
-}
-}
-
 .contact {
   background-color: #D9E2DD99;
   background : url('../pageSelect/backgrounds/background_12.jpg') no-repeat center center fixed;
@@ -72,14 +61,23 @@ body {
 }
 
 a {
-  margin-left: 0.5rem;
+  font-family: 'Playfair Display';
+  margin-left: 0.5rem; 
+  font-size: 1rem;
+}
+
+.lien{
+  color:#3E4F59 !important;
+  margin-bottom: 0.9rem;
 }
 
 p
  {
   font-family: 'playfair-display';
   font-size: 1rem;
-  color:  #3E4F59;
+  color:  whitesmoke;
+  background-color:  #3E4F59;
+  border: 2px solid whitesmoke;
 }
 
 .profil {
@@ -87,13 +85,21 @@ p
   flex-direction: column;
   justify-content: center;
   font-family: 'playfair display';
-  padding: none;
   background-color: whitesmoke;
   border-radius: 2%;
-  margin: 0.8rem;
+  margin: 5rem 0rem;
   width: 30rem ;
-  height: 8rem ;
-  border-radius: 2px;
+  height: 8.7rem ;
+  border: 2px solid #3E4F59;
+}
+
+.logogit {
+  margin-right: 0.3rem;
+}
+
+.logolinkedin {
+  margin-left: 0.2rem;
+  margin-right: 0.4rem;
 }
 
 .Footer p {
@@ -106,5 +112,44 @@ p
     text-align: right;
 }
 
+@media (min-width: 500px) and (max-width: 1000px){
+
+  .laTeam {
+    display: flex;
+    flex-direction: column;
+}
+
+  .profil {
+    width: 30rem ;
+    height: 8.7rem ;
+    margin: 0.8rem 0rem;
+  }
+}
+
+// Menu + burger menu on mobile
+@media only screen and(max-width : 500px) {
+
+  .burgerMenu .Navbar-Toggler {
+      display: flex ;
+      width: 2.5rem ;
+      padding: 1rem;
+  }
+
+  .laTeam {
+    display: flex;
+    flex-direction: column;
+}
+
+  .profil {
+    width: 20rem ;
+    height:10rem ;
+    margin: 0.8rem 0rem;
+  }
+
+  .contactTitle {
+    display: none;
+  }
+
+}
 
 @import '~bootstrap/scss/bootstrap.scss';
