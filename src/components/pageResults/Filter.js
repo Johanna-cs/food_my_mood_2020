@@ -16,7 +16,6 @@ function Filter (props){
 
 
         return (
-            
             <div className='filterBar'>
                 <h3 id='filterTitle'>Filters</h3>
  {/* search bar  */}
@@ -90,7 +89,6 @@ function Filter (props){
                         />
                         <label className='prefType'>Veggie </label>
                     </div>
-
                     <div className="prefType" >
                         <input
                             type="checkbox"
@@ -125,7 +123,6 @@ function Filter (props){
         
         )
     
- 
     }
 
 export default Filter
