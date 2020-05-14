@@ -21,29 +21,37 @@ function RecipesResults(props) {
         setQuery(query)
     }
 
+    const changeMood = (mood) => {
+        setDietLabels(mood)
+    }
+
+    const changePreference = (pref) => {
+        setHealthLabels(pref)
+    }
+
     useEffect(() => {
        const getData = () => {
 
         query !== '' ?
         Axios
-        .get(`https://api.edamam.com/search?q=${query}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
+        .get(`https://api.edamam.com/search?q=${query}&health=alcohol-free&excluded=tea&excluded=cream&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => setRecipes(response.data.hits))
         .finally(()=> setLoaded(true))
        
         : healthLabels === undefined ?
         Axios
-        .get(`https://api.edamam.com/search?q=&diet=${dietLabels}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
+        .get(`https://api.edamam.com/search?q=&diet=${dietLabels}&health=alcohol-free&excluded=tea&excluded=cream&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => setRecipes(response.data.hits))
         .finally(()=> setLoaded(true))
 
         : Axios
-        .get(`https://api.edamam.com/search?q=&diet=${dietLabels}&health=${healthLabels}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
+        .get(`https://api.edamam.com/search?q=&diet=${dietLabels}&health=${healthLabels}&health=alcohol-free&excluded=tea&excluded=cream&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => setRecipes(response.data.hits))
         .finally(()=> setLoaded(true))
        }; 
        
         getData();  
-    }, [query])
+    }, [query, dietLabels, healthLabels])
 
   
         return (
@@ -57,7 +65,7 @@ function RecipesResults(props) {
 
                     <div className='pageResults'>
 
-                {loaded && <Filter changeQuery={changeQuery}/>}
+                {loaded && <Filter mood={dietLabels} preferencies={healthLabels} changeQuery={changeQuery} changeMood={changeMood} changePreference={changePreference} />}
 
                         <div className='recipesresults'>
                                 {recipes.map(recip => recip.recipe).map(e=> (

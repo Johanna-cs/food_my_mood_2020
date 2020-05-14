@@ -80,22 +80,24 @@ class RecipeDetails extends React.Component {
                                         {e.dietLabels.map(elt=> (
                                             <p key={elt}>{elt}</p>))}
                                             <p>Calories : {Math.round(e.calories)} cal</p>
-                                        <p>Diet :</p>{e.healthLabels.map(el => 
+                                        <p>Diet info :</p>{e.healthLabels.map(el => 
                                         <li key={el}>{el} </li>)}
                                     </ul>
                                     <img className='recipeImg' src={e.image} alt={e.label}></img>
                                 </div>
                                 <div className='recipeList'>
-                                    <p>Timing : <span> {e.totalTime === 0 ? 'Instantané !' : e.totalTime} {e.totalTime > 0 ? 'minutes' : ''}</span></p>
+                                    <p>Timing : </p> <li> {e.totalTime === 0 ? 'Instantané !' : e.totalTime} {e.totalTime > 0 ? 'minutes' : ''}</li>
                                     <p> Ingredients :</p>
                                     <ul>
                                         {e.ingredients.map(ing=> (
                                             <li key={ing.text}>{ing.text}</li>))}
                                     </ul>
-                                </div>
+                                
+                                
                                     <a rel="noopener noreferrer" href={this.state.recipe[0].url} target="_blank">
                                         <button  className='goRecipe'>Get the complete recipe</button></a>
-                            </div>
+                                    </div>
+                                </div>
                             </div>
                         ))}
                         
