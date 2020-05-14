@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
 import './Filter.css'
 
 
-const API_ID = 'e9275ee4'
-const API_KEY = 'bda40244157a76f38fd5f51e25675359'
-
 function Filter (props){
     const [search, setSearch] = useState('')
-    const [dietLabels, setDietLabels] = useState(props.mood)
    
     const [concentration, setConcentration] = useState(props.mood === "low-fat" ? true : false)
     const [sportif, setSportif] = useState(props.mood === "high-protein" ? true : false)
@@ -124,28 +119,25 @@ function Filter (props){
                         <label className='prefType'>Vegan </label>
                     </div>
                     
-                    {/* <Link to ={{pathname: '/results',
-                                newMood : concentration ? 'low-fat' : sportif ? 'high-protein' : stresse ? 'low-carb' : 'balanced' }}> */}
                         <button className='selectBoxBtn' onClick={() => {
                             props.changeMood(concentration ? 'low-fat' : sportif ? 'high-protein' : stresse ? 'low-carb' : 'balanced');
                             props.changePreference(nopref ? undefined : vegetarian ? 'vegetarian' : 'vegan')} }
                             >
                             Valid your choices
                         </button>
-                    {/* </Link> */}
                 </div>
             </div>
 
-
+ {/* Timing  */}
                 <div className='filterTime'>
                     <label className='filterLabel' htmlFor="Timing">Timing</label>
                     <form className='timing'>
-                            <select type="select" className="timing">
-                                <option value='10'>10min</option>
-                                <option value='30'>30min</option>
-                                <option value='45'>45min</option>
-                                <option value='60'>1h </option>
-                                <option value='120'>2h +</option>
+                            <select type="select" className="timing" id="mySelect" onChange={(e) => props.filterOnTiming(e.target.value)}>
+                                <option value={10}>10min</option>
+                                <option value={30}>30min</option>
+                                <option value={45}>45min</option>
+                                <option value={60}>1h </option>
+                                <option value={120}>2h +</option>
                             </select>
                     </form>
                 </div>
