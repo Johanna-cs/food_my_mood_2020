@@ -38,7 +38,27 @@
     width: max-content;
     font-size: x-small;
 }
-
+/* select box  */
+.selectBox {
+    width: 3.1rem;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    margin: 0.4rem;
+    padding: 0.2rem;
+}
+.selectBoxBtn {
+    font: 'josefin' sans-serif;
+    font-size: xx-small;
+    align-items: center;
+    width: 4.8rem;
+    margin-top: 1.5rem;
+    margin-left: 0.6rem;
+    border: none;
+	border-radius: 4%;
+	box-shadow: 0.5px 0.5px 2px #aaa;
+	background: #f5f5f5;
+	color:#3E4F59;
+}
 /* Select Mood */
 .selectMood {
     display: flex;
