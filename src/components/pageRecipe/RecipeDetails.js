@@ -4,8 +4,8 @@ import SimilarRecipes from './SimilarRecipes'
 import './RecipeDetails.css'
 
 
-const API_ID = 'e9275ee4'
-const API_KEY = 'bda40244157a76f38fd5f51e25675359'
+const API_ID = '6b74c366'
+const API_KEY = '4819294e40eaccde885e836d49f610d0'
 
 class RecipeDetails extends React.Component {
     constructor(props){
@@ -78,8 +78,10 @@ class RecipeDetails extends React.Component {
                                 <div className='recipe-summary'>
                                     <ul className='recipe-typology'>
                                         {e.dietLabels.map(elt=> (
-                                            <li key={elt}>{elt}</li>))}
-                                            <li>Calories : {Math.round(e.calories)} cal</li>
+                                            <p key={elt}>{elt}</p>))}
+                                            <p>Calories : {Math.round(e.calories)} cal</p>
+                                        <p>Diet :</p>{e.healthLabels.map(el => 
+                                        <li key={el}>{el} </li>)}
                                     </ul>
                                     <img className='recipeImg' src={e.image} alt={e.label}></img>
                                 </div>

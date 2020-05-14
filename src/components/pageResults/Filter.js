@@ -15,8 +15,7 @@ function Filter (props){
     const [fatigue, setFatigue] = useState(props.dietLabels === "balanced" ? true : false)
 
 
-        return (
-            <>
+    return (
             <div className='filterBar'>
                 <h3 id='filterTitle'>Filters</h3>
  {/* search bar  */}
@@ -27,9 +26,9 @@ function Filter (props){
                         <button onClick={()=> props.changeQuery(search)} id='searchBarBtn' >Ok</button>
                     </div>
                 </div>
-                </div>
                 
-            <div className="selectBox" >
+                <div className='selectBox'>
+{/* check box Moods */}
                 <div className="selectMood">
                 <label className='filterLabel' htmlFor='moodsSelect'>Mood</label>
                     <div className="moodType" >
@@ -78,7 +77,7 @@ function Filter (props){
                         <input
                             type="checkbox"
                             defaultChecked={props.healthLabels === undefined}
-                            // onChange={this.handleChangeSansPreference}
+                            
                         />
                         <label className='prefType'>All </label>
                     </div>
@@ -86,7 +85,7 @@ function Filter (props){
                         <input
                             type="checkbox"
                             defaultChecked={props.healthLabels === "vegetarian"}
-                            // onChange={this.handleChangeVegetarien}
+                            
                         />
                         <label className='prefType'>Veggie </label>
                     </div>
@@ -94,7 +93,7 @@ function Filter (props){
                         <input
                             type="checkbox"
                             defaultChecked={props.healthLabels === "vegan"}
-                            // onChange={this.handleChangeVegan}
+                            
                         />
                         <label className='prefType'>Vegan </label>
                     </div>
@@ -119,8 +118,9 @@ function Filter (props){
                             </select>
                     </form>
                 </div>
-            
-        </>
+
+            </div>  
+        
         )
         
     }

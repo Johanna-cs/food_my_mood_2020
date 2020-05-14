@@ -45,6 +45,7 @@
     padding: inherit;
     width: 10rem;
     font-size: 1rem;
+    list-style-type: none;
 }
 
 .recipeList {
