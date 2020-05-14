@@ -8,11 +8,16 @@ const API_KEY = 'bda40244157a76f38fd5f51e25675359'
 
 function Filter (props){
     const [search, setSearch] = useState('')
-    const [dietLabels, setDietLabels] = useState(props.dietLabels)
-    const [concentration, setConcentration] = useState(props.dietLabels === "low-fat" ? true : false)
-    const [sportif, setSportif] = useState(props.dietLabels === "high-protein" ? true : false)
-    const [stresse, setStresse] = useState(props.dietLabels === "low-carb" ? true : false)
-    const [fatigue, setFatigue] = useState(props.dietLabels === "balanced" ? true : false)
+    const [dietLabels, setDietLabels] = useState(props.mood)
+   
+    const [concentration, setConcentration] = useState(props.mood === "low-fat" ? true : false)
+    const [sportif, setSportif] = useState(props.mood === "high-protein" ? true : false)
+    const [stresse, setStresse] = useState(props.mood === "low-carb" ? true : false)
+    const [fatigue, setFatigue] = useState(props.mood === "balanced" ? true : false)
+    
+    const [nopref, setNopref] = useState(props.preferencies === undefined ? true : false)
+    const [vegetarian, setVegetarian] = useState(props.preferencies === "vegetarian" ? true : false)
+    const [vegan, setVegan] = useState(props.preferencies === "vegan" ? true : false)
 
 
         return (
@@ -33,38 +38,50 @@ function Filter (props){
                 <label className='filterLabel' htmlFor='moodsSelect'>Mood</label>
                     <div className="moodType" >
                         <input
-                            type="checkbox"
+                            type="radio"
+                            id="concentration"
+                            value="concentration"
+                            name="mood"
                             defaultChecked={concentration}
-                            onChange={(e) => setConcentration(e.target.checked)}
+                            onChange={() => {setConcentration(!concentration); setSportif(concentration); setStresse(concentration); setFatigue(concentration)} }
                             />                      
-                       <label className='moodType'>Concentrated</label>
+                       <label className='moodType' htmlFor="concentration">Concentrated</label>
                     </div>
 
                     <div className="moodType" >
                         <input
-                            type="checkbox"
+                            type="radio"
+                            id="sportif"
+                            value="sportif"
+                            name="mood"
                             defaultChecked={sportif}
-                            onChange={(e) => setSportif(e.target.checked)}
+                            onChange={() => {setSportif(!sportif); setConcentration(sportif); setStresse(sportif); setFatigue(sportif)} }
                         />
-                        <label className='moodType'>Sport</label>
+                        <label className='moodType' htmlFor="sportif">Sport</label>
                     </div>
 
                     <div className="moodType" >
                         <input
-                            type="checkbox"
+                            type="radio"
+                            id="stresse"
+                            value="stresse"
+                            name="mood"
                             defaultChecked={stresse}
-                            onChange={(e) => setStresse(e.target.checked)}
+                            onChange={() => {setStresse(!stresse); setConcentration(stresse); setSportif(stresse); setFatigue(stresse)} }
                         />
-                        <label className='moodType'>Stressed</label>
+                        <label className='moodType' htmlFor="stresse">Stressed</label>
                     </div>
 
                     <div className="moodType" >
                         <input
-                            type="checkbox"
+                            type="radio"
+                            id="tired"
+                            value="tired"
+                            name="mood"
                             defaultChecked={fatigue}
-                            onChange={(e) => setFatigue(e.target.checked)}
+                            onChange={() => {setFatigue(!fatigue); setConcentration(fatigue); setSportif(fatigue); setStresse(fatigue)} }
                         />
-                        <label className='moodType'>Tired</label>
+                        <label className='moodType' htmlFor="tired">Tired</label>
                     </div>
 
                 </div>
@@ -75,33 +92,47 @@ function Filter (props){
                 <label className='filterLabel' htmlFor='prefSelect'>Preferencies</label>
                     <div className="prefType" >
                         <input
-                            type="checkbox"
-                            defaultChecked={this.props.healthLabels === undefined}
-                            onChange={this.handleChangeSansPreference}
+                            type="radio"
+                            id="nopref"
+                            value="nopref"
+                            name="preftype"
+                            defaultChecked={nopref}
+                            onChange={() => {setNopref(!nopref); setVegetarian(nopref); setVegan(nopref)} }
                         />
                         <label className='prefType'>All </label>
                     </div>
                     <div className="prefType" >
                         <input
-                            type="checkbox"
-                            defaultChecked={this.props.healthLabels === "vegetarian"}
-                            onChange={this.handleChangeVegetarien}
+                            type="radio"
+                            id="vegetarian"
+                            value="vegetarian"
+                            name="preftype"
+                            defaultChecked={vegetarian}
+                            onChange={() => {setVegetarian(!vegetarian); setNopref(vegetarian); setVegan(vegetarian)} }
                         />
                         <label className='prefType'>Veggie </label>
                     </div>
                     <div className="prefType" >
                         <input
-                            type="checkbox"
-                            defaultChecked={this.props.healthLabels === "vegan"}
-                            onChange={this.handleChangeVegan}
+                            type="radio"
+                            id="vegan"
+                            value="vegan"
+                            name="preftype"
+                            defaultChecked={vegan}
+                            onChange={() => {setVegan(!vegan); setNopref(vegan); setVegetarian(vegan)} }
                         />
                         <label className='prefType'>Vegan </label>
                     </div>
                     
-                    <Link to ={{pathname: '/results',
-                                newMood : concentration ? 'low-fat' : sportif ? 'high-protein' : stresse ? 'low-carb' : 'balanced' }}>
-                        <button className='selectBoxBtn'>Valid your choices</button>
-                    </Link>
+                    {/* <Link to ={{pathname: '/results',
+                                newMood : concentration ? 'low-fat' : sportif ? 'high-protein' : stresse ? 'low-carb' : 'balanced' }}> */}
+                        <button className='selectBoxBtn' onClick={() => {
+                            props.changeMood(concentration ? 'low-fat' : sportif ? 'high-protein' : stresse ? 'low-carb' : 'balanced');
+                            props.changePreference(nopref ? undefined : vegetarian ? 'vegetarian' : 'vegan')} }
+                            >
+                            Valid your choices
+                        </button>
+                    {/* </Link> */}
                 </div>
             </div>
 
@@ -110,11 +141,11 @@ function Filter (props){
                     <label className='filterLabel' htmlFor="Timing">Timing</label>
                     <form className='timing'>
                             <select type="select" className="timing">
-                            <option>10min</option>
-                            <option>30min</option>
-                            <option>45min</option>
-                            <option>1h </option>
-                            <option>2h +</option>
+                                <option value='10'>10min</option>
+                                <option value='30'>30min</option>
+                                <option value='45'>45min</option>
+                                <option value='60'>1h </option>
+                                <option value='120'>2h +</option>
                             </select>
                     </form>
                 </div>

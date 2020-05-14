@@ -21,6 +21,14 @@ function RecipesResults(props) {
         setQuery(query)
     }
 
+    const changeMood = (mood) => {
+        setDietLabels(mood)
+    }
+
+    const changePreference = (pref) => {
+        setHealthLabels(pref)
+    }
+
     useEffect(() => {
        const getData = () => {
 
@@ -43,7 +51,7 @@ function RecipesResults(props) {
        }; 
        
         getData();  
-    }, [query])
+    }, [query, dietLabels, healthLabels])
 
   
         return (
@@ -57,7 +65,7 @@ function RecipesResults(props) {
 
                     <div className='pageResults'>
 
-                {loaded && <Filter changeQuery={changeQuery}/>}
+                {loaded && <Filter mood={dietLabels} preferencies={healthLabels} changeQuery={changeQuery} changeMood={changeMood} changePreference={changePreference} />}
 
                         <div className='recipesresults'>
                                 {recipes.map(recip => recip.recipe).map(e=> (
