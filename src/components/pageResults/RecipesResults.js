@@ -15,6 +15,7 @@ function RecipesResults(props) {
     const [recipes, setRecipes] = useState([])
     const [query, setQuery] = useState('')
     const [loaded, setLoaded] = useState(false)
+    const [timing, setTiming] = useState(undefined)
 
 
     const changeQuery = (query) => {
@@ -29,6 +30,10 @@ function RecipesResults(props) {
         setHealthLabels(pref)
     }
 
+    const filterOnTiming = (time) => {
+        setTiming(time)
+    }
+ 
     useEffect(() => {
        const getData = () => {
 
@@ -65,10 +70,11 @@ function RecipesResults(props) {
 
                     <div className='pageResults'>
 
-                {loaded && <Filter mood={dietLabels} preferencies={healthLabels} changeQuery={changeQuery} changeMood={changeMood} changePreference={changePreference} />}
+                {loaded && <Filter mood={dietLabels} preferencies={healthLabels} changeQuery={changeQuery} changeMood={changeMood} changePreference={changePreference} filterOnTiming={filterOnTiming} />}
 
                         <div className='recipesresults'>
-                                {recipes.map(recip => recip.recipe).map(e=> (
+                            {timing === undefined ? 
+                                recipes.map(recip => recip.recipe).map(e=> (
                                     <RecipeCard
                                     key={e.uri} 
                                     label={e.label} 
@@ -77,7 +83,18 @@ function RecipesResults(props) {
                                     calories={e.calories}
                                     uri={e.uri}
                                     recipes={recipes.map(recipe=>recipe.recipe)} />
-                                ))}
+                                ))
+                            : recipes.map(recip => recip.recipe).filter(e => e.totalTime <= timing).map(e=>(
+                                    <RecipeCard
+                                    key={e.uri} 
+                                    label={e.label} 
+                                    image={e.image} 
+                                    time={e.totalTime} 
+                                    calories={e.calories}
+                                    uri={e.uri}
+                                    recipes={recipes.map(recipe=>recipe.recipe)} />
+                                ))
+                            }
                         </div>
                                     
                     </div>
