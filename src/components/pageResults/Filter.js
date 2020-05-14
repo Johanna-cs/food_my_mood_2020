@@ -5,12 +5,16 @@ class Filter extends Component {
         super(props)
         this.state = {
             search : '',
-            dietLabels : this.props.dietLabels,
-            concentration  : this.props.dietLabels === "low-fat" ? true : false,
+            dejaselectionne: false, 
+
+            concentration : this.props.dietLabels === "low-fat" ? true : false,
             sportif : this.props.dietLabels === "high-protein" ? true : false,
             stresse : this.props.dietLabels === "low-carb" ? true : false,
             fatigue : this.props.dietLabels === "balanced" ? true : false,
-            test : "coucou"
+  
+            sanspreference : this.props.healthLabels === "undefined" ? true : false,
+            vegetarien : this.props.healthLabels === "vegetarian" ? true : false,
+            vegan : this.props.healthLabels === "vegan" ? true : false,
         }}
     render() {
         return (
@@ -36,7 +40,7 @@ class Filter extends Component {
                 <label className='filterLabel' htmlFor='moodsSelect'>Mood</label>
                     <div className="moodType" >
                         <input
-                            type="checkbox"
+                            type="radio" name="Mood"
                             defaultChecked={this.state.concentration}
                             onChange={(e) => this.setState({concentration : e.target.checked})}
                             />
@@ -44,15 +48,15 @@ class Filter extends Component {
                     </div>
                     <div className="moodType" >
                         <input
-                            type="checkbox"
+                            type="radio" name="Mood"
                             defaultChecked={this.state.sportif}
-                            onChange={(e) => this.setState({sportif : e.target.checked})}
+                            onChange={() => this.setState({sportif : !this.state.sportif })}
                         />
                         <label className='moodType'>Sport</label>
                     </div>
                     <div className="moodType" >
                         <input
-                            type="checkbox"
+                            type="radio" name="Mood"
                             defaultChecked={this.state.stresse}
                             onChange={(e) => this.setState({stresse : e.target.checked})}
                         />
@@ -60,7 +64,7 @@ class Filter extends Component {
                     </div>
                     <div className="moodType" >
                         <input
-                            type="checkbox"
+                            type="radio" name="Mood"
                             defaultChecked={this.state.fatigue}
                             onChange={(e) => this.setState({fatigue : e.target.checked})}
                         />
@@ -72,32 +76,35 @@ class Filter extends Component {
                 <label className='filterLabel' htmlFor='prefSelect'>Preferencies</label>
                     <div className="prefType" >
                         <input
-                            type="checkbox"
-                            defaultChecked={this.props.healthLabels === undefined}
-                            onChange={this.handleChangeSansPreference}
+                            type="radio" name="Preferencies"
+                            defaultChecked={this.state.sanspreference}
+                            onChange={(e) => this.setState({sanspreference : e.target.checked})}
                         />
                         <label className='prefType'>All </label>
                     </div>
                     <div className="prefType" >
                         <input
-                            type="checkbox"
-                            defaultChecked={this.props.healthLabels === "vegetarian"}
-                            onChange={this.handleChangeVegetarien}
+                            type="radio" name="Preferencies"
+                            defaultChecked={this.state.vegetarien}
+                            onChange={(e) => this.setState({vegetarien : e.target.checked})}
                         />
                         <label className='prefType'>Veggie </label>
                     </div>
                     <div className="prefType" >
                         <input
-                            type="checkbox"
-                            defaultChecked={this.props.healthLabels === "vegan"}
-                            onChange={this.handleChangeVegan}
+                            type="radio" name="Preferencies"
+                            defaultChecked={this.state.vegan}
+                            onChange={(e) => this.setState({vegan : e.target.checked})}
                         />
                         <label className='prefType'>Vegan </label>
                     </div>
-                    <Link to ={{pathname: '/results',
-                                newMood : this.state.concentration ? 'low-fat' : this.state.sportif ? 'high-protein' : this.state.stresse ? 'low-carb' : 'balanced' }}>
-                        <button>Valid your choices</button>
+        
+                    <Link to ={{pathname: '/results',                                
+                               newMood : this.state.concentration ? 'low-fat' : this.state.sportif ? 'high-protein' : this.state.stresse ? 'low-carb' : 'balanced' }}>
+                            <button>Valid your choices</button>
                     </Link>
+
+
                 </div>
                 <div className='filterTime'>
                     <label className='filterLabel' htmlFor="Timing">Timing</label>

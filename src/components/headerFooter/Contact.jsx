@@ -10,9 +10,9 @@ const Contact = () => {
 
                 <div className= "col1">
                     <div className="profil">
-                        <div><p>Johanna Cas</p></div>
-                        <div><a>https://github.com/johanna-cs</a></div>
-                        <div><a>https://www.linkedin.com/in/johanna-cas/</a></div>
+                        <p>Johanna Cas</p>
+                        <a>https://github.com/johanna-cs</a>
+                        <a>https://www.linkedin.com/in/johanna-cas/</a>
                     </div>
 
                     <div className="profil">
@@ -33,7 +33,7 @@ const Contact = () => {
                     <div className="profil">
                         <p>Olivier Baveux</p>
                         <a>https://github.com/lco23</a>
-                        <a>https://www.linkedin.com/in/olivier-baveux-05560113/</a>
+                        <a>https://www.linkedin.com/in/olivierbaveux/</a>
                     </div>
                 </div>
 
