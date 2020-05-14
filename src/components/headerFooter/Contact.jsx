@@ -10,35 +10,33 @@ const Contact = () => {
 
                 <div className= "col1">
                     <div className="profil">
-                        <div><p>Johanna Cas</p></div>
-                        <div><a>https://github.com/johanna-cs</a></div>
-                        <div><a>https://www.linkedin.com/in/johanna-cas/</a></div>
+                        <p>Johanna Cas</p>
+                        <a href='https://github.com/johanna-cs' />
+                        <a href='https://www.linkedin.com/in/johanna-cas'/>
                     </div>
 
                     <div className="profil">
                         <p>Jean-Baptiste Bouillat</p>
-                        <a>https://github.com/jbb-dev</a>
-                        <a>https://www.linkedin.com/in/jean-baptiste-bouillat-b2258450/</a>
+                        <a href='https://github.com/jbb-dev'/>
+                        <a href='https://www.linkedin.com/in/jean-baptiste-bouillat-b2258450/'/>
                     </div>
-                </div>
 
                 <div className= "col2">
                     <div className="profil">
                         <p>Sabrina Bartoli</p>
-                        <a>https://github.com/sabgirl</a>
-                        <a>https://www.linkedin.com/in/sabrina-bartoli-b421b975/</a>
-                        
+                        <a href='https://github.com/sabgirl'/>
+                        <a href='https://www.linkedin.com/in/sabrina-bartoli-b421b975/'/>
                     </div>
 
                     <div className="profil">
                         <p>Olivier Baveux</p>
-                        <a>https://github.com/lco23</a>
-                        <a>https://www.linkedin.com/in/olivier-baveux-05560113/</a>
+                        <a href='https://github.com/lco23'/>
+                        <a href='https://www.linkedin.com/in/olivier-baveux-05560113/'/>
                     </div>
                 </div>
-
+                </div>
             </div>
-    </div>
+            </div>
     )}
 
 

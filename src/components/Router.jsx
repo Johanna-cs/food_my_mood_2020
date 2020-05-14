@@ -15,14 +15,15 @@ const Router = () => {
         <>
         <Header />
         <Switch>
-            <div className='routerLinks'>
+            {/* <div className='routerLinks'> */}
                     <Route exact path ='/' component={MoodList} />
                     <Route exact path ='/select' component={PreferencesList} />
                     <Route exact path ='/results' component={pageResults} />
+                    <Route exact path ='/results/ingredient/:query' component={pageResults} />
                     <Route exact path ='/contact' component={Contact} />
                     <Route path='/results/:id' component={RecipeDetails} />
 
-                </div>
+                {/* </div> */}
             </Switch>
         <Footer />
         </>
