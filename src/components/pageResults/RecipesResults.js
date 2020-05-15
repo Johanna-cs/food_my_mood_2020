@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios'
 import RecipeCard from './RecipeCard'
 import Filter from './Filter'
-import './Results.css'
+import './Results.scss'
 import Loader from 'react-loader'
-
 const API_ID = 'b013cd2e'
 const API_KEY = 'b5866da13b7d6a2eac318c855012b15f'
 

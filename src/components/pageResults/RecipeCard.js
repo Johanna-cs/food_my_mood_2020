@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import './Results.css'
+import './Results.scss'
 
 class RecipeCard extends React.Component {
     constructor(props) {

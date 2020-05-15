@@ -1,7 +1,7 @@
 import React from 'react'
 import Axios from 'axios'
 import SimilarRecipes from './SimilarRecipes'
-import './RecipeDetails.css'
+import './RecipeDetails.scss'
 
 
 const API_ID = '6b74c366'

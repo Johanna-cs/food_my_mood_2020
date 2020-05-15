@@ -1,7 +1,6 @@
 .pageDetails {
     background : url('../pageSelect/backgrounds/background_11.jpg') no-repeat center center fixed;
     background-size: cover;
-    
     min-height: 100%;
     min-width: 100%;
     width: 100%;
@@ -139,4 +138,42 @@
 .similTime {
     text-align: center;
     font-family: 'playfair-display';
+}
+
+@media only screen and(max-width : 500px) {
+    .container {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .recipe-summary {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .recipeImg {
+        width: 19rem;
+        height: 10rem;
+    }
+    .recipe-typology {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .similarrecipes{
+        display: flex;
+        justify-content: center;
+    }
+    .similRecipe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+    }
+    .similName{
+        text-align: center;
+        margin: 0rem;
+        padding: 0rem;
+    }
+    
+    
 }

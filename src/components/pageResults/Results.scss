@@ -25,7 +25,7 @@
 
 /* Recettes card */
 .recipeCard {
-    min-width: 15.4rem;
+    // min-width: 15.4rem;
     width: 15.4rem;
     background-color: #f5f5f5;
     border-radius: 2%;
@@ -53,7 +53,6 @@
 }
 .recipeTime, .recipeCal {
     color: #3E4F59;
-    
     text-justify: left;
     margin-bottom: unset;
     padding: 0.1rem;
@@ -77,7 +76,7 @@
    line-height: 1.6rem;
 }
 .recipeButton {
-    font: 'josefin' sans-serif;
+    font-family: 'josefin' sans-serif;
     font-size: xx-small;
     align-items: center;
     margin-left: 11rem;
@@ -90,3 +89,27 @@
 	background: transparent;
 	color:#3E4F59;
 } 
+
+@media only screen and(max-width : 500px) {
+    .recipeCard {
+        display: flex;
+        flex-flow: row wrap;
+        width: min-content;
+        padding: 0.2rem;
+        
+    }
+    .recipePhoto {
+        width: 10.4rem;
+        height: 5rem;
+    }
+    .recipeButton {
+        margin-left: 3.5rem;
+    }
+    #recipeName {
+        text-align: center;
+        font-size: 1rem !important;
+    }
+
+
+
+}
