@@ -16,6 +16,9 @@ function RecipesResults(props) {
     const [query, setQuery] = useState('')
     const [loaded, setLoaded] = useState(false)
     const [timing, setTiming] = useState(undefined)
+    const [peanutfree, setPeanutfree] = useState(false)
+    const [treenutfree, setTreenutfree] = useState(false)
+
 
 
     const changeQuery = (query) => {
@@ -32,6 +35,14 @@ function RecipesResults(props) {
 
     const filterOnTiming = (time) => {
         setTiming(time)
+    }
+
+    const filterOnPeanut = (value) => {
+        setPeanutfree(value)
+    }
+
+    const filterOnTreenut = (value) => {
+        setTreenutfree(value)
     }
  
     useEffect(() => {
@@ -82,7 +93,7 @@ function RecipesResults(props) {
 
                     <div className='pageResults'>
 
-                {loaded && <Filter mood={dietLabels} preferencies={healthLabels} changeQuery={changeQuery} changeMood={changeMood} changePreference={changePreference} filterOnTiming={filterOnTiming} />}
+                {loaded && <Filter mood={dietLabels} preferencies={healthLabels} changeQuery={changeQuery} changeMood={changeMood} changePreference={changePreference} filterOnTiming={filterOnTiming} filterOnPeanut={filterOnPeanut} filterOnTreenut={filterOnTreenut}/>}
 
                         <div className='recipesresults'>
                             {timing === undefined ? 

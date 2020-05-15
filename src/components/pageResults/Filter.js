@@ -149,6 +149,41 @@ function Filter (props){
                     </form>
                 </div>
 
+
+                <div className="filterAllergene">
+                    <label className='filterLabel' htmlFor='allergene'>Allergene</label>
+                    <div className="prefType" >
+                        <input
+                                type="checkbox"
+                                id="peanut-free"
+                                // value=
+                                name="peanut-free"
+                                defaultChecked={false}
+                                onChange={() => props.filterOnPeanut(!peanutfree) }
+                            />
+                        <label className='prefType'>Peanut-free </label>
+                    </div>
+
+                    <div className="prefType" >
+                        <input
+                                type="checkbox"
+                                id="treenut-free"
+                                value={true}
+                                name="treenut-free"
+                                defaultChecked={false}
+                                onChange={() => {setVegan(!vegan); setNopref(vegan); setVegetarian(vegan)} }
+                            />
+                        <label className='prefType'>Treenut-free </label>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
             </div>  
         
         )
