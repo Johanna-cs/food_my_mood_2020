@@ -4,8 +4,8 @@ import RecipeCard from './RecipeCard'
 import Filter from './Filter'
 import './Results.scss'
 import Loader from 'react-loader'
-const API_ID = 'b013cd2e'
-const API_KEY = 'b5866da13b7d6a2eac318c855012b15f'
+const API_ID = '6b74c366'
+const API_KEY = '4819294e40eaccde885e836d49f610d0'
 
 
 function RecipesResults(props) {
