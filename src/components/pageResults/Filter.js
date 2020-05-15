@@ -23,7 +23,13 @@ function Filter (props){
                     <label className='filterLabel' htmlFor='searchBar'>Search</label>
                     <div>
                     <input id='searchBarInput' type="text" placeholder= "Enter an ingredient" onChange={ e => setSearch (e.target.value)}/>
-                        <button onClick={()=> props.changeQuery(search)} id='searchBarBtn' >Ok</button>
+                        <button id='searchBarBtn' onClick={()=> {
+                            props.changeQuery(search); 
+                            props.changeMood(concentration ? 'low-fat' : sportif ? 'high-protein' : stresse ? 'low-carb' : 'balanced');
+                            props.changePreference(nopref ? undefined : vegetarian ? 'vegetarian' : 'vegan')} }
+                        >
+                            Ok
+                        </button>
                     </div>
                 </div>
                 
@@ -121,7 +127,8 @@ function Filter (props){
                     
                         <button className='selectBoxBtn' onClick={() => {
                             props.changeMood(concentration ? 'low-fat' : sportif ? 'high-protein' : stresse ? 'low-carb' : 'balanced');
-                            props.changePreference(nopref ? undefined : vegetarian ? 'vegetarian' : 'vegan')} }
+                            props.changePreference(nopref ? undefined : vegetarian ? 'vegetarian' : 'vegan');
+                            props.changeQuery(search)} }
                             >
                             Valid your choices
                         </button>
@@ -137,7 +144,7 @@ function Filter (props){
                                 <option value={30}>30min</option>
                                 <option value={45}>45min</option>
                                 <option value={60}>1h </option>
-                                <option value={120}>2h +</option>
+                                <option value={120}>2h</option>
                             </select>
                     </form>
                 </div>
