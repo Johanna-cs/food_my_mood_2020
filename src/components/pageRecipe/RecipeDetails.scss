@@ -91,9 +91,12 @@
     display : flex ; 
     justify-content: space-around;
     align-items: center ;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     padding : 0.4rem;
     background-color: #D9E2DD99;
+}
+.similPageTitle {
+    font-weight: 800;
 }
 .similarrecipes {
     display: flex;

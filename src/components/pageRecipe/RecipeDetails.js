@@ -103,7 +103,7 @@ class RecipeDetails extends React.Component {
                         
                         <div className='similSection'>
                             
-                            <h3>You will also love it :</h3>
+                            <h3 className='similPageTitle'>You will also love it :</h3>
                             <div className='similarrecipes'>
                                 {this.state.similarRecipes.map(recipe => (
                                             <div key={recipe.uri} onClick={() => this.refreshRecipeDetails(this.extractIdFromUri(recipe.uri))}><SimilarRecipes 
