@@ -1,3 +1,4 @@
+
 .moodList{ 
     background-color: #D9E2DD;
 }
@@ -32,4 +33,21 @@ h3 {
     font-weight: 600;
     font-size: 1.4rem;
     
+}
+
+@media only screen and(max-width : 800px) {
+
+    .cols{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        padding-top: 0.7rem;
+    }
+
+    .photos {
+        width: 90%;
+        margin: 1% 5% 10%;   
+    }
+
 }

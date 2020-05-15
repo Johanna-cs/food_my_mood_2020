@@ -18,7 +18,7 @@ const Header = (props) => {
         <Collapse isOpen={!collapsed} navbar> */}
           <Nav id='navMenu' navbar>
             <NavItem>
-              <NavLink className='linkMenu' tag={NavLinkTest}  to="/">Mood</NavLink>
+              <NavLink className='linkMenu' tag={NavLinkTest}  to="/">Home</NavLink>
             </NavItem>
             <NavItem>
               <NavLink className='linkMenu' tag={NavLinkTest}to="/results">Results</NavLink>

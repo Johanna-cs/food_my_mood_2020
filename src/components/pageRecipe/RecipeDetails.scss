@@ -1,7 +1,6 @@
 .pageDetails {
     background : url('../pageSelect/backgrounds/background_11.jpg') no-repeat center center fixed;
     background-size: cover;
-    
     min-height: 100%;
     min-width: 100%;
     width: 100%;
@@ -26,13 +25,14 @@
 
 .recipe-summary {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     font-size: 2rem;
+    margin-left: 1rem;
 
 }
 .recipeImg {
-    width: 20rem;
+    width: 22rem;
     height: 20rem;
     object-fit: cover;
     border-radius: 2%;
@@ -45,8 +45,22 @@
     padding: inherit;
     width: 10rem;
     font-size: 1rem;
+    list-style-type: none;
 }
-
+.recipe-typology p {
+    font-weight: 700;
+    margin-bottom: 0rem;
+}
+.recipe-typology li {
+    margin-left: 1rem;
+}
+.recipeList p {
+    font-weight: 700;
+    margin-bottom: 0rem;
+}
+.recipeList li {
+    margin-left: 0.5rem;
+}
 .recipeList {
     font-family: 'playfair-display';
     color: #3E4F59;
@@ -54,13 +68,13 @@
     padding: 0.8rem;
     text-align: start;
     margin: 0rem;
+    list-style-type: none;
 }
 .goRecipe {
     font: 'josefin' sans-serif;
     font-size: x-small;
     align-items: center;
-    margin-left: 32rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     width: 8rem;
     border: none;
 	padding: 6px 3px 6px 3px;
@@ -77,9 +91,12 @@
     display : flex ; 
     justify-content: space-around;
     align-items: center ;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     padding : 0.4rem;
     background-color: #D9E2DD99;
+}
+.similPageTitle {
+    font-weight: 800;
 }
 .similarrecipes {
     display: flex;
@@ -124,4 +141,42 @@
 .similTime {
     text-align: center;
     font-family: 'playfair-display';
+}
+
+@media only screen and(max-width : 500px) {
+    .container {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .recipe-summary {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .recipeImg {
+        width: 19rem;
+        height: 10rem;
+    }
+    .recipe-typology {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .similarrecipes{
+        display: flex;
+        justify-content: center;
+    }
+    .similRecipe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+    }
+    .similName{
+        text-align: center;
+        margin: 0rem;
+        padding: 0rem;
+    }
+    
+    
 }

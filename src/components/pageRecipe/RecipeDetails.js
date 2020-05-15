@@ -1,11 +1,11 @@
 import React from 'react'
 import Axios from 'axios'
 import SimilarRecipes from './SimilarRecipes'
-import './RecipeDetails.css'
+import './RecipeDetails.scss'
 
 
-const API_ID = 'e9275ee4'
-const API_KEY = 'bda40244157a76f38fd5f51e25675359'
+const API_ID = '6b74c366'
+const API_KEY = '4819294e40eaccde885e836d49f610d0'
 
 class RecipeDetails extends React.Component {
     constructor(props){
@@ -78,28 +78,32 @@ class RecipeDetails extends React.Component {
                                 <div className='recipe-summary'>
                                     <ul className='recipe-typology'>
                                         {e.dietLabels.map(elt=> (
-                                            <li key={elt}>{elt}</li>))}
-                                            <li>Calories : {Math.round(e.calories)} cal</li>
+                                            <p key={elt}>{elt}</p>))}
+                                            <p>Calories : {Math.round(e.calories)} cal</p>
+                                        <p>Diet info :</p>{e.healthLabels.map(el => 
+                                        <li key={el}>{el} </li>)}
                                     </ul>
                                     <img className='recipeImg' src={e.image} alt={e.label}></img>
                                 </div>
                                 <div className='recipeList'>
-                                    <p>Timing : <span> {e.totalTime === 0 ? 'Instantané !' : e.totalTime} {e.totalTime > 0 ? 'minutes' : ''}</span></p>
+                                    <p>Timing : </p> <li> {e.totalTime === 0 ? 'Instantané !' : e.totalTime} {e.totalTime > 0 ? 'minutes' : ''}</li>
                                     <p> Ingredients :</p>
                                     <ul>
                                         {e.ingredients.map(ing=> (
                                             <li key={ing.text}>{ing.text}</li>))}
                                     </ul>
-                                </div>
+                                
+                                
                                     <a rel="noopener noreferrer" href={this.state.recipe[0].url} target="_blank">
                                         <button  className='goRecipe'>Get the complete recipe</button></a>
-                            </div>
+                                    </div>
+                                </div>
                             </div>
                         ))}
                         
                         <div className='similSection'>
                             
-                            <h3>You will also love it :</h3>
+                            <h3 className='similPageTitle'>You will also love it :</h3>
                             <div className='similarrecipes'>
                                 {this.state.similarRecipes.map(recipe => (
                                             <div key={recipe.uri} onClick={() => this.refreshRecipeDetails(this.extractIdFromUri(recipe.uri))}><SimilarRecipes 
