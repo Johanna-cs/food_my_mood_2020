@@ -20,9 +20,9 @@ const Header = (props) => {
             <NavItem>
               <NavLink className='linkMenu' tag={NavLinkTest}  to="/">Home</NavLink>
             </NavItem>
-            {/* <NavItem>
+            <NavItem>
               <NavLink className='linkMenu' tag={NavLinkTest}to="/results">Results</NavLink>
-            </NavItem> */}
+            </NavItem>
             <NavItem>
               <NavLink className='linkMenu' tag={NavLinkTest} to="/contact">Contact</NavLink>
             </NavItem>
