@@ -41,7 +41,19 @@ function RecipesResults(props) {
         .get(`https://api.edamam.com/search?q=${query}&health=alcohol-free&excluded=tea&excluded=cream&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => setRecipes(response.data.hits))
         .finally(()=> setLoaded(true))
-       
+
+        : query !== '' & healthLabels !== undefined ?
+        Axios
+        .get(`https://api.edamam.com/search?q=${query}&health=${healthLabels}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
+        .then(response => setRecipes(response.data.hits))
+        .finally(()=> setLoaded(true))
+
+        : query !== '' & healthLabels !== undefined & dietLabels !== undefined ?
+        Axios
+        .get(`https://api.edamam.com/search?q=${query}&health=${healthLabels}&diet=${dietLabels}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
+        .then(response => setRecipes(response.data.hits))
+        .finally(()=> setLoaded(true))
+
         : healthLabels === undefined ?
         Axios
         .get(`https://api.edamam.com/search?q=&diet=${dietLabels}&health=alcohol-free&excluded=tea&excluded=cream&app_id=${API_ID}&app_key=${API_KEY}`)
