@@ -1,11 +1,7 @@
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    font-family: 'Josefin Sans' sans-serif, Roboto sans-serif, 'Playfair Display', serif;
-    }
 // Header global
 .navbar {
+  display: flex;
+  flex-flow: row wrap;
   background-color: #3E4F59;
   font-family: 'Playfair Display';
   width: 100%;
@@ -24,8 +20,8 @@ body {
 #navMenu {
   display: flex ;
   justify-content: space-around ;
-  flex-flow: row nowrap !important;
-  padding: 1.5rem !important;
+  flex-flow: row wrap ;
+  padding: 1.5rem;
 }
 .linkMenu {
   text-decoration: none;
@@ -35,7 +31,7 @@ body {
 .burgerMenu .Navbar-Toggler {
   display: none ;
 }
-
+//Page contact
 .contact {
   background-color: #D9E2DD99;
   background : url('../pageSelect/backgrounds/background_12.jpg') no-repeat center center fixed;
@@ -50,6 +46,7 @@ body {
   background-color: #D9E2DD99;
   padding: 3rem;
   font-weight: 700;
+  border-radius: 2%;
 }
 
 .laTeam {
@@ -60,24 +57,22 @@ body {
   margin : auto;
 }
 
-a {
-  font-family: 'Playfair Display';
-  margin-left: 0.5rem; 
-  font-size: 1rem;
-}
-
 .lien{
   color:#3E4F59 !important;
   margin-bottom: 0.9rem;
+  font-family: 'Playfair Display';
+  margin-left: 0.5rem; 
+  font-size: 1rem;
+
 }
 
-p
- {
+.contactName {
   font-family: 'playfair-display';
   font-size: 1rem;
-  color:  whitesmoke;
+  color:  #f5f5f5;
   background-color:  #3E4F59;
-  border: 2px solid whitesmoke;
+  border: 2px solid #f5f5f5;
+  border-radius: 2%;
 }
 
 .profil {
@@ -85,7 +80,7 @@ p
   flex-direction: column;
   justify-content: center;
   font-family: 'playfair display';
-  background-color: whitesmoke;
+  background-color: #f5f5f5;
   border-radius: 2%;
   margin: 5rem 0rem;
   width: 30rem ;
@@ -113,42 +108,60 @@ p
 }
 
 @media (min-width: 500px) and (max-width: 1000px){
-
-  .laTeam {
-    display: flex;
-    flex-direction: column;
+#navMenu {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 1rem;
+  justify-content: flex-end;
 }
 
-  .profil {
-    width: 30rem ;
-    height: 8.7rem ;
-    margin: 0.8rem 0rem;
-  }
+.laTeam {
+  display: flex;
+  flex-direction: column;
 }
 
-// Menu + burger menu on mobile
+.profil {
+  width: 30rem ;
+  height: 8.7rem ;
+  margin: 0.8rem 0rem;
+}
+}
+
+// Menu nav + Contact on mobile
 @media only screen and(max-width : 500px) {
 
-  .burgerMenu .Navbar-Toggler {
-      display: flex ;
-      width: 2.5rem ;
-      padding: 1rem;
-  }
-
-  .laTeam {
-    display: flex;
-    flex-direction: column;
+.laTeam {
+  display: flex;
+  flex-direction: column;
 }
 
-  .profil {
-    width: 20rem ;
-    height:10rem ;
-    margin: 0.8rem 0rem;
+.profil {
+  width: 20rem ;
+  height:10rem ;
+  margin: 0.8rem 0rem;
+}
+
+.contactTitle {
+  display: none;
   }
 
-  .contactTitle {
-    display: none;
-  }
+#navMenu {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 0rem;
+  justify-content: flex-end;
+}
+#navBar {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row nowrap;
+}
+.navbar {
+  height: 6rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
 
 }
 

@@ -12,7 +12,7 @@ const Contact = () => {
 
                 <div className= "col1">
                     <div className="profil">
-                        <p>Johanna Cas</p>
+                        <p className='contactName'>Johanna Cas</p>
                         <a className= "lien" href='https://github.com/johanna-cs'> 
                         <img className="logogit" src={github} alt="github" width="25px"/>
                          github.com/johanna-cs 
@@ -24,7 +24,7 @@ const Contact = () => {
                     </div>
 
                     <div className="profil">
-                        <p>Jean-Baptiste Bouillat</p>
+                        <p className='contactName'>Jean-Baptiste Bouillat</p>
                         <a className= "lien" href='https://github.com/jbb-dev'> 
                         <img className="logogit" src={github} alt="github" width="25px"/>
                         github.com/jbb-dev 
@@ -38,7 +38,7 @@ const Contact = () => {
 
                 <div className= "col2">
                     <div className="profil">
-                        <p>Sabrina Bartoli</p>
+                        <p className='contactName'>Sabrina Bartoli</p>
                         <a className= "lien" href='https://github.com/sabgirl'>
                         <img className="logogit" src={github} alt="github" width="25px"/>
                         github.com/sabgirl
@@ -50,7 +50,7 @@ const Contact = () => {
                     </div>
 
                     <div className="profil">
-                        <p>Olivier Baveux</p>
+                        <p className='contactName'>Olivier Baveux</p>
                         <a className= "lien" href='https://github.com/lco23'> 
                         <img className="logogit" src={github} alt="github" width="25px"/>
                         github.com/lco23
