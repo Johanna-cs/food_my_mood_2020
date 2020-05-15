@@ -5,7 +5,7 @@ import fatigue from './photos/cadre/fatigue.png'
 import stresse from './photos/cadre/stresse.png'
 import sportif from './photos/cadre/sportif.png'
 import { Link } from 'react-router-dom'
-import './MoodList.css'
+import './MoodList.scss'
 
 
 

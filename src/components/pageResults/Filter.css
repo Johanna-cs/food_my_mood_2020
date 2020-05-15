@@ -7,8 +7,8 @@
     padding: 0.5rem;
     min-width: 9.5rem;
 }
-#filterTitle h3 {
-    text-align: left;
+#filterTitle {
+    margin-right: 6.1rem;
 
 }
 
@@ -87,7 +87,6 @@
     justify-content: flex-start;
     flex-flow: column wrap;
     width: 10rem;
-    padding: 0.1rem;
     margin-bottom: 1rem;
 }
 .prefType {
@@ -111,10 +110,11 @@
     margin-bottom: 1rem;
 }
 .timing select {
-    width: 3.2rem;
-    font-size: 0.5rem ;
+    width: 4.2rem;
+    font-size: 0.6rem ;
     padding: 0.1rem;
     margin: 0.1rem;
+    margin-left: 1.3rem;
 }
 .timing form {
     margin-left: 10rem;

@@ -5,8 +5,8 @@ import Filter from './Filter'
 import './Results.css'
 import Loader from 'react-loader'
 
-const API_ID = 'e9275ee4'
-const API_KEY = 'bda40244157a76f38fd5f51e25675359'
+const API_ID = 'b013cd2e'
+const API_KEY = 'b5866da13b7d6a2eac318c855012b15f'
 
 
 function RecipesResults(props) {
@@ -39,7 +39,7 @@ function RecipesResults(props) {
 
         query !== '' ?
         Axios
-        .get(`https://api.edamam.com/search?q=${query}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
+        .get(`https://api.edamam.com/search?q=${query}&health=alcohol-free&excluded=tea&excluded=cream&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => setRecipes(response.data.hits))
         .finally(()=> setLoaded(true))
 
@@ -57,12 +57,12 @@ function RecipesResults(props) {
 
         : healthLabels === undefined ?
         Axios
-        .get(`https://api.edamam.com/search?q=&diet=${dietLabels}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
+        .get(`https://api.edamam.com/search?q=&diet=${dietLabels}&health=alcohol-free&excluded=tea&excluded=cream&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => setRecipes(response.data.hits))
         .finally(()=> setLoaded(true))
 
         : Axios
-        .get(`https://api.edamam.com/search?q=&diet=${dietLabels}&health=${healthLabels}&health=alcohol-free&excluded=tea&app_id=${API_ID}&app_key=${API_KEY}`)
+        .get(`https://api.edamam.com/search?q=&diet=${dietLabels}&health=${healthLabels}&health=alcohol-free&excluded=tea&excluded=cream&app_id=${API_ID}&app_key=${API_KEY}`)
         .then(response => setRecipes(response.data.hits))
         .finally(()=> setLoaded(true))
        }; 

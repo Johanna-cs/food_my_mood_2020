@@ -26,13 +26,14 @@
 
 .recipe-summary {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     font-size: 2rem;
+    margin-left: 1rem;
 
 }
 .recipeImg {
-    width: 20rem;
+    width: 22rem;
     height: 20rem;
     object-fit: cover;
     border-radius: 2%;
@@ -45,8 +46,22 @@
     padding: inherit;
     width: 10rem;
     font-size: 1rem;
+    list-style-type: none;
 }
-
+.recipe-typology p {
+    font-weight: 700;
+    margin-bottom: 0rem;
+}
+.recipe-typology li {
+    margin-left: 1rem;
+}
+.recipeList p {
+    font-weight: 700;
+    margin-bottom: 0rem;
+}
+.recipeList li {
+    margin-left: 0.5rem;
+}
 .recipeList {
     font-family: 'playfair-display';
     color: #3E4F59;
@@ -54,13 +69,13 @@
     padding: 0.8rem;
     text-align: start;
     margin: 0rem;
+    list-style-type: none;
 }
 .goRecipe {
     font: 'josefin' sans-serif;
     font-size: x-small;
     align-items: center;
-    margin-left: 32rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     width: 8rem;
     border: none;
 	padding: 6px 3px 6px 3px;

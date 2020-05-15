@@ -15,7 +15,7 @@ function Filter (props){
     const [vegan, setVegan] = useState(props.preferencies === "vegan" ? true : false)
 
 
-        return (
+    return (
             <div className='filterBar'>
                 <h3 id='filterTitle'>Filters</h3>
  {/* search bar  */}
@@ -152,7 +152,7 @@ function Filter (props){
             </div>  
         
         )
-    
+        
     }
 
 export default Filter
