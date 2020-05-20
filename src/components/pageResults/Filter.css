@@ -1,0 +1,121 @@
+/* Filter bar */
+.filterBar {
+    background-color: #AEDEB799;
+    display : flex;
+    flex-flow: column wrap;
+    width: min-content;
+    padding: 0.5rem;
+    min-width: 9.5rem;
+}
+#filterTitle {
+    margin-right: 6.1rem;
+
+}
+
+.filterLabel {
+    text-align: left;
+    font-family: 'josefin sans';
+    margin-bottom: 0 !important;
+    font-size: medium;
+    padding: 0.1rem;
+}
+/* Search bar */
+.searchBar {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+    width: 10rem;
+    margin-bottom: 1rem;
+}
+
+#searchBarInput {
+    font-size: xx-small;
+    width: min-content;
+    font-family: 'josefin', sans-serif, 'roboto' sans-serif;
+}
+
+#searchBarBtn {
+    width: max-content;
+    font-size: x-small;
+}
+/* select box  */
+.selectBox {
+    width: 3.1rem;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    margin: 0.4rem;
+    padding: 0.2rem;
+}
+.selectBoxBtn {
+    font: 'josefin' sans-serif;
+    font-size: xx-small;
+    align-items: center;
+    width: 4.8rem;
+    margin-top: 1.5rem;
+    margin-left: 0.6rem;
+    border: none;
+	border-radius: 4%;
+	box-shadow: 0.5px 0.5px 2px #aaa;
+	background: #f5f5f5;
+	color:#3E4F59;
+}
+/* Select Mood */
+.selectMood {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+    width: 10rem;
+    padding: 0.1rem;
+    margin-bottom: 1rem;
+}
+.moodType {
+    margin-left: 10px;
+    margin-bottom: none;
+    font-size: x-small;
+    font-weight: normal;
+    padding: 0.1rem !important;
+}
+.moodType label {
+    margin-left: 2px !important;
+    margin: -2px;
+    padding: 0.1rem !important;
+}
+
+/* Select Pref */
+.selectPreferencies {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+    width: 10rem;
+    margin-bottom: 1rem;
+}
+.prefType {
+    margin-left: 10px;
+    margin-bottom: none;
+    font-size: x-small;
+    font-weight: normal;
+    padding: 0.1rem !important;
+}
+.prefType label {
+    margin-left: 2px !important;
+    margin: -2px;
+    padding: 0.1rem !important;
+}
+
+
+/* Time selector  */
+.filterTime{
+    padding: 0;
+    margin: 0.1rem;
+    margin-bottom: 1rem;
+}
+.timing select {
+    width: 4.2rem;
+    font-size: 0.6rem ;
+    padding: 0.1rem;
+    margin: 0.1rem;
+    margin-left: 1.3rem;
+}
+.timing form {
+    margin-left: 10rem;
+}
