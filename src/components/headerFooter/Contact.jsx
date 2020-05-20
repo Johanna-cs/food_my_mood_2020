@@ -55,7 +55,7 @@ const Contact = () => {
                         <img className="logogit" src={github} alt="github" width="25px"/>
                         github.com/lco23
                         </a>
-                        <a className= "lien" href='https://www.linkedin.com/in/olivier-baveux'> 
+                        <a className= "lien" href='https://www.linkedin.com/in/olivierbaveux/'> 
                         <img className="logolinkedin" src={linkedin} alt="linkedin" width="20px"/>
                         linkedin.com/in/olivier-baveux
                         </a>
